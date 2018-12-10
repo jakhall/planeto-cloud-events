@@ -1,5 +1,3 @@
 steps:
-- name: "gcr.io/cloud-builders/git"
-  args: ["pull"]
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
