@@ -1,5 +1,7 @@
 steps:
-- name: gcr.io/cloud-builders/git
+- name: gcr.io/cloud-builders/gcloud
+  args: ['source', 'repos', 'clone', 'default']
+
 
 runtime: python27
 api_version: 1
