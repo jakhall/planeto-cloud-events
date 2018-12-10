@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     query = model.getUser("admin1")
-    return query.fetch()
+    return query.fetch()[0]
 
 @app.route('/profile')
 def profile():
