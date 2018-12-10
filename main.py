@@ -1,5 +1,6 @@
 
 from flask import Flask
+from google.appengine.ext import ndb
 import model
 
 
@@ -8,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     query = model.getUser("admin1")
-    return query.fetch
+    return query.fetch()
 
 @app.route('/profile')
 def profile():

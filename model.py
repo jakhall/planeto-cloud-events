@@ -20,7 +20,7 @@ def from_datastore(entity):
 
 
 def getUser(name):
-    User.query(User.username == name)
+    return User.query(User.username == name)
 
 class User(ndb.Model):
     username = ndb.StringProperty()
