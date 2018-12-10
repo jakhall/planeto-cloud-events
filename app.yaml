@@ -1,11 +1,14 @@
-runtime: python27
+runtime: python
+env: flex
+
+runtime_config:
+    python_version: 2
 api_version: 1
 threadsafe: true
+entrypoint: gunicorn -b :8080 main.app
+
+
 
 handlers:
 - url: /.*
   script: main.app
-
-libraries:
-- name: ssl
-  version: latest
