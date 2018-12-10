@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Welcome to Planeto"
+    return "Welcome to Planeto - updated"
 
 @app.route('/profile')
 def profile():
