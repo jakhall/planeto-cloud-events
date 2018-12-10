@@ -1,12 +1,13 @@
 
 from flask import Flask
+import model
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'This is the homepage'
+    return "Welcome to Planeto"
 
 @app.route('/profile')
 def profile():

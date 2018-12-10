@@ -1,5 +1,5 @@
 from flask import current_app
-from google.cloud import datastore
+#from google.cloud import datastore
 
 
 def init_app(app):
