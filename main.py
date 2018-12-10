@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Welcome to Planeto - updated"
+    query = model.getUser("admin1")
+    return query.fetch
 
 @app.route('/profile')
 def profile():

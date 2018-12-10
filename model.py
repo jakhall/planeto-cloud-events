@@ -1,5 +1,5 @@
 from flask import current_app
-#from google.cloud import datastore
+from google.appengine.ext import ndb
 
 
 def init_app(app):
@@ -19,15 +19,10 @@ def from_datastore(entity):
     return entity
 
 
-def getUser(id):
-    ds = get_client()
-    key = ds.key('User', int(id))
-    results = ds.get(key)
-    return from_datastore(results)
+def getUser(name):
+    User.query(User.username == name)
 
-
-def getProject(id):
-    ds = get_client()
-    key = ds.key('Project', int(id))
-    results = ds.get(key)
-    return from_datastore(results)
+class User(ndb.Model):
+    username = ndb.StringProperty()
+    userID = ndb.IntegerProperty()
+    email = ndb.StringProperty()
