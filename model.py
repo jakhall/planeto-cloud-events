@@ -19,10 +19,21 @@ def from_datastore(entity):
     return entity
 
 
-def getUser(name):
-    return User.query(User.username == name)
+def getUserByName(name):
+    return User.query(User.username == name).fetch()[0]
+
+def getUserById(id):
+    key = ndb.Key(User, id)
+    return key.get()
+
+
+def createUser(u, fn, ln, e):
+    user = User(username=u, firstname=fn, lastname=ln, email=e)
+    user.put()
+    return user
 
 class User(ndb.Model):
     username = ndb.StringProperty()
-    userID = ndb.IntegerProperty()
+    firstname = ndb.StringProperty()
+    lastname = ndb.StringProperty()
     email = ndb.StringProperty()
