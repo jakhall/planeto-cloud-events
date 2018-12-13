@@ -1,7 +1,7 @@
 
 from flask import *
 from google.appengine.ext import ndb
-import model
+import model as m
 
 
 app = Flask(__name__)
@@ -18,12 +18,13 @@ def userAsDict(user):
 
 @app.route('/')
 def index():
-    user = model.getUserByName("admin1")
-    return str(user.key)
+    return "Welcome to Planeto!"
 
-@app.route('/profile')
-def handleProfile():
-    return 'This is the profile page'
+@app.route('/users')
+def handleAllUsers():
+    userList = m.getAllUsers()
+    users = [userAsDict(user) for user in userList]
+    return jsonify(users)
 
 @app.route('/calendar')
 def handleCalendar():
@@ -33,7 +34,7 @@ def handleCalendar():
 def handleRegister():
     response = "Failed";
     if request.method == 'POST':
-        model.createUser(request.form['username'],
+        m.createUser(request.form['username'],
                          request.form['firstname'],
                          request.form['lastname'],
                          request.form['email'])
@@ -43,7 +44,7 @@ def handleRegister():
 
 @app.route('/profile/<int:id>')
 def handleGetUser(id):
-    user = jsonify(userAsDict(model.getUserById(id)))
+    user = jsonify(userAsDict(m.getUserById(id)))
     return make_response(user, 200)
 
 

@@ -26,6 +26,8 @@ def getUserById(id):
     key = ndb.Key(User, id)
     return key.get()
 
+def getAllUsers():
+    return User.query()
 
 def createUser(u, fn, ln, e):
     user = User(username=u, firstname=fn, lastname=ln, email=e)
