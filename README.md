@@ -11,63 +11,64 @@ Access from /api/.*
 
 ### User functions:
 
-Name: createUser
-URL: /register
-Method: POST
-Description: creates and posts new user to datastore.
-
-Name: getAllUsers
-URL: /users
-Method: GET
-Description: responds with all users from the datastore.
-
-Name: getUserInfo
-URL: /user/<id>
-Method: GET
-Description: responds with the selected user information.
-
+Name: createUser __
+URL: /register __
+Method: POST __
+Description: creates and posts new user to datastore. __
+__
+Name: getAllUsers __
+URL: /users __
+Method: GET __
+Description: responds with all users from the datastore. __
+__
+Name: getUserInfo __
+URL: /user/<id> __
+Method: GET __
+Description: responds with the selected user information. __
+__
 ### Event functions:
 
-Name: createUser
-URL: /user/<id>/events
-Method: POST
-Description: creates and posts new event to datastore.
+Name: createUser __
+URL: /user/<id>/events __
+Method: POST __
+Description: creates and posts new event to datastore. __
+__
+Name: getAllEvents __
+URL: /events __
+Method: GET __
+Description: responds with all events from the datastore. __
+__
+Name: getEventInfo __
+URL: /event/<id> __
+Method: GET __
+Description: responds with the selected event information. __
+__
 
-Name: getAllEvents
-URL: /events
-Method: GET
-Description: responds with all events from the datastore.
-
-Name: getEventInfo
-URL: /event/<id>
-Method: GET
-Description: responds with the selected event information.
-
-Name: getUserEvents
-URL: /user/<id>/events
-Method: GET
-Description: responds with all events associated with the selected user.
+Name: getUserEvents __
+URL: /user/<id>/events __
+Method: GET __
+Description: responds with all events associated with the selected user. __
 
 
 ## Tasks for MVP
 
 ### Completed
 
--Cloudbuild linked to repo
--datastore entities created
--initialize backend (flask)
--initialize frontend (angular)
--user/event create functions
+-Cloudbuild linked to repo __
+-datastore entities created __
+-initialize backend (flask) __
+-initialize frontend (angular) __
+-user/event create functions __
 -user/event read functions
 
 ### Todo
 
--user/event update functions
--user/event delete functions
--authentication (Auth0? Firebase? Users API?)
--handling of session state
--calendar view
--visuals (theme needs to be discussed)
+-user/event update functions __
+-user/event delete functions __
+-authentication (Auth0? Firebase? Users API?) __
+-handling of session state __
+-calendar view __
+-visuals (theme needs to be discussed) __
 
 (Please add to this list anything I've missed. Remember we're working towards the MVP so focus on basic functionality)
 
@@ -75,12 +76,12 @@ Description: responds with all events associated with the selected user.
 
 As was mentioned, you can test on your own GAE account by cloning this into a source repository. Otherwise follow these steps:
 
-1.Clone the repo to a local directory. (e.g. C:\\git\\planeto)
-2.Download and install google cloud sdk. https://cloud.google.com/sdk/
-3.Run "testbuild.bat" to obtain lib dependencies. (Make sure pip is installed)
-4.Test the app - "cd AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin", "dev_appserver.py C:\\git\\planeto"
-5.Access from browser at localhost:8000 and 8080.
+1.Clone the repo to a local directory. (e.g. C:\\git\\planeto) __
+2.Download and install google cloud sdk. https://cloud.google.com/sdk/ __
+3.Run "testbuild.bat" to obtain lib dependencies. (Make sure pip is installed) __
+4.Test the app - "cd AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin", "dev_appserver.py C:\\git\\planeto" __
+5.Access from browser at localhost:8000 and 8080. __
 
-Commit to the master branch anytime, just test it first as you will have no access to build error messages.
+Commit to the master branch anytime, just test it first as you will have no access to build error messages. __
 
 Any problems just let me know - Jak.
