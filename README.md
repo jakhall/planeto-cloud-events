@@ -29,7 +29,7 @@ Description: responds with the selected user information.
 
 ### Event functions:
 
-Name: createUser
+Name: createEvent
 URL: /user/\<id>/events
 Method: POST
 Description: creates and posts new event to datastore.
@@ -91,4 +91,4 @@ As was mentioned, you can test on your own GAE account by cloning this into a so
 
 Commit to the master branch anytime, just test it first as you will have no access to build error messages.
 
-Any problems just let me know - Jak.
+Any problems just let me know - Jak :)
