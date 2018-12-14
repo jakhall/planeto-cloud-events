@@ -8,7 +8,7 @@ handlers:
   script: main.app
 
 - url: /(.+)
-  static_files: dist/<app-name>/\1
+  static_files: dist/eventCalendar/\1
   upload: dist/eventCalendar/(.*)
 
 - url: /
