@@ -48,7 +48,7 @@ Description: responds with the selected event information.
 
 
 Name: getUserEvents
-URL: /user/\<id/>/events
+URL: /user/\<id>/events
 Method: GET
 Description: responds with all events associated with the selected user.
 
