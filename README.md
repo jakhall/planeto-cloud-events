@@ -23,14 +23,14 @@ Description: responds with all users from the datastore.
 
 
 Name: getUserInfo
-URL: /user/<id>
+URL: /user/\<id>
 Method: GET
 Description: responds with the selected user information.
 
 ### Event functions:
 
 Name: createUser
-URL: /user/<id>/events
+URL: /user/\<id>/events
 Method: POST
 Description: creates and posts new event to datastore.
 
@@ -42,13 +42,13 @@ Description: responds with all events from the datastore.
 
 
 Name: getEventInfo
-URL: /event/<id>
+URL: /event/\<id>
 Method: GET
 Description: responds with the selected event information.
 
 
 Name: getUserEvents
-URL: /user/<id>/events
+URL: /user/\<id/>/events
 Method: GET
 Description: responds with all events associated with the selected user.
 
@@ -73,7 +73,7 @@ Description: responds with all events associated with the selected user.
 - calendar view
 - visuals (theme needs to be discussed)
 
-(Please add to this list anything I've missed. Remember we're working towards the MVP so focus on basic functionality)
+Please add to this list anything I've missed. Remember we're working towards the MVP so focus on basic functionality.
 
 ## Local Testing
 
@@ -83,11 +83,11 @@ As was mentioned, you can test on your own GAE account by cloning this into a so
 
 2. Download and install google cloud sdk. https://cloud.google.com/sdk/
 
-3. Run "testbuild.bat" inside "build" to obtain lib dependencies. (Make sure pip is installed)
+3. Run 'build/testbuild.bat' to obtain lib dependencies. (Make sure pip is installed)
 
 4. Test the app - "cd AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin", "dev_appserver.py C:\\git\\planeto"
 
-5. Access from browser at localhost:8000 and 8080.
+5. Access from browser at localhost:8000 and localhost:8080.
 
 Commit to the master branch anytime, just test it first as you will have no access to build error messages.
 
