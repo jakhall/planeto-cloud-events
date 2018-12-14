@@ -5,11 +5,11 @@ Cloud group project - Event management system.
 Live Version: https://planeto-app.appspot.com/
 
 
-##API Endpoints
+## API Endpoints
 
 Access from /api/.*
 
-###User functions:
+### User functions:
 
 Name: createUser
 URL: /register
@@ -26,7 +26,7 @@ URL: /user/<id>
 Method: GET
 Description: responds with the selected user information.
 
-###Event functions:
+### Event functions:
 
 Name: createUser
 URL: /user/<id>/events
@@ -49,9 +49,9 @@ Method: GET
 Description: responds with all events associated with the selected user.
 
 
-##Tasks for MVP
+## Tasks for MVP
 
-###Completed
+### Completed
 
 -Cloudbuild linked to repo
 -datastore entities created
@@ -60,7 +60,7 @@ Description: responds with all events associated with the selected user.
 -user/event create functions
 -user/event read functions
 
-###Todo
+### Todo
 
 -user/event update functions
 -user/event delete functions
