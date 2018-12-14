@@ -4,9 +4,31 @@ threadsafe: true
 
 
 handlers:
-- url: /.*
+- url: /rest/.*
   script: main.app
+
+- url: /(.+)
+  static_files: dist/<app-name>/\1
+  upload: dist/<app-name>/(.*)
+
+- url: /
+  static_files: dist/<app-name>/index.html
+  upload: dist/<app-name>/index.html
+
+skip_files:
+- e2e/
+- node_modules/
+- src/
+- ^(.*/)?\..*$
+- ^(.*/)?.*\.json$
+- ^(.*/)?.*\.md$
+- ^(.*/)?.*\.yaml$
+- ^Dockerfile
+- ^LICENSE
 
 libraries:
 - name: ssl
   version: latest
+runtime: python27
+api_version: 1
+threadsafe: yes
