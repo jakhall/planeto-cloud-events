@@ -15,10 +15,10 @@ def userAsDict(user):
                 'email': user.email}
     return userDict
 
-
-@app.route('/')
-def index():
-    return "Welcome to Planeto!"
+# handled in angular app
+# @app.route('/')
+# def index():
+#     return "Welcome to Planeto!"
 
 @app.route('/users')
 def handleAllUsers():
@@ -26,9 +26,10 @@ def handleAllUsers():
     users = [userAsDict(user) for user in userList]
     return jsonify(users)
 
-@app.route('/calendar')
-def handleCalendar():
-    return 'This is the calendar page'
+# handled in angular app
+# @app.route('/calendar')
+# def handleCalendar():
+#     return 'This is the calendar page'
 
 @app.route('/register', methods=['POST', 'GET'])
 def handleRegister():

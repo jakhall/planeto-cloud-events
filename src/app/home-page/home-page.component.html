@@ -1,3 +1,30 @@
-<p>
-  home-page works!
-</p>
+<app-header [fullName]="fullName"></app-header>
+<p-card header="Simple Card" [style]="{width: '360px'}">
+  <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px;">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4">
+        Name
+      </div>
+      <div class="ui-grid-col-8">
+        {{fullName}}
+      </div>
+    </div>
+    <div class="ui-grid-row">
+    <div class="ui-grid-col-4">
+      Username
+    </div>
+    <div class="ui-grid-col-8">
+      {{username}}
+    </div>
+    </div>
+    <div class="ui-grid-row">
+  <div class="ui-grid-col-4">
+    Email
+  </div>
+  <div class="ui-grid-col-8">
+    {{email}}
+  </div>
+    </div>
+  </div>
+</p-card>
+<app-event-management [userID]="userID"></app-event-management>

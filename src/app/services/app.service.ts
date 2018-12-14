@@ -13,10 +13,30 @@ export class AppService {
   constructor(private http: HttpClient) {
   }
 
-  getUsers() {
-    const uri = 'rest/users';
+  getUser(userID) {
+    const uri = 'rest/profile/5632499082330112'; //userId will be dynamic
 
     return this.http.get(uri)
+      .pipe(
+        map(res => {
+          return res;
+        }));
+  }
+
+  getEvent(userID) {
+    const uri = 'rest/event/100'; //userId will be dynamic
+
+    return this.http.get(uri)
+      .pipe(
+        map(res => {
+          return res;
+        }));
+  }
+
+  createEvent(event) {
+    const uri = 'rest/event';
+
+    return this.http.post(uri, event)
       .pipe(
         map(res => {
           return res;
