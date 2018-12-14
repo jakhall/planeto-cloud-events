@@ -83,7 +83,7 @@ As was mentioned, you can test on your own GAE account by cloning this into a so
 
 2. Download and install google cloud sdk. https://cloud.google.com/sdk/
 
-3. Run "testbuild.bat" to obtain lib dependencies. (Make sure pip is installed)
+3. Run "testbuild.bat" inside "build" to obtain lib dependencies. (Make sure pip is installed)
 
 4. Test the app - "cd AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin", "dev_appserver.py C:\\git\\planeto"
 
