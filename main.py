@@ -92,4 +92,4 @@ def handleGetAllEvents():
 @app.route('/api/event/<int:id>')
 def handleGetEvent(id):
     event = jsonify(eventAsDict(m.getEventById(id)))
-    return make_response(user, 200)
+    return make_response(event, 200)
