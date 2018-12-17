@@ -13,8 +13,10 @@ export class HomePageComponent implements OnInit {
   firstname: string;
   lastname: string;
   userID: number;
-  username:string
+  username: string;
   constructor(private appService: AppService) { }
+
+  ndbUser:IUserModel;
 
   ngOnInit() {
     this.userID = 5632499082330112; //will be replaced by loggedIn user
@@ -30,6 +32,14 @@ export class HomePageComponent implements OnInit {
       this.userID = 100;
       this.username = 'janu'
     });
+  }
+
+
+  getNdbUser() {
+    this.appService.getUser(5066549580791808).subscribe((res: IUserModel)=>{
+      this.ndbUser = res;
+    })
+
   }
 
 }
