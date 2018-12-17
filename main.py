@@ -93,3 +93,16 @@ def handleGetAllEvents():
 def handleGetEvent(id):
     event = jsonify(eventAsDict(m.getEventById(id)))
     return make_response(event, 200)
+
+
+@app.route('/login',methods=['POST'])
+def handleLogin():
+  pass
+
+
+@app.route('/api/test/createUser')
+def testCreateUser():
+  user = m.createUser('tewang','te','wang','tewang@foxmail.com')
+  return jsonify(userAsDict(user))
+
+
