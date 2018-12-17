@@ -9,12 +9,15 @@ import {map, tap} from 'rxjs/operators';
 export class AppService {
 
   result: any;
+  baseUrl = 'http://localhost:8080/api/';
+  userUrl = this.baseUrl+'user/';
 
   constructor(private http: HttpClient) {
+
   }
 
   getUser(userID) {
-    const uri = 'rest/profile/5632499082330112'; //userId will be dynamic
+    const uri = this.userUrl+userID; //userId will be dynamic
 
     return this.http.get(uri)
       .pipe(
@@ -23,8 +26,8 @@ export class AppService {
         }));
   }
 
-  getEvent(userID) {
-    const uri = 'rest/event/100'; //userId will be dynamic
+  getEvents(userID) {
+    const uri = this.userUrl+userID+'/events'; //userId will be dynamic
 
     return this.http.get(uri)
       .pipe(
@@ -34,7 +37,9 @@ export class AppService {
   }
 
   createEvent(event) {
-    const uri = 'rest/event';
+
+    let userID = event.userID;
+    const uri = this.userUrl+userID+'/events';
 
     return this.http.post(uri, event)
       .pipe(
@@ -42,8 +47,6 @@ export class AppService {
           return res;
         }));
   }
-
-
 
 
 }

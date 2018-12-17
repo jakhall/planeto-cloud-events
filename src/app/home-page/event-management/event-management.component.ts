@@ -84,7 +84,7 @@ export class EventManagementComponent implements OnInit {
   }
 
   updateEvent() {
-    this.appService.getEvent(this.userID).subscribe((data: IEvent[]) => {
+    this.appService.getEvents(this.userID).subscribe((data: IEvent[]) => {
       this.events = data;
     });
   }
