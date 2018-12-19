@@ -4,7 +4,8 @@ export interface IUserModel
   firstname: string;
   lastname: string;
   userID: number;
-  username:string
+  username:string;
+  password:string;
 }
 
 export interface IEvent

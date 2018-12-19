@@ -9,8 +9,10 @@ import {DialogModule, ButtonModule} from "primeng/primeng";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioButtonModule, DropdownModule } from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
-  declarations: [HomePageComponent, AppHeaderComponent, EventManagementComponent],
+  declarations: [HomePageComponent, AppHeaderComponent, EventManagementComponent, LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,

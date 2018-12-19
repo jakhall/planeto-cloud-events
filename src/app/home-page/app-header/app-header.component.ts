@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {IUserModel} from '../home-page.model';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +10,24 @@ import {MenuItem} from "primeng/api";
 })
 export class AppHeaderComponent implements OnInit {
   items: MenuItem[];
-  @Input() fullName: string;
-  constructor() { }
+  currentUser:string;
+  constructor() {
+  }
 
   ngOnInit() {
+    this.currentUser = localStorage.getItem("currentUser");
     this.items = [
       {
         label: 'Event Calendar',
         routerLink: '/home'
       }
     ];
+  }
+
+
+  cleanUser(){
+    this.currentUser = null;
+    localStorage.clear();
   }
 
 }

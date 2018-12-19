@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioButtonModule, DropdownModule } from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {DatePipe} from "@angular/common";
+import {HomePageModule} from './home-page/home-page.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {DatePipe} from "@angular/common";
   ],
   imports: [
     BrowserModule,
+    HomePageModule,
     AppRoutingModule,
     HttpClientModule,
     MenubarModule,

@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="signup center-block jumbotron">
+  <h1>Signup</h1>
+  <form [formGroup]="signupForm">
+    <div class="form-group">
+      <label >Username</label>
+      <input pInputText class="input" type="text" formControlName="username" placeholder=""/>
+    </div>
+    <div class="form-group">
+      <label >Firstname</label>
+      <input pInputText type="text" class="input" formControlName="firstname" placeholder="">
+    </div>
+    <div class="form-group">
+      <label >Lastname</label>
+      <input pInputText type="text"  class="input" formControlName="lastname" placeholder="">
+    </div>
+    <div class="form-group">
+      <label >email</label>
+      <input pInputText type="email"  class="input" formControlName="email" placeholder="">
+    </div>
+    <div class="form-group">
+      <label >Password</label>
+      <input pInputText type="password" class="input" formControlName="password" placeholder="">
+    </div>
+    <div class="form-group">
+      <label >Check Password</label>
+      <input pInputText type="password" class="input" formControlName="checkPassword" placeholder="">
+    </div>
+    <button pButton [disabled]="!signupForm.valid" type="button"  label="signup" style="margin-left:.25em" class="btn btn-default" (click)="signup(signupForm.value)"></button>
+  </form>
+</div>
