@@ -32,8 +32,8 @@ def getUserById(id):
 def getAllUsers():
     return User.query()
 
-def createUser(u, fn, ln, e):
-    user = User(username=u, firstname=fn, lastname=ln, email=e)
+def createUser(u, fn, ln, e, pw):
+    user = User(username=u, firstname=fn, lastname=ln, email=e, password=pw)
     user.put()
     return user
 
@@ -57,6 +57,7 @@ class User(ndb.Model):
     firstname = ndb.StringProperty()
     lastname = ndb.StringProperty()
     email = ndb.StringProperty()
+    password = ndb.StringProperty()
 
 class Event(ndb.Model):
     userID = ndb.IntegerProperty()

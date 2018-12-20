@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 import {IUserModel} from '../home-page/home-page.model';
+import {stringify} from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AppService {
   }
 
   login(username:string,password:string){
-    const url = this.baseUrl+'login';
+    const url = this.userUrl+'login';
     let user = {
       username:username,
       password:password
@@ -30,16 +31,12 @@ export class AppService {
     );
   }
 
-  signup(username:string,firstname:string,lastname:string,email:string,password:string){
-    const url = this.baseUrl+'register';
-    let user = <IUserModel> {
-      username:username,
-      firstname:firstname,
-      lastname:lastname,
-      email:email,
-      password:password
-    }
-
+  createUser(user) {
+    const url = this.userUrl+'register';
+    return this.http.post(url,user).pipe(
+      map(res => {
+        return res;
+      }));
   }
 
   getUser(userID) {
@@ -52,10 +49,7 @@ export class AppService {
         }));
   }
 
-  createUser(user) {
-    const url = this.userUrl+'register';
-    return this.http.post(url,user)
-  }
+
 
   getEvents(userID) {
     const uri = this.userUrl+userID+'/events'; //userId will be dynamic
@@ -77,6 +71,14 @@ export class AppService {
         map(res => {
           return res;
         }));
+  }
+
+
+
+  debug(){
+    return this.http.get(this.baseUrl+'test/getUser').pipe(map(res => {
+      return res;
+    }));
   }
 
 
