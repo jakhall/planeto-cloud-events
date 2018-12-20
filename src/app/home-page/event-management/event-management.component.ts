@@ -60,7 +60,7 @@ export class EventManagementComponent implements OnInit {
       { field: 'start', header: 'Start Date/Time' },
       { field: 'end', header: 'End Date/Time' },
     ];
-    this.updateEvent();
+    // this.updateEvent();
   }
   onSubmit(value) {
     let event = {};

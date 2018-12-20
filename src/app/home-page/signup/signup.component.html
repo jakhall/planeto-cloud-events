@@ -4,7 +4,7 @@
   <form [formGroup]="signupForm">
     <div class="form-group">
       <label >Username</label>
-      <input pInputText class="input" type="text" formControlName="username" placeholder=""/>
+      <input pInputText class="input" type="text" formControlName="username" placeholder="required"/>
     </div>
     <div class="form-group">
       <label >Firstname</label>
@@ -16,16 +16,20 @@
     </div>
     <div class="form-group">
       <label >email</label>
-      <input pInputText type="email"  class="input" formControlName="email" placeholder="">
+      <input pInputText type="email"  class="input" formControlName="email" placeholder="required">
     </div>
     <div class="form-group">
       <label >Password</label>
-      <input pInputText type="password" class="input" formControlName="password" placeholder="">
+      <input pInputText type="password" class="input" formControlName="password" placeholder="required">
     </div>
     <div class="form-group">
       <label >Check Password</label>
-      <input pInputText type="password" class="input" formControlName="checkPassword" placeholder="">
+      <input pInputText type="password" class="input" formControlName="checkPassword" placeholder="required">
     </div>
-    <button pButton [disabled]="!signupForm.valid" type="button"  label="signup" style="margin-left:.25em" class="btn btn-default" (click)="signup(signupForm.value)"></button>
+
+    <p-message severity="error" text="checkPassword is not equal to password"
+    *ngIf="signupForm.controls['checkPassword'].valid && signupForm.controls['password'].value!=signupForm.controls['checkPassword'].value"></p-message>
+
+    <button pButton [disabled]="!signupForm.valid || signupForm.controls['password'].value!=signupForm.controls['checkPassword'].value" type="button"  label="signup" style="margin-left:.25em" class="btn btn-default" (click)="signup(signupForm.value)"></button>
   </form>
 </div>

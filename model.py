@@ -23,7 +23,10 @@ def from_datastore(entity):
     return entity
 
 def getUserByName(name):
-    return User.query(User.username == name).fetch()[0]
+    users = User.query(User.username == name).fetch()
+    if users:
+      return users[0]
+    return None
 
 def getUserById(id):
     key = ndb.Key(User, id)

@@ -54,7 +54,7 @@ def handleRegister():
                user['lastname'],
                user['email'],
                user['password'])
-  response = make_response(createdUser.key.id(), 200)
+  response = make_response(str(createdUser.key.id()), 200)
   return response
 
 @app.route('/api/user/login', methods=['POST'])

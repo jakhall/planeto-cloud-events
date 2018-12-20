@@ -37,10 +37,10 @@ export class SignupComponent implements OnInit {
     };
 
     this.appService.createUser(user).subscribe(userID =>{
-      localStorage.setItem("currentUser",userID);
+      localStorage.setItem("currentUser",String(userID));
       this.router.navigate(['/home']);
     }), error =>{
-      console.log(error.message);
+      console.error(error.message.body);
     }
   }
 

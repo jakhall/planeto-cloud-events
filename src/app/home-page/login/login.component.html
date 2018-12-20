@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="login jumbotron center-block">
   <h1>Login</h1>
-  <form [FormGroup]="loginForm" >
+  <form [formGroup]="loginForm" >
     <div class="form-group">
       <label >Username</label>
       <input pInputText type="text" class="form-control" formControlName="username" placeholder="">
@@ -12,5 +12,6 @@
     </div>
     <button pButton style="margin-left:.25em" type="button" label="submit" (click)="login(loginForm.value)"></button>
     <button pButton style="margin-left:.25em" type="button" label="to signup" routerLink="/signup"></button>
+    <button pButton style="margin-left:.25em" type="button" label="debug" (click)="debug()"></button>
   </form>
 </div>

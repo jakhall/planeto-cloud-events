@@ -29,8 +29,4 @@
 </p-card>
 
 <button type="button" style="margin: 5px" label="testAPI" pButton (click)="getNdbUser()"></button>
-<div *ngIf="ndbUser">
-  <div>{{ndbUser.username}}</div>
-  <div>{{ndbUser.email}}</div>
-</div>
 <app-event-management [userID]="userID"></app-event-management>
