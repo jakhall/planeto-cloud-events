@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService} from "../services/app.service";
 import { IUserModel} from "./home-page.model";
+import {stringify} from 'querystring';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -12,34 +14,30 @@ export class HomePageComponent implements OnInit {
   email: string;
   firstname: string;
   lastname: string;
-  userID: number;
   username: string;
-  constructor(private appService: AppService) { }
-
-  ndbUser:IUserModel;
+  userID: string;
+  constructor(private appService: AppService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.userID = 5632499082330112; //will be replaced by loggedIn user
+    this.userID = localStorage.getItem("currentUser");
+    // if (this.userID==null) {
+    //   this.router.navigate(['/login'])
+    // }
     this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
-       this.fullName = data.firstname + ' ' + data.lastname;
+       this.fullName = data.username;
        this.email = data.email;
-       this.userID = data.userID;
+       this.userID = String(data.userID);
        this.username = data.username
 
     }, error2 => {
       this.fullName = 'Janani Sundaresan';
       this.email = 'janani.sundaresan@gmail.com';
-      this.userID = 100;
+      this.userID = String(100);
       this.username = 'janu'
     });
-  }
-
-
-  getNdbUser() {
-    this.appService.getUser(5066549580791808).subscribe((res: IUserModel)=>{
-      this.ndbUser = res;
-    })
 
   }
+
 
 }

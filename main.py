@@ -54,17 +54,17 @@ def handleRegister():
                user['lastname'],
                user['email'],
                user['password'])
-  response = make_response(createdUser.key.id(), 200)
+  response = make_response(str(createdUser.key.id()), 200)
   return response
 
 @app.route('/api/user/login', methods=['POST'])
 def handleLogin():
   user = json.loads(request.data)
-  username = user.username
+  username = user['username']
   userInDB = m.getUserByName(username)
   if userInDB:
-    if userInDB.password == user.password:
-      return make_response(user.key.id(), 200)
+    if userInDB.password == user['password']:
+      return make_response(str(userInDB.key.id()), 200)
     return make_response("password not right",500)
   return make_response("username not exists",500)
 

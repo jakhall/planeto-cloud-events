@@ -1,4 +1,4 @@
-<app-header [fullName]="fullName"></app-header>
+<app-header></app-header>
 <p-card header="Simple Card" [style]="{width: '360px'}">
   <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px;">
     <div class="ui-grid-row">
@@ -27,10 +27,4 @@
     </div>
   </div>
 </p-card>
-
-<button type="button" style="margin: 5px" label="testAPI" pButton (click)="getNdbUser()"></button>
-<div *ngIf="ndbUser">
-  <div>{{ndbUser.username}}</div>
-  <div>{{ndbUser.email}}</div>
-</div>
 <app-event-management [userID]="userID"></app-event-management>
