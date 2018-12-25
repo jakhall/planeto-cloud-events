@@ -61,6 +61,16 @@ export class AppService {
         }));
   }
 
+  getJoinedEvents(userID) {
+    const uri = this.userUrl+userID+'/events'; //userId will be dynamic
+
+    return this.http.get(uri)
+      .pipe(
+        map(res => {
+          return res;
+        }));
+  }
+
   createEvent(event) {
 
     let userID = event.userID;
@@ -71,6 +81,21 @@ export class AppService {
         map(res => {
           return res;
         }));
+  }
+  delEvent(){
+    return "yes";
+  }
+
+  updateEvent(event) {
+    return event;
+  }
+
+  quitEvent(choice) {
+    return "yes";
+  }
+
+  joinEvent(choice) {
+    return 'yes';
   }
 
 

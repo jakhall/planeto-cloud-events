@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CardModule} from "primeng/primeng";
+import {
+  CardModule,
+  CheckboxModule,
+  DataListModule,
+  DataTableModule,
+  InputTextModule,
+  MenuModule,
+  SplitButtonModule,
+  TabMenuModule
+} from 'primeng/primeng';
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
@@ -27,7 +36,9 @@ import { SignupComponent } from './signup/signup.component';
     MultiSelectModule,
     TableModule,
     DropdownModule,
-    RadioButtonModule
+    RadioButtonModule,
+    InputTextModule, DataTableModule, ButtonModule, DialogModule,
+    CheckboxModule, DataListModule, MenubarModule,MenuModule,TabMenuModule
   ],
   exports: [AppHeaderComponent, EventManagementComponent],
 })

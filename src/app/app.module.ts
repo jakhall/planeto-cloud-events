@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService} from "./services/app.service";
-import { CardModule} from "primeng/primeng";
+import {CardModule, CheckboxModule, DataListModule, DataTableModule, InputTextModule} from 'primeng/primeng';
 import {DialogModule, ButtonModule} from "primeng/primeng";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioButtonModule, DropdownModule } from 'primeng/primeng';
@@ -34,7 +34,9 @@ import {HomePageModule} from './home-page/home-page.module';
     TableModule,
     DropdownModule,
     RadioButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputTextModule, DataTableModule, ButtonModule, DialogModule,
+    CheckboxModule, DataListModule, MenubarModule
   ],
   providers: [AppService, DatePipe],
   bootstrap: [AppComponent]
