@@ -23,7 +23,6 @@ def userAsDict(user):
   return userDict
 
 
-
 def eventAsDict(event):
   eventDict = {'eventID': event.key.id(),
                'userID': event.userID,
@@ -38,24 +37,29 @@ def formatStr(dt):
   return dt.strftime('%d-%m-%y %H:%M:%S')
 
 
+def getEntityID(entity):
+  return str(entity.key.id())
+
+
 # Request Handlers:
 
 # Users:
 
 @app.route('/api/user/register', methods=['POST'])
 def handleRegister():
-  response = make_response("error",500)
+  response = make_response("error", 500)
   user = json.loads(request.data)
   if m.getUserByName(user['username']):
     response = make_response("username already exists", 500)
     return response
   createdUser = m.createUser(user['username'],
-               user['firstname'],
-               user['lastname'],
-               user['email'],
-               user['password'])
-  response = make_response(str(createdUser.key.id()), 200)
+                             user['firstname'],
+                             user['lastname'],
+                             user['email'],
+                             user['password'])
+  response = make_response(getEntityID(createdUser), 200)
   return response
+
 
 @app.route('/api/user/login', methods=['POST'])
 def handleLogin():
@@ -64,9 +68,9 @@ def handleLogin():
   userInDB = m.getUserByName(username)
   if userInDB:
     if userInDB.password == user['password']:
-      return make_response(str(userInDB.key.id()), 200)
-    return make_response("password not right",500)
-  return make_response("username not exists",500)
+      return make_response(getEntityID(userInDB), 200)
+    return make_response("password not right", 500)
+  return make_response("username not exists", 500)
 
 
 @app.route('/api/users')
@@ -84,45 +88,96 @@ def handleGetUserbyId(id):
 
 # Events:
 
-@app.route('/api/user/<int:id>/events', methods=['POST'])
-def handleCreateEvent(id):
+@app.route('/api/event/<int:userID>', methods=['POST'])
+def handleCreateEvent(userID):
+  event = json.loads(request.data)
   response = make_response("Failed", 500)
   if request.method == 'POST':
-    m.createEvent(id, request.form['name'],
-                  request.form['description'],
-                  request.form['start'],
-                  request.form['end'])
-    response = make_response("Success", 200)
+    event = m.createEvent(id=userID,
+                          name=event['name'],
+                          desc=event['description'],
+                          start=formatStr(event['start']),
+                          end=formatStr(event['end']))
+    response = make_response(getEntityID(event), 200)
   return response
 
 
-@app.route('/api/user/<int:id>/events', methods=['GET'])
-def handleGetUserEvents(id):
-  eventList = m.getUserEvents(id)
+@app.route('/api/event/<int:eventID>', methods=['PUT'])
+def handleUpdateEvent(eventID):
+  event = json.loads(request.data)
+  response = make_response("eventNotExists", 500)
+  if request.method == 'POST':
+    event = m.updateEvent(id=eventID,
+                          name=event['name'],
+                          desc=event['description'],
+                          start=formatStr(event['start']),
+                          end=formatStr(event['end']))
+    if event:
+      response = make_response(getEntityID(event), 200)
+  return response
+
+
+@app.route('/api/event/<int:userID>/<int:eventID>', methods=['DELETE'])
+def handleDeleteEvent(userID, eventID):
+  m.deleteEvent(eventID=eventID, userID=userID)
+  return make_response("delete success", 200)
+
+
+@app.route('/api/event/<string:type>/<int:userID>/', methods=['GET'])
+def handleGetEvents(type, userID):
+  eventList = []
+  if type == 'userEvents':
+    eventList = m.getUserEvents(userID)
+  elif type == 'joinedEvents':
+    eventList = m.getJoinedEvent(userID)
+  elif type == 'otherEvents':
+    eventList = m.getOtherEvents(userID)
   events = [eventAsDict(event) for event in eventList]
-  return jsonify(events)
+  if events:
+    return make_response(jsonify(events), 200)
+  return make_response("not found events", 404)
 
 
-@app.route('/api/events')
-def handleGetAllEvents():
-  eventList = m.getAllEvents()
-  events = [eventAsDict(event) for event in eventList]
-  return jsonify(events)
+@app.route('/api/event/<int:eventID>', methods=['GET'])
+def handleGetEventInfo(eventID):
+  numOfppl = m.getNumOfJoined(eventID=eventID)
+  date = m.getMostDate(eventID=eventID)
+  info = {'num': numOfppl, 'date': date}
+  return make_response(jsonify(info), 200)
 
 
-@app.route('/api/event/<int:id>')
-def handleGetEvent(id):
-  event = jsonify(eventAsDict(m.getEventById(id)))
-  return make_response(event, 200)
+
+# choice
+@app.route('/api/choice', methods=['POST'])
+def handleCreateChoice():
+  choice = json.loads(request.data)
+  choice = m.createChoice(eventID=choice['eventID'],
+                          userID=choice['userID'],
+                          dateChoice=formatStr(choice['date']))
+  return make_response(str(choice.key.id()), 200)
 
 
+@app.route('/api/choice/<int:eventID>', methods=['PUT'])
+def handleUpdateChoice(eventID):
+  choice = json.loads(request.data)
+  choice = m.updateChoice(eventID=eventID,
+                          userID=choice['userID'],
+                          dateChoice=formatStr(choice['date']))
+  return make_response(str(choice.key.id()), 200)
+
+
+@app.route('/api/choice/<int:userID>/<int:eventID>', methods=['DELETE'])
+def handleDeleteChoice(userID, eventID):
+  m.deleteChoice(eventID=eventID, userID=userID)
+  return make_response("delete success", 200)
 
 
 
 @app.route('/api/test/createUser')
 def testCreateUser():
-  user = m.createUser('tewang', 'te', 'wang', 'tewang@foxmail.com',"123456")
+  user = m.createUser('tewang', 'te', 'wang', 'tewang@foxmail.com', "123456")
   return jsonify(userAsDict(user))
+
 
 @app.route('/api/test/getUser')
 def testGetUser():

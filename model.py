@@ -59,14 +59,14 @@ def updateEvent(eventID, name, desc, start, end):
     event.start = start
     event.end = end
     event.put()
-  return event
+    return event
+  else: return None
 
 
 def deleteEvent(eventID, userID):
   event = getEventById(eventID)
   if event and event.userID == userID:
-    return event.key.delete()
-  return None
+    event.key.delete()
 
 
 def getEventById(id):
