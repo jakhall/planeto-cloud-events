@@ -1,4 +1,4 @@
-pip install -r requirements.txtWorking example 
+Working example:
 http://bookshelf-226611.appspot.com
 
 Your can create or edit or delete an event.
@@ -16,6 +16,7 @@ And when you first time to login with Google account, you automatically register
 When you login with Google account, you can create event.
 
 If you not login, you just can view event
+
 
 
 
