@@ -13,9 +13,9 @@ You don't need to login with password or register, you login with google account
 
 And when you first time to login with Google account, you automatically register and create your user profile in database.
 
-When you login with Google account, you can create event.
+When you login with Google account, you can create a new event, view all events and view the events created by you.
 
-If you not login, you just can view event
+If you not login, you just can view all events.
 
 ...
 ...
