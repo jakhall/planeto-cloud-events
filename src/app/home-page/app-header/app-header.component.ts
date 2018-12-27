@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {IUserModel} from '../home-page.model';
+import {AppService} from "../../services/app.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -9,16 +12,27 @@ import {MenuItem} from "primeng/api";
 })
 export class AppHeaderComponent implements OnInit {
   items: MenuItem[];
-  @Input() fullName: string;
-  constructor() { }
+  currentUser:string;
+  isLoggedIn : Observable<boolean>;
+  constructor(private appService: AppService) {
+    this.isLoggedIn = this.appService.isLoggedIn();
+  }
 
   ngOnInit() {
+    this.currentUser = localStorage.getItem('username') || '';
     this.items = [
       {
         label: 'Event Calendar',
         routerLink: '/home'
       }
     ];
+  }
+
+
+  cleanUser(){
+    this.currentUser = null;
+    this.appService.loggedIn.next(false);
+    localStorage.clear();
   }
 
 }
