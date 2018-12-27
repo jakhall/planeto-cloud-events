@@ -15,7 +15,6 @@ export class AppService {
   public loggedIn: BehaviorSubject<boolean>;
   eventUrl = this.baseUrl + 'event/';
   choiceUrl = this.baseUrl + 'choice/';
-
   constructor(private http: HttpClient) {
     this.loggedIn = new BehaviorSubject<boolean>(this.hasToken());
   }
