@@ -32,7 +32,7 @@
             <div class="ui-grid-col-4" style="padding: 20px;">
               <label class="label">Event End Date</label></div>
             <div class="ui-grid-col-6">
-              <p-calendar formControlName="end" [showIcon]="true"></p-calendar>
+              <p-calendar formControlName="end" [showIcon]="true" ></p-calendar>
             <div class="ui-grid-col-6">
               <p-message severity="error" text="Event End Date is required"
                          *ngIf="!userform.controls['end'].valid&&userform.controls['end'].dirty"></p-message>
@@ -72,8 +72,8 @@
         label="ModifyEvent"></button>
 <button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
         label="DelEvent"></button>
-<button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button" label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
-<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button" label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>
+<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button" label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
+<button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button" label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>
 
 
 <p-dialog [(visible)]="displayEventDialog">
@@ -83,7 +83,7 @@
     <p-button label="No" (onClick)="choice('no')"></p-button>
   </div>
 </p-dialog>
-<div *ngIf="myEvents || otherEvents">
+<div *ngIf="myEvents || otherEvents || joinedEvents">
   <p-table #dt [columns]="cols" [value]="events" [(selection)]="event" [paginator]="true" [rows]="10">
     <ng-template pTemplate="caption">
 
