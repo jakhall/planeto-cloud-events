@@ -7,6 +7,10 @@ handlers:
 - url: /api/.*
   script: main.app
 
+- url: /home
+  static_files: dist/eventCalendar/index.html
+  upload: dist/eventCalendar/index.html
+
 - url: /(.+)
   static_files: dist/eventCalendar/\1
   upload: dist/eventCalendar/(.*)
@@ -14,6 +18,8 @@ handlers:
 - url: /
   static_files: dist/eventCalendar/index.html
   upload: dist/eventCalendar/index.html
+
+
 
 skip_files:
 - e2e/

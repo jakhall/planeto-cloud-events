@@ -26,7 +26,7 @@ def from_datastore(entity):
 
 # User model
 def getUserByName(name):
-  return User.query(User.username == name).fetch(1)
+  return User.query(User.username == name).fetch()
 
 
 def getUserById(id):
@@ -46,7 +46,7 @@ def createUser(u, fn, ln, e, pw):
 
 # Event model
 def createEvent(id, name, desc, start, end):
-  event = Event(userID=id, name=name, description=desc, start=formatDT(start), end=formatDT(end))
+  event = Event(userID=id, name=name, description=desc, start=start, end=end)
   event.put()
   return event
 
@@ -67,6 +67,8 @@ def deleteEvent(eventID, userID):
   event = getEventById(eventID)
   if event and event.userID == userID:
     event.key.delete()
+  deleteEventChoices(eventID)
+
 
 
 def getEventById(id):
@@ -79,23 +81,27 @@ def getUserEvents(userId):
 
 
 def getJoinedEvent(userID):
+  joinedEvents = []
   choices = Choice.query(Choice.userID == userID).fetch()
   if choices:
     eventID_list = [choice.eventID for choice in choices]
-  joinedEvents = []
-  for eventID in eventID_list:
-    joinedEvents.append(getEventById(eventID))
+    for eventID in eventID_list:
+      joinedEvents.append(getEventById(eventID))
   return joinedEvents
 
 
 def getOtherEvents(userID):
-  choices = Choice.query(Choice.userID != userID).fetch()
-  if choices:
-    eventID_list = [choice.eventID for choice in choices]
   otherEvents = []
-  for eventID in eventID_list:
-    otherEvents.append(getEventById(eventID))
+  joinedEvents = getJoinedEvent(userID)
+  allEvents = getAllEvents()
+
+  joinedEventsIDList = [ event.key.id() for event in joinedEvents]
+  for event in allEvents:
+    if event.key.id() not in joinedEventsIDList:
+      otherEvents.append(event)
   return otherEvents
+
+
 
 
 def getAllEvents():
@@ -113,7 +119,7 @@ def getChoice(eventID, userID):
   choice = Choice.query(ndb.AND(Choice.eventID == eventID, Choice.userID == userID)).fetch(1)
   if not choice:
     print "choice doesn't exists"
-  return choice
+  return choice[0]
 
 
 def updateChoice(eventID, userID, dateChoice):
@@ -129,6 +135,12 @@ def deleteChoice(eventID, userID):
   if choice:
     return choice.key.delete()
   return None
+
+
+def deleteEventChoices(eventID):
+  choices = Choice.query(Choice.eventID == eventID)
+  for choice in choices:
+    choice.key.delete()
 
 
 def getNumOfJoined(eventID):
@@ -163,11 +175,11 @@ class Event(ndb.Model):
   userID = ndb.IntegerProperty()
   name = ndb.StringProperty()
   description = ndb.StringProperty()
-  start = ndb.DateTimeProperty()
-  end = ndb.DateTimeProperty()
+  start = ndb.StringProperty()
+  end = ndb.StringProperty()
 
 
 class Choice(ndb.Model):
   eventID = ndb.IntegerProperty()
   userID = ndb.IntegerProperty()
-  dateChoice = ndb.DateTimeProperty()
+  dateChoice = ndb.StringProperty()
