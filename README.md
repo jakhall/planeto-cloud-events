@@ -17,11 +17,10 @@ When you login with Google account, you can create event.
 
 If you not login, you just can view event
 
-
-
-
-
-
+...
+...
+...
+...
 
 
 The commands to test locally:
