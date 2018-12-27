@@ -14,7 +14,7 @@
 
 import model as m
 from flask import Blueprint, current_app, redirect, render_template, request, \
-    session, url_for, jsonify
+    session, url_for
 
 crud = Blueprint('crud', __name__)
 
@@ -79,8 +79,6 @@ def add():
             return redirect(url_for('.view', id=event['id']))
 
     return render_template("form.html", action="Add", event={})
-
-
 # [END add]
 
 
