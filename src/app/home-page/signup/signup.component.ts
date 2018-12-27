@@ -41,6 +41,7 @@ export class SignupComponent implements OnInit {
 
     this.appService.createUser(user).subscribe(userID =>{
       localStorage.setItem("currentUser",String(userID));
+      this.appService.loggedIn.next(true);
       this.router.navigate(['/home']);
     }), error =>{
       console.error(error.message.body);
