@@ -4,7 +4,7 @@ import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import {v4 as uuid} from 'uuid';
 import {AppService} from '../../services/app.service';
-import {IEvent} from '../home-page.model';
+import {IEvent, IUserModel} from '../home-page.model';
 import {range} from 'rxjs';
 import {MenuItem} from 'primeng/api';
 import {MenuModule} from 'primeng/menu';
@@ -37,7 +37,11 @@ export class EventManagementComponent implements OnInit {
   cols: any[];
   dialogMessage:string;
   items: MenuItem[]
-
+  fullName: string;
+  email: string;
+  firstname: string;
+  lastname: string;
+  username: string;
   showDialog(type) {
     this.type = type;
     if (this.type === 'create') {
@@ -80,7 +84,22 @@ export class EventManagementComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
+      this.fullName = data.firstname + ' ' + data.lastname;
+      this.email = data.email;
+      this.userID = data.userID;
+      this.username = data.username
+      localStorage.setItem("firstName",data.firstname);
+      localStorage.setItem("lastname",data.lastname);
+      localStorage.setItem("email",data.email);
+      localStorage.setItem("username",data.username);
 
+    }, error2 => {
+      this.fullName = 'Janani Sundaresan';
+      this.email = 'janani.sundaresan@gmail.com';
+      this.userID = 100;
+      this.username = 'janu'
+    });
     this.items = [
       {label: 'MyEvents', icon: 'pi pi-info',command:() => this.showEvents(this.items[0].label)},
       {label: 'JoinedEvents', icon: 'pi pi-info',command:() => this.showEvents(this.items[1].label)},

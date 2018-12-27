@@ -1,23 +1,32 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 import {IUserModel} from '../home-page/home-page.model';
 import {stringify} from 'querystring';
-
+import { Observable, BehaviorSubject, of, from } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
   result: any;
-  baseUrl = 'http://localhost:8080/api/';
+  baseUrl = 'https://planeto-app.appspot.com/api/';
   userUrl = this.baseUrl+'user/';
-
+  public loggedIn: BehaviorSubject<boolean>;
   constructor(private http: HttpClient) {
-
+    this.loggedIn = new BehaviorSubject<boolean>(this.hasToken());
+  }
+  /**
+   * if we have token the user is loggedIn
+   * @returns {boolean}
+   */
+  private hasToken() : boolean {
+    return !!localStorage.getItem('currentUser');
   }
 
+  isLoggedIn() : Observable<boolean> {
+    return this.loggedIn.asObservable();
+  }
   login(username:string,password:string){
     const url = this.userUrl+'login';
     let user = {
@@ -83,19 +92,27 @@ export class AppService {
         }));
   }
   delEvent(){
-    return "yes";
+    return this.http.get(this.baseUrl+'test/getUser').pipe(map(res => {
+      return res;
+    }));
   }
 
   updateEvent(event) {
-    return event;
+    return this.http.get(this.baseUrl+'test/getUser').pipe(map(res => {
+      return res;
+    }));
   }
 
   quitEvent(choice) {
-    return "yes";
+    return this.http.get(this.baseUrl+'test/getUser').pipe(map(res => {
+      return res;
+    }));
   }
 
   joinEvent(choice) {
-    return 'yes';
+    return this.http.get(this.baseUrl+'test/getUser').pipe(map(res => {
+      return res;
+    }));
   }
 
 

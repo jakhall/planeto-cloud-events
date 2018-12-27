@@ -20,8 +20,9 @@ import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioBut
 import {TableModule} from 'primeng/table';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
-  declarations: [HomePageComponent, AppHeaderComponent, EventManagementComponent, LoginComponent, SignupComponent],
+  declarations: [HomePageComponent, AppHeaderComponent, EventManagementComponent, LoginComponent, SignupComponent, UserProfileComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,

@@ -68,9 +68,9 @@
 </p-dialog>
 
 <button type="button" style="margin: 5px" (click)="showDialog('create')" pButton label="CreateEvent"></button>
-<button type="button" style="margin: 5px" *ngIf="event && userID===event.userID" (click)="showDialog('modify')" pButton
+<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showDialog('modify')" pButton
         label="ModifyEvent"></button>
-<button type="button" style="margin: 5px" *ngIf="event && userID===event.userID" (click)="showEventManagementDialog('del')" pButton
+<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
         label="DelEvent"></button>
 <button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button" label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
 <button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button" label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>

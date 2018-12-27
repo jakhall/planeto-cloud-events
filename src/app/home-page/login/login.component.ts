@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
               private appService : AppService) { }
 
   ngOnInit() {
+    if(localStorage.getItem("currentUser")) {
+      this.router.navigate(['/home']);
+    }
     this.loginForm = this.fb.group({
       'username': new FormControl('', Validators.required),
       'password': new FormControl('',Validators.required),
@@ -29,6 +32,7 @@ export class LoginComponent implements OnInit {
 
     this.appService.login(username,password).subscribe( userID =>{
       localStorage.setItem("currentUser",String(userID));
+      this.appService.loggedIn.next(true);
       this.router.navigate(['/home']);
     }), error => {
       console.error(error.message.body);

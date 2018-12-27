@@ -12,6 +12,7 @@ import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioBut
 import {TableModule} from 'primeng/table';
 import {DatePipe} from "@angular/common";
 import {HomePageModule} from './home-page/home-page.module';
+import {AuthGuard} from "./auth/auth.guard";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {HomePageModule} from './home-page/home-page.module';
     InputTextModule, DataTableModule, ButtonModule, DialogModule,
     CheckboxModule, DataListModule, MenubarModule
   ],
-  providers: [AppService, DatePipe],
+  providers: [AppService, DatePipe, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

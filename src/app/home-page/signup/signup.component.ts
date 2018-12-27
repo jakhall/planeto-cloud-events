@@ -17,6 +17,9 @@ export class SignupComponent implements OnInit {
               private fb:FormBuilder) { }
 
   ngOnInit() {
+    if(localStorage.getItem("currentUser")) {
+      this.router.navigate(['/home']);
+    }
     this.signupForm = this.fb.group({
       'username': new FormControl('', Validators.required),
       'firstname': new FormControl(''),

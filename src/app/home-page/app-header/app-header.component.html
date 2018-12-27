@@ -1,10 +1,8 @@
 <p-menubar [model]="items">
-  <div *ngIf="!currentUser">
-    <button pButton label="login"  style="margin-left:.25em" routerLink="/login"></button>
-    <button pButton label="signup" style="margin-left:.25em" routerLink="/signup"></button>
+  <div *ngIf="!(isLoggedIn | async)">
   </div>
-  <div *ngIf="currentUser">
-    <span class="myAccount">Hi! {{currentUser}}</span>
+  <div *ngIf="(isLoggedIn | async)">
+    <a class="myAccount" routerLink="/userProfile">Hi! {{currentUser}}</a>
     <button pButton label="logout" style="margin-left:.25em" (click)="cleanUser()" routerLink="/login"></button>
   </div>
 </p-menubar>
