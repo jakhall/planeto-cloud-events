@@ -147,22 +147,22 @@ def handleLogin():
   user = json.loads(request.data)
   username = user['username']
   userInDB = m.getUserByName(username)
-  response = make_response("Username or password incorrect", 500)
+  response = make_response(jsonify(message='Username of password incorrect'), 500)
   if userInDB:
     if userInDB[0].password == user['password']:
        login_user(userInDB[0])
-       response = make_response("Login Successful", 200)
+       response = make_response(jsonify(message='Login Successful'), 200)
   return response
 
   @app.route('/api/user/logout', methods=['GET'])
   def handleLogout():
       logout_user()
-    return make_response("Logout Successful", 200)
+      return make_response(jsonify(message='Logout Successful'), 200)
 
 @app.route('/api/session/user', methods=['GET'])
 @login_required
 def handleGetCurrentUser():
-    return make_response(current_user, 200)
+    return make_response(jsonify(userAsDict(current_user)), 200)
 
 
 # choice
