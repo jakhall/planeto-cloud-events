@@ -1,7 +1,7 @@
 from flask import current_app
 from datetime import datetime
 from google.appengine.ext import ndb
-
+from flask_login import UserMixin
 
 def init_app(app):
   pass
@@ -151,7 +151,8 @@ def getMostDate(eventID):
     return None
 
 
-class User(ndb.Model):
+class User(ndb.Model, UserMixin):
+  id = ndb.IntegerProperty()
   username = ndb.StringProperty()
   firstname = ndb.StringProperty()
   lastname = ndb.StringProperty()

@@ -1,4 +1,5 @@
 from flask import *
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from google.appengine.ext import ndb
 from datetime import datetime
 import model as m
@@ -7,6 +8,9 @@ import json
 # app creation:
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '43uyi573858fd322343r'
+loginManager = LoginManager()
+loginManager.init_app(app)
 
 if __name__ == '__main__':
   app.run(debug=True)
@@ -40,6 +44,9 @@ def formatStr(dt):
 def getEntityID(entity):
   return str(entity.key.id())
 
+@loginManager.user_loader
+def load_user(userId):
+    return m.getUserById(userId)
 
 # Request Handlers:
 
@@ -59,19 +66,6 @@ def handleRegister():
                              user['password'])
   response = make_response(getEntityID(createdUser), 200)
   return response
-
-
-@app.route('/api/user/login', methods=['POST'])
-def handleLogin():
-  user = json.loads(request.data)
-  username = user['username']
-  userInDB = m.getUserByName(username)
-  if userInDB:
-    if userInDB.password == user['password']:
-      return make_response(getEntityID(userInDB), 200)
-    return make_response("password not right", 500)
-  return make_response("username not exists", 500)
-
 
 @app.route('/api/users')
 def handleAllUsers():
@@ -145,6 +139,30 @@ def handleGetEventInfo(eventID):
   info = {'num': numOfppl, 'date': date}
   return make_response(jsonify(info), 200)
 
+
+# Session:
+
+@app.route('/api/user/login', methods=['POST'])
+def handleLogin():
+  user = json.loads(request.data)
+  username = user['username']
+  userInDB = m.getUserByName(username)
+  response = make_response(jsonify(message='Username of password incorrect'), 500)
+  if userInDB:
+    if userInDB[0].password == user['password']:
+       login_user(userInDB[0])
+       response = make_response(jsonify(message='Login Successful'), 200)
+  return response
+
+  @app.route('/api/user/logout', methods=['GET'])
+  def handleLogout():
+      logout_user()
+      return make_response(jsonify(message='Logout Successful'), 200)
+
+@app.route('/api/session/user', methods=['GET'])
+@login_required
+def handleGetCurrentUser():
+    return make_response(jsonify(userAsDict(current_user)), 200)
 
 
 # choice

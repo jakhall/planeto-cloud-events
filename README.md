@@ -52,6 +52,23 @@ URL: /user/\<id>/events
 Method: GET
 Description: responds with all events associated with the selected user.
 
+### Session functions:
+
+Name: loginUser
+URL: /user/login
+Method: POST
+Description: validates and starts a user session.
+
+Name: logoutUser
+URL: /user/logout
+Method: GET
+Description: logs the user out and ends user session.
+
+
+Name: getSessionUser
+URL: /session/user
+Method: GET
+Description: returns the user currently logged in.
 
 ## Tasks for MVP
 
