@@ -57,9 +57,12 @@ def list_mine():
 # [END list_mine]
 
 
-@crud.route('/<id>')
+@crud.route('/<id>', methods=['GET', 'POST'])
 def view(id):
     event = m.read(id)
+    if request.method == 'POST':
+        m.add_or_remove_attender(id, session['profile']['id'])
+        return redirect('/')
     return render_template("view.html", event=event)
 
 
@@ -73,7 +76,7 @@ def add():
         if 'profile' in session:
             data['createdBy'] = session['profile']['displayName']
             data['createdById'] = session['profile']['id']
-
+            data['attender'] = []
             event = m.create(data)
 
             return redirect(url_for('.view', id=event['id']))

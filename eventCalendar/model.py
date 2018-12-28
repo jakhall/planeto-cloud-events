@@ -98,6 +98,29 @@ def update(data, id=None):
 
 create = update
 
+def add_or_remove_attender(id, userId):
+    ds = get_client()
+    key = ds.key('Event', int(id))
+    entity = ds.get(key)
+    attender_list = entity['attender']
+    if(userId in attender_list):
+        attender_list.remove(userId)
+    else:
+        attender_list.append(userId)
+    entity['attender'] = attender_list
+    ds.put(entity)
+
+    ds = get_client()
+    key = ds.key('User', userId)
+    entity = ds.get(key)
+    event_list = entity['choice']
+    if (int(id) in event_list):
+        event_list.remove(int(id))
+    else:
+        event_list.append(int(id))
+    entity['choice'] = event_list
+    ds.put(entity)
+
 
 def delete(id):
     ds = get_client()

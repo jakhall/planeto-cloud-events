@@ -93,6 +93,7 @@ def _request_user_info(credentials):
         data['email'] = session['profile']['emails'][0]['value']
         data['firstname'] = session['profile']['name']['givenName']
         data['lastname'] = session['profile']['name']['familyName']
+        data['choice'] = []
         user = m.createUser(data, session['profile']['id'])
 
 # [END request_user_info]

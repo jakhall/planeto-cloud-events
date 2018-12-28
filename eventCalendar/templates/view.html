@@ -33,6 +33,7 @@
 </div>
 {% endif %}
 {% endif %}
+<form method="POST" enctype="multipart/form-data">
 <div class="media">
   <div class="media-left">
       <img class="event-image" src="http://placekitten.com/g/128/192">
@@ -46,8 +47,17 @@
     <p class="event-description">Description: {{event.description}}</p>
     <p class="event-startDate">Start Date: {{event.startDate}}</p>
     <p class="event-endDate">End Date: {{event.endDate}}</p>
-    <small class="event-added-by">Created by {{event.get('createdBy')|default('Anonymous', True)}}</small>
+    <p class="event-added-by">Created by {{event.get('createdBy')|default('Anonymous', True)}}</p>
+    {% if session.profile %}
+    {% if session.profile.id != event.createdById %}
+    {% if session.profile.id in event.attender %}
+    <button type="submit" class="btn btn-success">Remove this event from attend list</button>
+    {% else %}
+    <button type="submit" class="btn btn-success">Attend this event</button>
+    {% endif %}
+    {% endif %}
+    {% endif %}
   </div>
 </div>
-
+</form>
 {% endblock %}
