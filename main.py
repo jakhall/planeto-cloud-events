@@ -152,7 +152,7 @@ def handleLogin():
   if userInDB:
     if userInDB[0].password == user['password']:
        login_user(userInDB[0])
-       response = make_response(jsonify(message='Login Successful'), 200)
+       response = make_response(jsonify(userAsDict(current_user), 200)
   return response
 
   @app.route('/api/user/logout', methods=['GET'])
