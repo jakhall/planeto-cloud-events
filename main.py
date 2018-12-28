@@ -1,4 +1,5 @@
 from flask import *
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from google.appengine.ext import ndb
 from datetime import datetime
 import model as m
@@ -7,6 +8,9 @@ import json
 # app creation:
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '43uyi573858fd322343r'
+loginManager = LoginManager()
+loginManager.init_app(app)
 
 if __name__ == '__main__':
   app.run(debug=True)
@@ -40,6 +44,9 @@ def formatStr(dt):
 def getEntityID(entity):
   return str(entity.key.id())
 
+@loginManager.user_loader
+def load_user(userId):
+    return m.getUserById(userId)
 
 # Request Handlers:
 
@@ -66,11 +73,13 @@ def handleLogin():
   user = json.loads(request.data)
   username = user['username']
   userInDB = m.getUserByName(username)
+  response = make_response("Username or password incorrect", 500)
   if userInDB:
-    if userInDB.password == user['password']:
-      return make_response(getEntityID(userInDB), 200)
-    return make_response("password not right", 500)
-  return make_response("username not exists", 500)
+    if userInDB[0].password == user['password']:
+       login_user(userInDB[0])
+       response = make_response(current_user.username, 200)
+       logout_user()
+  return response
 
 
 @app.route('/api/users')
