@@ -20,12 +20,14 @@ export class EventManagementComponent implements OnInit {
   @Input() userID: number;
   title: string;
   type: string;
+  options: any;
 
   events: any[];
   otherEvents: any[];
   myEvents: any[];
   joinedEvents: any[];
 
+  Events: any[];
   event: any;
 
   display: boolean = false;
@@ -34,10 +36,13 @@ export class EventManagementComponent implements OnInit {
   showJoinedEvents: boolean = true;
   showMyEvents: boolean = true;
 
+  showCalendarView: boolean = true;
+
   userform: FormGroup;
   cols: any[];
   dialogMessage:string;
-  items: MenuItem[]
+  items: MenuItem[];
+  calendarItem:MenuItem[];
   fullName: string;
   email: string;
   firstname: string;
@@ -85,6 +90,20 @@ export class EventManagementComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.options = {
+      header: {
+        left: 'prev,next',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      }
+    };
+      // dateClick: (e) =>  {
+        //handle date click
+      // }
+    // {;
+
+    // test full calendar
     this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
       this.fullName = data.firstname + ' ' + data.lastname;
       this.email = data.email;
@@ -107,6 +126,12 @@ export class EventManagementComponent implements OnInit {
       {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)},
       {label: 'JoinedEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)},
       {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}
+    ];
+
+    this.calendarItem = [
+      {label: 'EventsTableView', command: () => {
+          this.CalendarView(false);
+        }}
     ];
     this.events = new Array();
     this.myEvents = new Array();
@@ -136,6 +161,15 @@ export class EventManagementComponent implements OnInit {
       userID: 1001,
       eventID: 2
     };
+
+    this.Events = [
+      {
+        "title":event_te.name,
+        "start": event_te.start,
+        "end":event_te.end
+      }
+    ];
+
     this.myEvents.push(event_jane);
     this.otherEvents.push(event_temp);
     this.joinedEvents.push(event_te);
@@ -152,8 +186,22 @@ export class EventManagementComponent implements OnInit {
       {field: 'start', header: 'Start Date/Time'},
       {field: 'end', header: 'End Date/Time'},
     ];
+  };
+
+  // build calendarView events based on userEvents
+  initCalendarViewEvents(){
+    this.Events = new Array();
+    this.myEvents.forEach( myEvent =>{
+      let event = {
+        "title":myEvent.name,
+        "start": myEvent.start,
+        "end":myEvent.end
+      };
+      this.Events.push(event);
+    });
   }
 
+  // get events from database
   initEvents(events, type) {
     this.appService.getEvents(this.userID, type).subscribe(data => {
       // console.log(data[0]);
@@ -308,6 +356,10 @@ export class EventManagementComponent implements OnInit {
 
   onCancel() {
     this.display = false;
+  }
+
+  CalendarView(show:boolean){
+    this.showCalendarView =show;
   }
 
   afterOperstion() {

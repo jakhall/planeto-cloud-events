@@ -13,6 +13,7 @@ import {TableModule} from 'primeng/table';
 import {DatePipe} from "@angular/common";
 import {HomePageModule} from './home-page/home-page.module';
 import {AuthGuard} from "./auth/auth.guard";
+import {FullCalendarModule} from 'primeng/fullcalendar';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {AuthGuard} from "./auth/auth.guard";
     RadioButtonModule,
     BrowserAnimationsModule,
     InputTextModule, DataTableModule, ButtonModule, DialogModule,
-    CheckboxModule, DataListModule, MenubarModule
+    CheckboxModule, DataListModule, MenubarModule,FullCalendarModule
   ],
   providers: [AppService, DatePipe, AuthGuard],
   bootstrap: [AppComponent]

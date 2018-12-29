@@ -67,15 +67,6 @@
   </p-footer>
 </p-dialog>
 
-<button type="button" style="margin: 5px" (click)="showDialog('create')" pButton label="CreateEvent"></button>
-<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showDialog('modify')" pButton
-        label="ModifyEvent"></button>
-<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
-        label="DelEvent"></button>
-<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button" label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
-<button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button" label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>
-
-
 <p-dialog [(visible)]="displayEventDialog">
   <h3>{{dialogMessage}}</h3>
   <div>
@@ -83,7 +74,28 @@
     <p-button label="No" (onClick)="choice('no')"></p-button>
   </div>
 </p-dialog>
-<div *ngIf="myEvents || otherEvents || joinedEvents">
+
+
+<p-splitButton
+  (onClick)="CalendarView(true)" [model]="calendarItem"
+  label="MyEventCalendarView"
+></p-splitButton>
+<button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
+        label="CreateEvent"></button>
+<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showDialog('modify')" pButton
+        label="ModifyEvent"></button>
+<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
+        label="DelEvent"></button>
+<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button"
+        label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
+<button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button"
+        label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>
+
+<div style="width: max-content">
+  <p-fullCalendar class="fc-basic-view" #ucCalendar *ngIf="showCalendarView" [events]="Events" [options]="options"></p-fullCalendar>
+</div>
+
+<div *ngIf="(myEvents || otherEvents || joinedEvents) && !showCalendarView">
   <p-table #dt [columns]="cols" [value]="events" [(selection)]="event" [paginator]="true" [rows]="10">
     <ng-template pTemplate="caption">
 

@@ -22,9 +22,9 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.userID = Number(localStorage.getItem("currentUser"));
     // comment for dev
-    if (this.userID==null) {
-      this.router.navigate(['/login'])
-    }
+    // if (this.userID==null) {
+    //   this.router.navigate(['/login'])
+    // }
     this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
        this.fullName = data.username;
        this.email = data.email;

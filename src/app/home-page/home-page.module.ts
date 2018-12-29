@@ -21,6 +21,7 @@ import {TableModule} from 'primeng/table';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {FullCalendarModule} from 'primeng/fullcalendar';
 @NgModule({
   declarations: [HomePageComponent, AppHeaderComponent, EventManagementComponent, LoginComponent, SignupComponent, UserProfileComponent],
   imports: [
@@ -39,7 +40,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     DropdownModule,
     RadioButtonModule,
     InputTextModule, DataTableModule, ButtonModule, DialogModule,
-    CheckboxModule, DataListModule, MenubarModule,MenuModule,TabMenuModule
+    CheckboxModule, DataListModule, MenubarModule,MenuModule,TabMenuModule,FullCalendarModule,SplitButtonModule
   ],
   exports: [AppHeaderComponent, EventManagementComponent],
 })
