@@ -11,12 +11,14 @@ export class AppService {
 
   result: any;
   baseUrl = 'https://planeto-app.appspot.com/api/';
-  userUrl = this.baseUrl+'user/';
-  public loggedIn: BehaviorSubject<boolean>;
+  userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
   choiceUrl = this.baseUrl + 'choice/';
+  public loggedIn: BehaviorSubject<boolean>;
+  public userData: BehaviorSubject<string>;
   constructor(private http: HttpClient) {
     this.loggedIn = new BehaviorSubject<boolean>(this.hasToken());
+    this.userData = new BehaviorSubject<string>(null);
   }
   /**
    * if we have token the user is loggedIn
@@ -29,8 +31,12 @@ export class AppService {
   isLoggedIn() : Observable<boolean> {
     return this.loggedIn.asObservable();
   }
-  login(username:string,password:string){
-    const url = this.userUrl+'login';
+  userDataAvailable() : Observable<string> {
+    return this.userData.asObservable();
+  }
+
+  login(username: string, password: string) {
+    const url = this.userUrl + 'login';
     let user = {
       username: username,
       password: password

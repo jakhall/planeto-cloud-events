@@ -95,6 +95,7 @@ export class EventManagementComponent implements OnInit {
       localStorage.setItem("email",data.email);
       localStorage.setItem("username",data.username);
       this.appService.loggedIn.next(true);
+      this.appService.userData.next(data.username);
 
     }, error2 => {
       this.fullName = 'Janani Sundaresan';

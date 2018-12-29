@@ -16,10 +16,13 @@ export class AppHeaderComponent implements OnInit {
   isLoggedIn : Observable<boolean>;
   constructor(private appService: AppService) {
     this.isLoggedIn = this.appService.isLoggedIn();
+
   }
 
   ngOnInit() {
-    this.currentUser = localStorage.getItem('username') || '';
+    this.appService.userDataAvailable().subscribe((data) => {
+      this.currentUser = data || localStorage.getItem('username');
+    });
     this.items = [
       {
         label: 'Event Calendar',

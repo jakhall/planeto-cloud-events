@@ -92,7 +92,7 @@ module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHAuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"
 
 /***/ }),
 
@@ -282,7 +282,7 @@ module.exports = "<p-menubar [model]=\"items\">\n  <div *ngIf=\"!(isLoggedIn | a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myAccount {\n  padding: 10px;\n  text-decoration: none; }\n\n.ui-menuitem.ui-menuitem-active > .ui-menuitem-link {\n  color: #cccccc !important;\n  background-color: transparent !important; }\n\n.ui-state-active {\n  color: #cccccc !important;\n  background-color: transparent !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC1oZWFkZXIvQzpcXFVzZXJzXFxiYWNodVxcRG9jdW1lbnRzXFxldmVudENhbGVuZGFyXFxzcmNcXGFwcFxcaG9tZS1wYWdlL2FwcC1oZWFkZXJcXGFwcC1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFhO0VBQ2Isc0JBQXFCLEVBQ3RCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLHlDQUF3QyxFQUN6Qzs7QUFFRDtFQUNJLDBCQUF5QjtFQUN6Qix5Q0FBd0MsRUFDekMiLCJmaWxlIjoiYXBwLWhlYWRlci9hcHAtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm15QWNjb3VudCB7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbi51aS1tZW51aXRlbS51aS1tZW51aXRlbS1hY3RpdmUgPiAudWktbWVudWl0ZW0tbGluayB7XHJcbiAgY29sb3I6ICNjY2NjY2MgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udWktc3RhdGUtYWN0aXZlIHtcclxuICAgIGNvbG9yOiAjY2NjY2NjICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiJdfQ== */"
+module.exports = ".myAccount {\n  padding: 10px;\n  text-decoration: none; }\n\n.ui-menuitem.ui-menuitem-active > .ui-menuitem-link {\n  color: #cccccc !important;\n  background-color: transparent !important; }\n\n.ui-state-active {\n  color: #cccccc !important;\n  background-color: transparent !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL2FwcC1oZWFkZXIvQzpcXFVzZXJzXFxiYWNodVxcRG9jdW1lbnRzXFxldmVudENhbGVuZGFyL3NyY1xcYXBwXFxob21lLXBhZ2VcXGFwcC1oZWFkZXJcXGFwcC1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFhO0VBQ2Isc0JBQXFCLEVBQ3RCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLHlDQUF3QyxFQUN6Qzs7QUFFRDtFQUNJLDBCQUF5QjtFQUN6Qix5Q0FBd0MsRUFDekMiLCJmaWxlIjoic3JjL2FwcC9ob21lLXBhZ2UvYXBwLWhlYWRlci9hcHAtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm15QWNjb3VudCB7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbi51aS1tZW51aXRlbS51aS1tZW51aXRlbS1hY3RpdmUgPiAudWktbWVudWl0ZW0tbGluayB7XHJcbiAgY29sb3I6ICNjY2NjY2MgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udWktc3RhdGUtYWN0aXZlIHtcclxuICAgIGNvbG9yOiAjY2NjY2NjICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -351,7 +351,7 @@ var AppHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p-dialog *ngIf=\"userform\" header=\"{{title}}\" [(visible)]=\"display\" [modal]=\"true\" [responsive]=\"true\" [width]=\"900\"\n          [minWidth]=\"200\" [minY]=\"70\"\n          [maximizable]=\"true\" [baseZIndex]=\"10000\">\n    <span>\n      <div class=\"login-wrap\">\n  <div class=\"login-html\">\n    <div class=\"login-form\">\n      <div class=\"sign-up-htm\">\n        <form [formGroup]=\"userform\">\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Name</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"name\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Name is required\"\n                         *ngIf=\"!userform.controls['name'].valid&&userform.controls['name'].dirty\"></p-message>\n            </div>\n          </div>\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Start Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"start\" [showIcon]=\"true\"></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Start Date is required\"\n                         *ngIf=\"!userform.controls['start'].valid&&userform.controls['start'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n           <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event End Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"end\" [showIcon]=\"true\"></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event End Date is required\"\n                         *ngIf=\"!userform.controls['end'].valid&&userform.controls['end'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Description</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"description\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"description\"\n                         *ngIf=\"!userform.controls['description'].valid&&userform.controls['description'].dirty\"></p-message>\n            </div>\n          </div>\n        </form>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n    </span>\n  <p-footer>\n    <button type=\"button\" *ngIf=\"type === 'create'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onSubmit(userform.value)\" label=\"Create\"></button>\n    <button type=\"button\" *ngIf=\"type==='Modify'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onModify(userform.value)\" label=\"Modify\"></button>\n    <button type=\"button\" pButton (click)=\"onCancel()\" label=\"Cancel\" class=\"ui-button-secondary\"></button>\n  </p-footer>\n</p-dialog>\n\n<button type=\"button\" style=\"margin: 5px\" (click)=\"showDialog('create')\" pButton label=\"CreateEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showDialog('modify')\" pButton\n        label=\"ModifyEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showEventManagementDialog('del')\" pButton\n        label=\"DelEvent\"></button>\n<button *ngIf=\"showJoinedEvents && !showMyEvents\" pButton type=\"button\" label=\"JoinEvent\"  (click)=\"showEventManagementDialog('join')\"  ></button>\n<button *ngIf=\"!showJoinedEvents && !showMyEvents\" pButton type=\"button\" label=\"QuitEvent\"  (click)=\"showEventManagementDialog('quit')\"  ></button>\n\n\n<p-dialog [(visible)]=\"displayEventDialog\">\n  <h3>{{dialogMessage}}</h3>\n  <div>\n    <p-button label=\"Yes\" (onClick)=\"choice('yes')\"></p-button>\n    <p-button label=\"No\" (onClick)=\"choice('no')\"></p-button>\n  </div>\n</p-dialog>\n<div *ngIf=\"myEvents || otherEvents\">\n  <p-table #dt [columns]=\"cols\" [value]=\"events\" [(selection)]=\"event\" [paginator]=\"true\" [rows]=\"10\">\n    <ng-template pTemplate=\"caption\">\n\n      <div style=\"text-align: left\">\n        <p-tabMenu [model]=\"items\" [activeItem]=\"items[0]\"></p-tabMenu>\n        <input  type=\"text\" pInputText size=\"50\" placeholder=\"Search\"\n                (input)=\"dt.filterGlobal($event.target.value, 'contains')\" style=\"width:auto\">\n        <i class=\"pi pi-search\" style=\"margin:4px 4px 0 0\"></i>\n      </div>\n    </ng-template>\n    <ng-template pTemplate=\"header\" let-columns>\n      <tr>\n        <th style=\"width: 3em\"></th>\n        <th *ngFor=\"let col of columns\" [ngSwitch]=\"col.field\">\n          {{col.header}}\n          <input *ngSwitchCase=\"'name'\" pInputText type=\"text\"\n                 (input)=\"dt.filter($event.target.value, col.field, col.filterMatchMode)\">\n        </th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-rowData let-columns=\"columns\">\n      <tr [pSelectableRow]=\"rowData\">\n        <td>\n          <p-tableRadioButton [value]=\"rowData\"></p-tableRadioButton>\n        </td>\n        <td *ngFor=\"let col of columns\">\n          {{rowData[col.field]}}\n        </td>\n      </tr>\n    </ng-template>\n\n  </p-table>\n\n</div>\n<div *ngIf=\"!(myEvents || otherEvents)\">\n  No Records Found\n</div>\n"
+module.exports = "<p-dialog *ngIf=\"userform\" header=\"{{title}}\" [(visible)]=\"display\" [modal]=\"true\" [responsive]=\"true\" [width]=\"900\"\n          [minWidth]=\"200\" [minY]=\"70\"\n          [maximizable]=\"true\" [baseZIndex]=\"10000\">\n    <span>\n      <div class=\"login-wrap\">\n  <div class=\"login-html\">\n    <div class=\"login-form\">\n      <div class=\"sign-up-htm\">\n        <form [formGroup]=\"userform\">\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Name</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"name\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Name is required\"\n                         *ngIf=\"!userform.controls['name'].valid&&userform.controls['name'].dirty\"></p-message>\n            </div>\n          </div>\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Start Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"start\" [showIcon]=\"true\"></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Start Date is required\"\n                         *ngIf=\"!userform.controls['start'].valid&&userform.controls['start'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n           <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event End Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"end\" [showIcon]=\"true\" ></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event End Date is required\"\n                         *ngIf=\"!userform.controls['end'].valid&&userform.controls['end'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Description</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"description\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"description\"\n                         *ngIf=\"!userform.controls['description'].valid&&userform.controls['description'].dirty\"></p-message>\n            </div>\n          </div>\n        </form>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n    </span>\n  <p-footer>\n    <button type=\"button\" *ngIf=\"type === 'create'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onSubmit(userform.value)\" label=\"Create\"></button>\n    <button type=\"button\" *ngIf=\"type==='Modify'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onModify(userform.value)\" label=\"Modify\"></button>\n    <button type=\"button\" pButton (click)=\"onCancel()\" label=\"Cancel\" class=\"ui-button-secondary\"></button>\n  </p-footer>\n</p-dialog>\n\n<button type=\"button\" style=\"margin: 5px\" (click)=\"showDialog('create')\" pButton label=\"CreateEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showDialog('modify')\" pButton\n        label=\"ModifyEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showEventManagementDialog('del')\" pButton\n        label=\"DelEvent\"></button>\n<button *ngIf=\"!showJoinedEvents && !showMyEvents\" pButton type=\"button\" label=\"JoinEvent\"  (click)=\"showEventManagementDialog('join')\"  ></button>\n<button *ngIf=\"showJoinedEvents && !showMyEvents\" pButton type=\"button\" label=\"QuitEvent\"  (click)=\"showEventManagementDialog('quit')\"  ></button>\n\n\n<p-dialog [(visible)]=\"displayEventDialog\">\n  <h3>{{dialogMessage}}</h3>\n  <div>\n    <p-button label=\"Yes\" (onClick)=\"choice('yes')\"></p-button>\n    <p-button label=\"No\" (onClick)=\"choice('no')\"></p-button>\n  </div>\n</p-dialog>\n<div *ngIf=\"myEvents || otherEvents || joinedEvents\">\n  <p-table #dt [columns]=\"cols\" [value]=\"events\" [(selection)]=\"event\" [paginator]=\"true\" [rows]=\"10\">\n    <ng-template pTemplate=\"caption\">\n\n      <div style=\"text-align: left\">\n        <p-tabMenu [model]=\"items\" [activeItem]=\"items[0]\"></p-tabMenu>\n        <input  type=\"text\" pInputText size=\"50\" placeholder=\"Search\"\n                (input)=\"dt.filterGlobal($event.target.value, 'contains')\" style=\"width:auto\">\n        <i class=\"pi pi-search\" style=\"margin:4px 4px 0 0\"></i>\n      </div>\n    </ng-template>\n    <ng-template pTemplate=\"header\" let-columns>\n      <tr>\n        <th style=\"width: 3em\"></th>\n        <th *ngFor=\"let col of columns\" [ngSwitch]=\"col.field\">\n          {{col.header}}\n          <input *ngSwitchCase=\"'name'\" pInputText type=\"text\"\n                 (input)=\"dt.filter($event.target.value, col.field, col.filterMatchMode)\">\n        </th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-rowData let-columns=\"columns\">\n      <tr [pSelectableRow]=\"rowData\">\n        <td>\n          <p-tableRadioButton [value]=\"rowData\"></p-tableRadioButton>\n        </td>\n        <td *ngFor=\"let col of columns\">\n          {{rowData[col.field]}}\n        </td>\n      </tr>\n    </ng-template>\n\n  </p-table>\n\n</div>\n<div *ngIf=\"!(myEvents || otherEvents)\">\n  No Records Found\n</div>\n"
 
 /***/ }),
 
@@ -362,7 +362,7 @@ module.exports = "<p-dialog *ngIf=\"userform\" header=\"{{title}}\" [(visible)]=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJldmVudC1tYW5hZ2VtZW50L2V2ZW50LW1hbmFnZW1lbnQuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9ldmVudC1tYW5hZ2VtZW50L2V2ZW50LW1hbmFnZW1lbnQuY29tcG9uZW50LnNjc3MifQ== */"
 
 /***/ }),
 
@@ -432,13 +432,13 @@ var EventManagementComponent = /** @class */ (function () {
         var eventName = this.event.name;
         this.type = type;
         if (type === 'join') {
-            this.dialogMessage = "Are you sure to join the event: " + eventName;
+            this.dialogMessage = 'Are you sure to join the event: ' + eventName;
         }
         else if (type === 'quit') {
-            this.dialogMessage = "Are you sure to quit the event: " + eventName;
+            this.dialogMessage = 'Are you sure to quit the event: ' + eventName;
         }
         else if (type === 'del') {
-            this.dialogMessage = "Are you sure to delete the event: " + eventName;
+            this.dialogMessage = 'Are you sure to delete the event: ' + eventName;
         }
         this.displayEventDialog = true;
     };
@@ -453,6 +453,7 @@ var EventManagementComponent = /** @class */ (function () {
             localStorage.setItem("lastname", data.lastname);
             localStorage.setItem("email", data.email);
             localStorage.setItem("username", data.username);
+            _this.appService.loggedIn.next(true);
         }, function (error2) {
             _this.fullName = 'Janani Sundaresan';
             _this.email = 'janani.sundaresan@gmail.com';
@@ -473,28 +474,31 @@ var EventManagementComponent = /** @class */ (function () {
             description: 'event',
             start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
             end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-            userID: '101',
-            eventID: '0001'
+            userID: 101,
+            eventID: 1
         };
         var event_jane = {
             name: 'jane',
             description: 'event',
             start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
             end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-            userID: '100',
-            eventID: '0000'
+            userID: 100,
+            eventID: 0
         };
         var event_temp = {
             name: 'temp',
             description: 'event',
             start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
             end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-            userID: '1001',
-            eventID: '0002'
+            userID: 1001,
+            eventID: 2
         };
         this.myEvents.push(event_jane);
         this.otherEvents.push(event_temp);
         this.joinedEvents.push(event_te);
+        this.initEvents(this.myEvents, 'userEvents');
+        this.initEvents(this.joinedEvents, 'joinedEvents');
+        this.initEvents(this.otherEvents, 'otherEvents');
         this.events = this.myEvents;
         this.cols = [
             { field: 'name', header: 'EventName' },
@@ -502,6 +506,16 @@ var EventManagementComponent = /** @class */ (function () {
             { field: 'start', header: 'Start Date/Time' },
             { field: 'end', header: 'End Date/Time' },
         ];
+    };
+    EventManagementComponent.prototype.initEvents = function (events, type) {
+        this.appService.getEvents(this.userID, type).subscribe(function (data) {
+            // console.log(data[0]);
+            data.forEach(function (event) {
+                // console.log(event);
+                events.push(event);
+            });
+            console.log(events);
+        }, function (error) { return console.error(error.message); });
     };
     EventManagementComponent.prototype.showEvents = function (type) {
         if (type === 'MyEvents') {
@@ -525,35 +539,42 @@ var EventManagementComponent = /** @class */ (function () {
         if (value === 'yes') {
             var choice = {
                 userID: this.userID,
-                eventID: this.event.eventID
+                eventID: this.event.eventID,
+                date: this.event.start
             };
             if (this.type === 'join') {
-                this.appService.joinEvent(choice).subscribe(function (data) {
+                this.appService.createChoice(choice, this.userID).subscribe(function (data) {
                     _this.joinedEvents.push(_this.event);
                     _this.otherEvents = _this.otherEvents.filter(function (event) {
                         return event.eventID !== _this.event.eventID;
                     });
+                    _this.afterOperstion();
                 }, function (error) {
                     console.error(error.message);
                 });
             }
             else if (this.type === 'quit') {
-                this.appService.quitEvent(choice).subscribe(function (data) {
+                this.appService.deleteChoice(this.userID, this.event.eventID).subscribe(function (data) {
                     _this.otherEvents.push(_this.event);
-                    console.log(_this.event.eventID);
+                    console.log(_this.event.eventID + data);
                     _this.joinedEvents = _this.joinedEvents.filter(function (event) {
                         return event.eventID !== _this.event.eventID;
                     });
+                    _this.afterOperstion();
                 }, function (error) {
                     console.error(error.message);
                 });
             }
             else if (this.type === 'del') {
                 //TODO del others joined event
-                this.appService.delEvent().subscribe(function (data) {
-                    _this.myEvents.filter(function (event) {
-                        return event.eventID !== _this.event.eventID;
+                this.appService.deleteEvent(this.userID, this.event.eventID).subscribe(function (eventID) {
+                    _this.myEvents = _this.myEvents.filter(function (event) {
+                        return event.eventID !== Number(eventID);
                     });
+                    _this.joinedEvents = _this.joinedEvents.filter(function (event) {
+                        return event.eventID !== Number(eventID);
+                    });
+                    _this.afterOperstion();
                     alert('del event success');
                 }, function (error) {
                     console.error(error.message);
@@ -569,13 +590,29 @@ var EventManagementComponent = /** @class */ (function () {
             description: value.description,
             start: value.start,
             end: value.end,
-            userID: this.userID
+            userID: this.userID,
+            eventID: null
         };
-        console.log(event);
+        // console.log(event);
         if (this.type === 'create') {
-            this.appService.createEvent(event).subscribe(function (data) {
+            this.appService.createEvent(event, this.userID).subscribe(function (eventID) {
+                console.log('get create event id:' + eventID);
+                event['eventID'] = eventID;
                 _this.myEvents.push(event);
+                _this.joinedEvents.push(event);
+                // console.log(event);
                 _this.display = false;
+                var choice = {
+                    'eventID': eventID,
+                    'userID': _this.userID,
+                    // TODO add choose join date,now just use the start date
+                    'date': event.start
+                };
+                _this.appService.createChoice(choice, _this.userID).subscribe(function (choiceID) {
+                    console.log('create choice ID is: ' + choiceID);
+                }), function (error) {
+                    console.error(error.message);
+                };
                 alert('create event success');
             }, function (error) {
                 console.error(error.message);
@@ -593,7 +630,11 @@ var EventManagementComponent = /** @class */ (function () {
             eventID: this.event.eventID
         };
         this.appService.updateEvent(event).subscribe(function (data) {
-            _this.event = event;
+            var itemIndex = _this.myEvents.findIndex(function (item) { return item.eventID == event.eventID; });
+            _this.myEvents[itemIndex] = event;
+            itemIndex = _this.joinedEvents.findIndex(function (item) { return item.eventID == event.eventID; });
+            _this.joinedEvents[itemIndex] = event;
+            _this.afterOperstion();
             _this.display = false;
             alert('update event success');
         }, function (error) {
@@ -602,6 +643,9 @@ var EventManagementComponent = /** @class */ (function () {
     };
     EventManagementComponent.prototype.onCancel = function () {
         this.display = false;
+    };
+    EventManagementComponent.prototype.afterOperstion = function () {
+        this.event = null;
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -693,7 +737,7 @@ module.exports = "<app-event-management [userID]=\"userID\"></app-event-manageme
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLXBhZ2UuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LnNjc3MifQ== */"
 
 /***/ }),
 
@@ -729,19 +773,20 @@ var HomePageComponent = /** @class */ (function () {
     }
     HomePageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userID = localStorage.getItem("currentUser");
-        // if (this.userID==null) {
-        //   this.router.navigate(['/login'])
-        // }
+        this.userID = Number(localStorage.getItem("currentUser"));
+        // comment for dev
+        if (this.userID == null) {
+            this.router.navigate(['/login']);
+        }
         this.appService.getUser(this.userID).subscribe(function (data) {
             _this.fullName = data.username;
             _this.email = data.email;
-            _this.userID = String(data.userID);
+            _this.userID = data.userID;
             _this.username = data.username;
         }, function (error2) {
             _this.fullName = 'Janani Sundaresan';
             _this.email = 'janani.sundaresan@gmail.com';
-            _this.userID = String(100);
+            _this.userID = 100;
             _this.username = 'janu';
         });
     };
@@ -857,7 +902,7 @@ module.exports = "<div class=\"login\">\n  <h2>Login</h2>\n  <form [formGroup]=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luL0M6XFxVc2Vyc1xcYmFjaHVcXERvY3VtZW50c1xcZXZlbnRDYWxlbmRhclxcc3JjXFxhcHBcXGhvbWUtcGFnZS9sb2dpblxcbG9naW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6ImxvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcbiAgZm9udC1mYW1pbHk6IFwiQ29taWMgU2FucyBNU1wiLCBjdXJzaXZlLCBzYW5zLXNlcmlmO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgbWFyZ2luOiAyMHB4O1xuICBjb2xvcjogcmdiKDM3LCAzNywgMzcpO1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbn1cblxuZm9ybXtcbiAgd2lkdGg6NTAlO1xufVxuXG5pbnB1dFt0eXBlPXRleHRdLFxuaW5wdXRbdHlwZT1wYXNzd29yZF0gLFxuaW5wdXRbdHlwZT1lbWFpbF0ge1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTJweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogMTRweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBib3JkZXI6IG5vbmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5jYW5jZWxidG4ge1xuICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XG59XG5cbi5jYW5jZWxidG4sXG4uc2lnbnVwYnRuIHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIHdpZHRoOiA1MCU7XG59XG5cbi5jb250YWluZXIge1xuICBwYWRkaW5nOiAxNnB4O1xuICB3aWR0aDogY2FsYygxMDAlIC0gMzZweCk7XG59XG5cbi5jbGVhcmZpeDo6YWZ0ZXIge1xuICBjb250ZW50OiBcIlwiO1xuICBjbGVhcjogYm90aDtcbiAgZGlzcGxheTogdGFibGU7XG59XG5cbmEge1xuICBjb2xvcjogYmlzcXVlO1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuIl19 */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL2xvZ2luL0M6XFxVc2Vyc1xcYmFjaHVcXERvY3VtZW50c1xcZXZlbnRDYWxlbmRhci9zcmNcXGFwcFxcaG9tZS1wYWdlXFxsb2dpblxcbG9naW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9tZS1wYWdlL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcbiAgZm9udC1mYW1pbHk6IFwiQ29taWMgU2FucyBNU1wiLCBjdXJzaXZlLCBzYW5zLXNlcmlmO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgbWFyZ2luOiAyMHB4O1xuICBjb2xvcjogcmdiKDM3LCAzNywgMzcpO1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbn1cblxuZm9ybXtcbiAgd2lkdGg6NTAlO1xufVxuXG5pbnB1dFt0eXBlPXRleHRdLFxuaW5wdXRbdHlwZT1wYXNzd29yZF0gLFxuaW5wdXRbdHlwZT1lbWFpbF0ge1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTJweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogMTRweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBib3JkZXI6IG5vbmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5jYW5jZWxidG4ge1xuICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XG59XG5cbi5jYW5jZWxidG4sXG4uc2lnbnVwYnRuIHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIHdpZHRoOiA1MCU7XG59XG5cbi5jb250YWluZXIge1xuICBwYWRkaW5nOiAxNnB4O1xuICB3aWR0aDogY2FsYygxMDAlIC0gMzZweCk7XG59XG5cbi5jbGVhcmZpeDo6YWZ0ZXIge1xuICBjb250ZW50OiBcIlwiO1xuICBjbGVhcjogYm90aDtcbiAgZGlzcGxheTogdGFibGU7XG59XG5cbmEge1xuICBjb2xvcjogYmlzcXVlO1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -909,7 +954,6 @@ var LoginComponent = /** @class */ (function () {
         var password = value.password;
         this.appService.login(username, password).subscribe(function (userID) {
             localStorage.setItem("currentUser", String(userID));
-            _this.appService.loggedIn.next(true);
             _this.router.navigate(['/home']);
         }), function (error) {
             console.error(error.message.body);
@@ -958,7 +1002,7 @@ module.exports = "<div class=\"login\">\n  <h2>Signup</h2>\n  <form [formGroup]=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNpZ251cC9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXGV2ZW50Q2FsZW5kYXJcXHNyY1xcYXBwXFxob21lLXBhZ2Uvc2lnbnVwXFxzaWdudXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InNpZ251cC9zaWdudXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4ge1xuICBmb250LWZhbWlseTogXCJDb21pYyBTYW5zIE1TXCIsIGN1cnNpdmUsIHNhbnMtc2VyaWY7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtYXJnaW46IDIwcHg7XG4gIGNvbG9yOiByZ2IoMzcsIDM3LCAzNyk7XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xufVxuXG5mb3Jte1xuICB3aWR0aDo1MCU7XG59XG5cbmlucHV0W3R5cGU9dGV4dF0sXG5pbnB1dFt0eXBlPXBhc3N3b3JkXSAsXG5pbnB1dFt0eXBlPWVtYWlsXSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbn1cblxuYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJvcmRlcjogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNhbmNlbGJ0biB7XG4gIHBhZGRpbmc6IDE0cHggMjBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNjtcbn1cblxuLmNhbmNlbGJ0bixcbi5zaWdudXBidG4ge1xuICBmbG9hdDogbGVmdDtcbiAgd2lkdGg6IDUwJTtcbn1cblxuLmNvbnRhaW5lciB7XG4gIHBhZGRpbmc6IDE2cHg7XG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAzNnB4KTtcbn1cblxuLmNsZWFyZml4OjphZnRlciB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGNsZWFyOiBib3RoO1xuICBkaXNwbGF5OiB0YWJsZTtcbn1cblxuYSB7XG4gIGNvbG9yOiBiaXNxdWU7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMwMHB4KSB7XG4gIC5jYW5jZWxidG4sXG4gIC5zaWdudXBidG4ge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4iXX0= */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL3NpZ251cC9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXGV2ZW50Q2FsZW5kYXIvc3JjXFxhcHBcXGhvbWUtcGFnZVxcc2lnbnVwXFxzaWdudXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9tZS1wYWdlL3NpZ251cC9zaWdudXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4ge1xuICBmb250LWZhbWlseTogXCJDb21pYyBTYW5zIE1TXCIsIGN1cnNpdmUsIHNhbnMtc2VyaWY7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtYXJnaW46IDIwcHg7XG4gIGNvbG9yOiByZ2IoMzcsIDM3LCAzNyk7XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xufVxuXG5mb3Jte1xuICB3aWR0aDo1MCU7XG59XG5cbmlucHV0W3R5cGU9dGV4dF0sXG5pbnB1dFt0eXBlPXBhc3N3b3JkXSAsXG5pbnB1dFt0eXBlPWVtYWlsXSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbn1cblxuYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJvcmRlcjogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNhbmNlbGJ0biB7XG4gIHBhZGRpbmc6IDE0cHggMjBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNjtcbn1cblxuLmNhbmNlbGJ0bixcbi5zaWdudXBidG4ge1xuICBmbG9hdDogbGVmdDtcbiAgd2lkdGg6IDUwJTtcbn1cblxuLmNvbnRhaW5lciB7XG4gIHBhZGRpbmc6IDE2cHg7XG4gIHdpZHRoOiBjYWxjKDEwMCUgLSAzNnB4KTtcbn1cblxuLmNsZWFyZml4OjphZnRlciB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIGNsZWFyOiBib3RoO1xuICBkaXNwbGF5OiB0YWJsZTtcbn1cblxuYSB7XG4gIGNvbG9yOiBiaXNxdWU7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMwMHB4KSB7XG4gIC5jYW5jZWxidG4sXG4gIC5zaWdudXBidG4ge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -1059,7 +1103,7 @@ module.exports = "<div class=\"login\">\n  <div style=\"border:1px solid #ccc; w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVzZXItcHJvZmlsZS9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXGV2ZW50Q2FsZW5kYXJcXHNyY1xcYXBwXFxob21lLXBhZ2UvdXNlci1wcm9maWxlXFx1c2VyLXByb2ZpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InVzZXItcHJvZmlsZS91c2VyLXByb2ZpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4ge1xyXG4gIGZvbnQtZmFtaWx5OiBcIkNvbWljIFNhbnMgTVNcIiwgY3Vyc2l2ZSwgc2Fucy1zZXJpZjtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBtYXJnaW46IDIwcHg7XHJcbiAgY29sb3I6IHJnYigzNywgMzcsIDM3KTtcclxuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcclxufVxyXG5cclxuZm9ybXtcclxuICB3aWR0aDo1MCU7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9dGV4dF0sXHJcbmlucHV0W3R5cGU9cGFzc3dvcmRdICxcclxuaW5wdXRbdHlwZT1lbWFpbF0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gIG1hcmdpbjogOHB4IDA7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLmNhbmNlbGJ0biB7XHJcbiAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XHJcbn1cclxuXHJcbi5jYW5jZWxidG4sXHJcbi5zaWdudXBidG4ge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIHdpZHRoOiA1MCU7XHJcbn1cclxuXHJcbi5jb250YWluZXIge1xyXG4gIHBhZGRpbmc6IDE2cHg7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDM2cHgpO1xyXG59XHJcblxyXG4uY2xlYXJmaXg6OmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIGNsZWFyOiBib3RoO1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG59XHJcblxyXG5hIHtcclxuICBjb2xvcjogYmlzcXVlO1xyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xyXG4gIC5jYW5jZWxidG4sXHJcbiAgLnNpZ251cGJ0biB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbn1cclxuIl19 */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n\nform {\n  width: 50%; }\n\ninput[type=text],\ninput[type=password],\ninput[type=email] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-sizing: border-box; }\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  cursor: pointer;\n  width: 100%; }\n\n.cancelbtn {\n  padding: 14px 20px;\n  background-color: #f44336; }\n\n.cancelbtn,\n.signupbtn {\n  float: left;\n  width: 50%; }\n\n.container {\n  padding: 16px;\n  width: calc(100% - 36px); }\n\n.clearfix::after {\n  content: \"\";\n  clear: both;\n  display: table; }\n\na {\n  color: bisque; }\n\n@media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL3VzZXItcHJvZmlsZS9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXGV2ZW50Q2FsZW5kYXIvc3JjXFxhcHBcXGhvbWUtcGFnZVxcdXNlci1wcm9maWxlXFx1c2VyLXByb2ZpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFDbEI7O0FBRUQ7RUFDRSxXQUFTLEVBQ1Y7O0FBRUQ7OztFQUdFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLHNCQUFxQjtFQUNyQix1QkFBc0I7RUFDdEIsdUJBQXNCLEVBQ3ZCOztBQUVEO0VBQ0UsMEJBQXlCO0VBQ3pCLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLGFBQVk7RUFDWixnQkFBZTtFQUNmLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQiwwQkFBeUIsRUFDMUI7O0FBRUQ7O0VBRUUsWUFBVztFQUNYLFdBQVUsRUFDWDs7QUFFRDtFQUNFLGNBQWE7RUFDYix5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsWUFBVztFQUNYLGVBQWMsRUFDZjs7QUFFRDtFQUNFLGNBQWEsRUFDZDs7QUFFRDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9tZS1wYWdlL3VzZXItcHJvZmlsZS91c2VyLXByb2ZpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4ge1xyXG4gIGZvbnQtZmFtaWx5OiBcIkNvbWljIFNhbnMgTVNcIiwgY3Vyc2l2ZSwgc2Fucy1zZXJpZjtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBtYXJnaW46IDIwcHg7XHJcbiAgY29sb3I6IHJnYigzNywgMzcsIDM3KTtcclxuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcclxufVxyXG5cclxuZm9ybXtcclxuICB3aWR0aDo1MCU7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9dGV4dF0sXHJcbmlucHV0W3R5cGU9cGFzc3dvcmRdICxcclxuaW5wdXRbdHlwZT1lbWFpbF0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gIG1hcmdpbjogOHB4IDA7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLmNhbmNlbGJ0biB7XHJcbiAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XHJcbn1cclxuXHJcbi5jYW5jZWxidG4sXHJcbi5zaWdudXBidG4ge1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIHdpZHRoOiA1MCU7XHJcbn1cclxuXHJcbi5jb250YWluZXIge1xyXG4gIHBhZGRpbmc6IDE2cHg7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDM2cHgpO1xyXG59XHJcblxyXG4uY2xlYXJmaXg6OmFmdGVyIHtcclxuICBjb250ZW50OiBcIlwiO1xyXG4gIGNsZWFyOiBib3RoO1xyXG4gIGRpc3BsYXk6IHRhYmxlO1xyXG59XHJcblxyXG5hIHtcclxuICBjb2xvcjogYmlzcXVlO1xyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xyXG4gIC5jYW5jZWxidG4sXHJcbiAgLnNpZ251cGJ0biB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -1135,8 +1179,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1155,7 +1199,9 @@ var AppService = /** @class */ (function () {
         this.http = http;
         this.baseUrl = 'https://planeto-app.appspot.com/api/';
         this.userUrl = this.baseUrl + 'user/';
-        this.loggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](this.hasToken());
+        this.eventUrl = this.baseUrl + 'event/';
+        this.choiceUrl = this.baseUrl + 'choice/';
+        this.loggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](this.hasToken());
     }
     /**
      * if we have token the user is loggedIn
@@ -1173,67 +1219,81 @@ var AppService = /** @class */ (function () {
             username: username,
             password: password
         };
-        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.createUser = function (user) {
         var url = this.userUrl + 'register';
-        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.getUser = function (userID) {
-        var uri = this.userUrl + userID; //userId will be dynamic
-        return this.http.get(uri)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+        var url = this.userUrl + userID; //userId will be dynamic
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
-    AppService.prototype.getEvents = function (userID) {
-        var uri = this.userUrl + userID + '/events'; //userId will be dynamic
-        return this.http.get(uri)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
-            return res;
-        }));
-    };
-    AppService.prototype.getJoinedEvents = function (userID) {
-        var uri = this.userUrl + userID + '/events'; //userId will be dynamic
-        return this.http.get(uri)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
-            return res;
-        }));
-    };
-    AppService.prototype.createEvent = function (event) {
-        var userID = event.userID;
-        var uri = this.userUrl + userID + '/events';
+    AppService.prototype.createEvent = function (event, userID) {
+        var uri = this.eventUrl + userID;
         return this.http.post(uri, event)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
-            return res;
-        }));
-    };
-    AppService.prototype.delEvent = function () {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.updateEvent = function (event) {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+        var url = this.eventUrl + event.eventID;
+        return this.http.put(url, event)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
-    AppService.prototype.quitEvent = function (choice) {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+    AppService.prototype.deleteEvent = function (userID, eventID) {
+        var url = this.eventUrl + userID + '/' + eventID;
+        return this.http.delete(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
-    AppService.prototype.joinEvent = function (choice) {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+    AppService.prototype.getEvents = function (userID, type) {
+        var url = this.eventUrl + type + '/' + userID; //userId will be dynamic
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            return res;
+        }));
+    };
+    AppService.prototype.getEventInfo = function (eventId) {
+        var url = this.eventUrl + eventId; //userId will be dynamic
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            return String(res);
+        }));
+    };
+    AppService.prototype.createChoice = function (choice, userID) {
+        var url = this.choiceUrl + userID;
+        return this.http.post(url, choice)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            return res;
+        }));
+    };
+    AppService.prototype.updateChoice = function (choice) {
+        var url = this.choiceUrl + choice.eventID;
+        return this.http.put(url, choice)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            return res;
+        }));
+    };
+    AppService.prototype.deleteChoice = function (userID, eventID) {
+        var url = this.choiceUrl + userID + '/' + eventID;
+        return this.http.delete(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.debug = function () {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
             return res;
         }));
     };
