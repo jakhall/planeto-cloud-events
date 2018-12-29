@@ -32,13 +32,13 @@ def eventAsDict(event):
                'userID': event.userID,
                'name': event.name,
                'description': event.description,
-               'start': formatStr(event.start),
-               'end': formatStr(event.end)}
+               'start': event.start,
+               'end': event.end}
   return eventDict
 
 
 def formatStr(dt):
-  return dt.strftime('%d-%m-%y %H:%M:%S')
+  return datetime.strftime('%d-%m-%y %H:%M:%S')
 
 
 def getEntityID(entity):
@@ -90,8 +90,8 @@ def handleCreateEvent(userID):
     event = m.createEvent(id=userID,
                           name=event['name'],
                           desc=event['description'],
-                          start=formatStr(event['start']),
-                          end=formatStr(event['end']))
+                          start=event['start'],
+                          end=event['end'])
     response = make_response(getEntityID(event), 200)
   return response
 
@@ -100,12 +100,12 @@ def handleCreateEvent(userID):
 def handleUpdateEvent(eventID):
   event = json.loads(request.data)
   response = make_response("eventNotExists", 500)
-  if request.method == 'POST':
-    event = m.updateEvent(id=eventID,
+  if request.method == 'PUT':
+    event = m.updateEvent(eventID=eventID,
                           name=event['name'],
                           desc=event['description'],
-                          start=formatStr(event['start']),
-                          end=formatStr(event['end']))
+                          start=event['start'],
+                          end=event['end'])
     if event:
       response = make_response(getEntityID(event), 200)
   return response
@@ -114,7 +114,7 @@ def handleUpdateEvent(eventID):
 @app.route('/api/event/<int:userID>/<int:eventID>', methods=['DELETE'])
 def handleDeleteEvent(userID, eventID):
   m.deleteEvent(eventID=eventID, userID=userID)
-  return make_response("delete success", 200)
+  return make_response(str(eventID), 200)
 
 
 @app.route('/api/event/<string:type>/<int:userID>/', methods=['GET'])
@@ -126,10 +126,11 @@ def handleGetEvents(type, userID):
     eventList = m.getJoinedEvent(userID)
   elif type == 'otherEvents':
     eventList = m.getOtherEvents(userID)
+  print eventList
   events = [eventAsDict(event) for event in eventList]
   if events:
-    return make_response(jsonify(events), 200)
-  return make_response("not found events", 404)
+    return make_response(json.dumps(events), 200)
+  return make_response(json.dumps([]), 200)
 
 
 @app.route('/api/event/<int:eventID>', methods=['GET'])
@@ -151,7 +152,7 @@ def handleLogin():
   if userInDB:
     if userInDB[0].password == user['password']:
        login_user(userInDB[0])
-       response = make_response(jsonify(message='Login Successful'), 200)
+       response = make_response(jsonify(userAsDict(current_user)), 200)
   return response
 
   @app.route('/api/user/logout', methods=['GET'])
@@ -166,12 +167,12 @@ def handleGetCurrentUser():
 
 
 # choice
-@app.route('/api/choice', methods=['POST'])
-def handleCreateChoice():
+@app.route('/api/choice/<int:userID>', methods=['POST'])
+def handleCreateChoice(userID):
   choice = json.loads(request.data)
   choice = m.createChoice(eventID=choice['eventID'],
-                          userID=choice['userID'],
-                          dateChoice=formatStr(choice['date']))
+                          userID=userID,
+                          dateChoice=choice['date'])
   return make_response(str(choice.key.id()), 200)
 
 
@@ -180,14 +181,14 @@ def handleUpdateChoice(eventID):
   choice = json.loads(request.data)
   choice = m.updateChoice(eventID=eventID,
                           userID=choice['userID'],
-                          dateChoice=formatStr(choice['date']))
+                          dateChoice=choice['date'])
   return make_response(str(choice.key.id()), 200)
 
 
 @app.route('/api/choice/<int:userID>/<int:eventID>', methods=['DELETE'])
 def handleDeleteChoice(userID, eventID):
   m.deleteChoice(eventID=eventID, userID=userID)
-  return make_response("delete success", 200)
+  return make_response(str(eventID), 200)
 
 
 

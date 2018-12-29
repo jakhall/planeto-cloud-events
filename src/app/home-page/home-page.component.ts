@@ -15,25 +15,26 @@ export class HomePageComponent implements OnInit {
   firstname: string;
   lastname: string;
   username: string;
-  userID: string;
+  userID: number;
   constructor(private appService: AppService,
               private router: Router) { }
 
   ngOnInit() {
-    this.userID = localStorage.getItem("currentUser");
-    // if (this.userID==null) {
-    //   this.router.navigate(['/login'])
-    // }
+    this.userID = Number(localStorage.getItem("currentUser"));
+    // comment for dev
+    if (this.userID==null) {
+      this.router.navigate(['/login'])
+    }
     this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
        this.fullName = data.username;
        this.email = data.email;
-       this.userID = String(data.userID);
+       this.userID = data.userID;
        this.username = data.username
 
     }, error2 => {
       this.fullName = 'Janani Sundaresan';
       this.email = 'janani.sundaresan@gmail.com';
-      this.userID = String(100);
+      this.userID = 100;
       this.username = 'janu'
     });
 
