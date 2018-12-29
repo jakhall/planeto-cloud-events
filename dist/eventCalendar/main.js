@@ -956,8 +956,8 @@ var LoginComponent = /** @class */ (function () {
         var _this = this;
         var username = value.username;
         var password = value.password;
-        this.appService.login(username, password).subscribe(function (userID) {
-            localStorage.setItem("currentUser", String(userID));
+        this.appService.login(username, password).subscribe(function (user) {
+            localStorage.setItem("currentUser", String(user.userID));
             _this.router.navigate(['/home']);
         }), function (error) {
             console.error(error.message.body);
