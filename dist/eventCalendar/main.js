@@ -315,7 +315,10 @@ var AppHeaderComponent = /** @class */ (function () {
         this.isLoggedIn = this.appService.isLoggedIn();
     }
     AppHeaderComponent.prototype.ngOnInit = function () {
-        this.currentUser = localStorage.getItem('username') || '';
+        var _this = this;
+        this.appService.userDataAvailable().subscribe(function (data) {
+            _this.currentUser = data || localStorage.getItem('username');
+        });
         this.items = [
             {
                 label: 'Event Calendar',
@@ -454,6 +457,7 @@ var EventManagementComponent = /** @class */ (function () {
             localStorage.setItem("email", data.email);
             localStorage.setItem("username", data.username);
             _this.appService.loggedIn.next(true);
+            _this.appService.userData.next(data.username);
         }, function (error2) {
             _this.fullName = 'Janani Sundaresan';
             _this.email = 'janani.sundaresan@gmail.com';
@@ -1179,8 +1183,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1201,7 +1205,8 @@ var AppService = /** @class */ (function () {
         this.userUrl = this.baseUrl + 'user/';
         this.eventUrl = this.baseUrl + 'event/';
         this.choiceUrl = this.baseUrl + 'choice/';
-        this.loggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](this.hasToken());
+        this.loggedIn = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](this.hasToken());
+        this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null);
     }
     /**
      * if we have token the user is loggedIn
@@ -1213,87 +1218,90 @@ var AppService = /** @class */ (function () {
     AppService.prototype.isLoggedIn = function () {
         return this.loggedIn.asObservable();
     };
+    AppService.prototype.userDataAvailable = function () {
+        return this.userData.asObservable();
+    };
     AppService.prototype.login = function (username, password) {
         var url = this.userUrl + 'login';
         var user = {
             username: username,
             password: password
         };
-        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.createUser = function (user) {
         var url = this.userUrl + 'register';
-        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.getUser = function (userID) {
         var url = this.userUrl + userID; //userId will be dynamic
         return this.http.get(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.createEvent = function (event, userID) {
         var uri = this.eventUrl + userID;
         return this.http.post(uri, event)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.updateEvent = function (event) {
         var url = this.eventUrl + event.eventID;
         return this.http.put(url, event)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.deleteEvent = function (userID, eventID) {
         var url = this.eventUrl + userID + '/' + eventID;
         return this.http.delete(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.getEvents = function (userID, type) {
         var url = this.eventUrl + type + '/' + userID; //userId will be dynamic
         return this.http.get(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.getEventInfo = function (eventId) {
         var url = this.eventUrl + eventId; //userId will be dynamic
         return this.http.get(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return String(res);
         }));
     };
     AppService.prototype.createChoice = function (choice, userID) {
         var url = this.choiceUrl + userID;
         return this.http.post(url, choice)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.updateChoice = function (choice) {
         var url = this.choiceUrl + choice.eventID;
         return this.http.put(url, choice)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.deleteChoice = function (userID, eventID) {
         var url = this.choiceUrl + userID + '/' + eventID;
         return this.http.delete(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
     AppService.prototype.debug = function () {
-        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) {
+        return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
         }));
     };
