@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
     this.appService.login(username,password).subscribe( userID =>{
       localStorage.setItem("currentUser",String(userID));
-      this.appService.loggedIn.next(true);
       this.router.navigate(['/home']);
     }), error => {
       console.error(error.message.body);
