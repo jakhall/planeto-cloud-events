@@ -2,14 +2,9 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import {DatePipe} from '@angular/common';
-import {v4 as uuid} from 'uuid';
 import {AppService} from '../../services/app.service';
 import {IEvent, IUserModel} from '../home-page.model';
-import {range} from 'rxjs';
 import {MenuItem} from 'primeng/api';
-import {MenuModule} from 'primeng/menu';
-import {SplitButtonModule} from 'primeng/splitbutton';
-import {error} from 'util';
 
 @Component({
   selector: 'app-event-management',
@@ -21,7 +16,7 @@ export class EventManagementComponent implements OnInit {
   title: string;
   type: string;
   options: any;
-
+  calendarEvent: Event;
   events: any[];
   otherEvents: any[];
   myEvents: any[];
@@ -92,16 +87,16 @@ export class EventManagementComponent implements OnInit {
   ngOnInit() {
 
     this.options = {
-      header: {
+    header: {
         left: 'prev,next',
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
-      }
+      },
+      eventClick: function (date) {
+       //self.calendarEvent =  new Event(date.event.title, date.event.start, date.event.end,date.event.extendedProps.description);
+      },
     };
-      // dateClick: (e) =>  {
-        //handle date click
-      // }
-    // {;
+
 
     // test full calendar
     this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
@@ -115,6 +110,7 @@ export class EventManagementComponent implements OnInit {
       localStorage.setItem("username",data.username);
       this.appService.loggedIn.next(true);
       this.appService.userData.next(data.username);
+      this.initEvents();
 
     }, error2 => {
       this.fullName = 'Janani Sundaresan';
@@ -123,62 +119,19 @@ export class EventManagementComponent implements OnInit {
       this.username = 'janu'
     });
     this.items = [
-      {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)},
+      {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)}/*,
       {label: 'JoinedEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)},
-      {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}
+      {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}*/
     ];
 
     this.calendarItem = [
       {label: 'EventsTableView', command: () => {
           this.CalendarView(false);
+        }},
+      {label: 'EventsCalendarView', command: () => {
+          this.CalendarView(true);
         }}
     ];
-    this.events = new Array();
-    this.myEvents = new Array();
-    this.otherEvents = new Array();
-    this.joinedEvents = new Array();
-    let event_te = {
-      name: 'te',
-      description: 'event',
-      start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      userID: 101,
-      eventID: 1
-    };
-    let event_jane = {
-      name: 'jane',
-      description: 'event',
-      start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      userID: 100,
-      eventID: 0
-    };
-    let event_temp = {
-      name: 'temp',
-      description: 'event',
-      start: new Date('Tue Dec 04 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      end: new Date('Wed Dec 05 2018 00:00:00 GMT+0000 (Greenwich Mean Time)'),
-      userID: 1001,
-      eventID: 2
-    };
-
-    this.Events = [
-      {
-        "title":event_te.name,
-        "start": event_te.start,
-        "end":event_te.end
-      }
-    ];
-
-    this.myEvents.push(event_jane);
-    this.otherEvents.push(event_temp);
-    this.joinedEvents.push(event_te);
-
-    this.initEvents(this.myEvents, 'userEvents');
-    this.initEvents(this.joinedEvents, 'joinedEvents');
-    this.initEvents(this.otherEvents, 'otherEvents');
-
-    this.events = this.myEvents;
 
     this.cols = [
       {field: 'name', header: 'EventName'},
@@ -190,46 +143,47 @@ export class EventManagementComponent implements OnInit {
 
   // build calendarView events based on userEvents
   initCalendarViewEvents(){
+
     this.Events = new Array();
-    this.myEvents.forEach( myEvent =>{
+    this.events.forEach( myEvent =>{
       let event = {
         "title":myEvent.name,
-        "start": myEvent.start,
-        "end":myEvent.end
+        "start": this.datePipe.transform(myEvent.start, 'yyyy-MM-dd'),
+        "end": this.datePipe.transform(myEvent.end, 'yyyy-MM-dd'),
+        "description": myEvent.description,
+        "eventID": myEvent.eventID,
+        "userID": myEvent.userID
       };
       this.Events.push(event);
     });
   }
 
   // get events from database
-  initEvents(events, type) {
-    this.appService.getEvents(this.userID, type).subscribe(data => {
-      // console.log(data[0]);
-      data.forEach(event => {
-        // console.log(event);
-        events.push(event);
-      });
-      console.log(events);
+  initEvents() {
+    this.appService.getEvents(this.userID, 'userEvents').subscribe(data => {
+      this.events = data;
+      this.initCalendarViewEvents();
+
     }, error => console.error(error.message));
   }
 
   showEvents(type) {
     if (type === 'MyEvents') {
-      this.events = this.myEvents;
+      //this.events = this.myEvents;
       this.showMyEvents = true;
     } else {
       this.showMyEvents = false;
-      if (type === 'JoinedEvents') {
+/*      if (type === 'JoinedEvents') {
         this.events = this.joinedEvents;
         this.showJoinedEvents = true;
       } else if (type === 'OtherEvents') {
         this.events = this.otherEvents;
         this.showJoinedEvents = false;
-      }
+      }*/
     }
   }
 
-  choice(value) {
+  /*choice(value) {
     if (value === 'yes') {
       let choice = {
         userID: this.userID,
@@ -283,7 +237,7 @@ export class EventManagementComponent implements OnInit {
     }
     this.displayEventDialog = false;
 
-  }
+  }*/
 
   onSubmit(value) {
     let event = {
@@ -297,36 +251,40 @@ export class EventManagementComponent implements OnInit {
     // console.log(event);
     if (this.type === 'create') {
       this.appService.createEvent(event, this.userID).subscribe(eventID => {
-        console.log('get create event id:' + eventID);
-        event['eventID'] = eventID;
+        this.initEvents();
+        /* console.log('get create event id:' + eventID);
+         event['eventID'] = eventID;
 
-        this.myEvents.push(event);
-        this.joinedEvents.push(event);
+         this.myEvents.push(event);
+         this.joinedEvents.push(event);
 
-        // console.log(event);
-        this.display = false;
+         // console.log(event);
+         this.display = false;
 
-        let choice = {
-          'eventID': eventID,
-          'userID': this.userID,
-          // TODO add choose join date,now just use the start date
-          'date': event.start
-        };
+         let choice = {
+           'eventID': eventID,
+           'userID': this.userID,
+           // TODO add choose join date,now just use the start date
+           'date': event.start
+         };
 
-        this.appService.createChoice(choice, this.userID).subscribe(choiceID => {
-          console.log('create choice ID is: ' + choiceID);
-        }), error => {
-          console.error(error.message);
-        };
+         this.appService.createChoice(choice, this.userID).subscribe(choiceID => {
+           console.log('create choice ID is: ' + choiceID);
+         }), error => {
+           console.error(error.message);
+         };
 
-        alert('create event success');
+         alert('create event success');
+       }, error => {
+         console.error(error.message);
+       });
+ */
+
       }, error => {
         console.error(error.message);
       });
 
-
     }
-
   }
 
   onModify(value) {
@@ -339,13 +297,14 @@ export class EventManagementComponent implements OnInit {
       eventID: this.event.eventID
     };
     this.appService.updateEvent(event).subscribe(data => {
-      let itemIndex = this.myEvents.findIndex(item => item.eventID == event.eventID);
+      this.initEvents();
+/*      let itemIndex = this.myEvents.findIndex(item => item.eventID == event.eventID);
       this.myEvents[itemIndex] = event;
 
       itemIndex = this.joinedEvents.findIndex(item => item.eventID == event.eventID);
       this.joinedEvents[itemIndex] = event;
 
-      this.afterOperstion();
+      this.afterOperstion();*/
 
       this.display = false;
       alert('update event success');

@@ -7,59 +7,59 @@
   margin: 20px;
   color: rgb(37, 37, 37);
   background: white;
-}
 
-form{
-  width:50%;
-}
 
-input[type=text],
-input[type=password] ,
-input[type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+  form {
+    width: 50%;
+  }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+  input[type=text],
+  input[type=password],
+  input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
 
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
 
-.cancelbtn,
-.signupbtn {
-  float: left;
-  width: 50%;
-}
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
 
-.container {
-  padding: 16px;
-  width: calc(100% - 36px);
-}
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 50%;
+  }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+  .container {
+    padding: 16px;
+    width: calc(100% - 36px);
+  }
 
-a {
-  color: bisque;
-}
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
+  a {
+    color: bisque;
+  }
+}
 @media screen and (max-width: 300px) {
   .cancelbtn,
   .signupbtn {

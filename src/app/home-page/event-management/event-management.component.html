@@ -78,7 +78,7 @@
 
 <p-splitButton
   (onClick)="CalendarView(true)" [model]="calendarItem"
-  label="MyEventCalendarView"
+  label="Switch View"
 ></p-splitButton>
 <button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
         label="CreateEvent"></button>
@@ -86,16 +86,30 @@
         label="ModifyEvent"></button>
 <button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
         label="DelEvent"></button>
-<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button"
+<!--<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button"
         label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
 <button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button"
-        label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>
+        label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>-->
+<br>
+<div class="container ui-grid-row">
+<div class="ui-grid-col-6">
+  <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="showCalendarView && events && events.length > 0 &&  Events && Events.length > 0 " [events]="Events" [options]="options"></p-fullCalendar>
+</div> test{{calendarEvent}}
+<!--
+<div *ngIf="calendarEvent" style="border:1px solid #ccc;" class="ui-grid-col-6">
+      <label >Event Name</label>
+      {{calendarEvent.title}}
+      <label >Event Start Date</label>
+       {{calendarEvent.start}}
+      <label >Event End Date</label>
+       {{calendarEvent.end}}
+      <label >Event Description</label>
+       {{calendarEvent.def.extendedProps.description}}
+    </div>
+-->
 
-<div style="width: max-content">
-  <p-fullCalendar class="fc-basic-view" #ucCalendar *ngIf="showCalendarView" [events]="Events" [options]="options"></p-fullCalendar>
 </div>
-
-<div *ngIf="(myEvents || otherEvents || joinedEvents) && !showCalendarView">
+<div *ngIf="!showCalendarView && events && events.length > 0">
   <p-table #dt [columns]="cols" [value]="events" [(selection)]="event" [paginator]="true" [rows]="10">
     <ng-template pTemplate="caption">
 
@@ -129,7 +143,4 @@
 
   </p-table>
 
-</div>
-<div *ngIf="!(myEvents || otherEvents)">
-  No Records Found
 </div>
