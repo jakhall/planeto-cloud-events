@@ -1,6 +1,6 @@
 steps:
 - name: "docker.io/library/python:2.7"
-  args: ['pip', 'install', '-t', '/workspace/lib', '-r', 'requirements.txt']
+  args: ['pip', 'install', '-t', '/workspace/lib', '-r', '/workspace/build/requirements.txt']
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install' ]
   dir: 'frontend'
