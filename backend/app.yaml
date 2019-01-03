@@ -5,7 +5,7 @@ threadsafe: true
 
 handlers:
 - url: /api/.*
-  script: backend.main.app
+  script: main.app
 
 skip_files:
 - ^(.*/)?\..*$
