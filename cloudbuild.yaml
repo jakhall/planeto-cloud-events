@@ -1,5 +1,7 @@
 steps:
 - name: "docker.io/library/python:2.7"
   args: ['pip', 'install', '-t', '/workspace/lib', '-r', '/workspace/requirements.txt']
+- name: 'gcr.io/planeto-app/ng:next'
+  args: ['build', '--prod']
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
