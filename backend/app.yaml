@@ -10,6 +10,10 @@ handlers:
 - url: /home
   static_files: ../frontend/dist/eventCalendar/index.html
   upload: ../frontend/dist/eventCalendar/index.html
+  
+- url: /test
+  static_files: ../frontend/test.html
+  upload: test.html
 
 - url: /(.+)
   static_files: ../frontend/dist/eventCalendar/\1
@@ -19,13 +23,11 @@ handlers:
   static_files: ../frontend/dist/eventCalendar/index.html
   upload: ../frontend/dist/eventCalendar/index.html
 
-- url: /test
-  static_files: ../frontend/test.html
-  upload: ../frontend/test.html
+
+
 
 skip_files:
 - e2e/
-- node_modules/
 - src/
 - ^(.*/)?\..*$
 - ^(.*/)?.*\.json$
