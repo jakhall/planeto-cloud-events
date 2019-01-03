@@ -5,7 +5,7 @@ threadsafe: true
 
 handlers:
 - url: /api/.*
-  script: backend/main.app
+  script: backennd/main.app
 
 - url: /home
   static_files: frontend/dist/eventCalendar/index.html
