@@ -10,9 +10,9 @@ handlers:
 - url: /home
   static_files: ../frontend/dist/eventCalendar/index.html
   upload: ../frontend/dist/eventCalendar/index.html
-  
+
 - url: /test
-  static_files: ../frontend/test.html
+  static_files: test.html
   upload: test.html
 
 - url: /(.+)
