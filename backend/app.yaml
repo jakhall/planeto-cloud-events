@@ -1,0 +1,20 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+handlers:
+- url: /api/.*
+  script: backend.main.app
+
+skip_files:
+- ^(.*/)?\..*$
+- ^(.*/)?.*\.json$
+- ^(.*/)?.*\.md$
+- ^(.*/)?.*\.yaml$
+- ^Dockerfile
+- ^LICENSE
+
+libraries:
+- name: ssl
+  version: latest
