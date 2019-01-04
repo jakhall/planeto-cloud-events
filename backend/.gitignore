@@ -1,5 +1,6 @@
 
 lib
+*.pyc
 
 # compiled output
 /tmp
