@@ -99,6 +99,7 @@ Description: returns the user currently logged in.
 
 ### Todo
 - Tidying code - adding comments (everyone)
+- Date validation, events over multiple days defaulting to 00:00 (Jan?)
 - Profile page needs formatting and update function. (Jan?, Sarah?)
 - Visuals (theme needs to be discussed) (everyone?)
 - login validation and session states (Liu?, Jak?)
