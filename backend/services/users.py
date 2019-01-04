@@ -2,7 +2,7 @@ from flask import *
 from flask_login import login_required
 from google.appengine.ext import ndb
 from . import routes
-import model as m
+from models import user_model as m
 import json
 from fuzzywuzzy import process
 
@@ -58,6 +58,21 @@ def handleAllUsers():
 def handleGetUserbyId(id):
   user = jsonify(userAsDict(m.getUserById(id)))
   return make_response(user, 200)
+
+@routes.route('/api/user/<int:id>', methods=['PUT'])
+def handleUpdateUser(id):
+    user = json.loads(request.data)
+    response = make_response("User Doesn't Exist", 500)
+    if request.method == 'PUT':
+      user = m.updateUser( id=id,
+                            username=user['username'],
+                            firstname=user['firstname'],
+                            lastname=user['lastname'],
+                            email=user['email'],
+                            password=user['password']);
+      if event:
+        response = make_response(user, 200)
+    return response
 
 
 @routes.route('/api/search/<string:username>', methods=['GET'])

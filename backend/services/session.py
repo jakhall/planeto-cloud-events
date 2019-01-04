@@ -2,7 +2,7 @@ from flask import *
 from flask_login import login_required, login_user, logout_user, current_user
 from google.appengine.ext import ndb
 from . import routes
-import model as m
+from models import user_model as m
 import json
 
 # Utilities:

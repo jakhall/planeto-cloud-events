@@ -22,11 +22,15 @@ URL: /register
 Method: POST
 Description: creates and posts new user to datastore.
 
+Name: updateUser
+URL: /user/\<id>
+Method: PUT
+Description: updates the user, requires all user fields.
+
 Name: getAllUsers
 URL: /users
 Method: GET
 Description: responds with all users from the datastore.
-
 
 Name: getUserInfo
 URL: /user/\<id>
