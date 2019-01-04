@@ -43,6 +43,8 @@ export class EventManagementComponent implements OnInit {
   firstname: string;
   lastname: string;
   username: string;
+
+  searchUserName: string;
   showDialog(type) {
     this.type = type;
     if (this.type === 'create') {
@@ -86,11 +88,12 @@ export class EventManagementComponent implements OnInit {
   eventClick(calEvent) {
     this.event = {
       name: calEvent.event.title,
-        description: calEvent.event.def.extendedProps.description,
+      description: calEvent.event.def.extendedProps.description,
       start: calEvent.event.start,
       end: calEvent.event.end,
       userID: calEvent.event.def.extendedProps.userID,
-      eventID: calEvent.event.def.extendedProps.eventID
+      eventID: calEvent.event.def.extendedProps.eventID,
+      creatorName: calEvent.event.def.extendedProps.creatorName
     };
   }
   ngOnInit() {
@@ -148,6 +151,7 @@ export class EventManagementComponent implements OnInit {
       {field: 'description', header: 'Description'},
       {field: 'start', header: 'Start Date/Time'},
       {field: 'end', header: 'End Date/Time'},
+      {field: 'creatorName', header: 'creatorName'}
     ];
   }
 
@@ -162,7 +166,8 @@ export class EventManagementComponent implements OnInit {
         'end': myEvent.end,
         'description': myEvent.description,
         'eventID': myEvent.eventID,
-        'userID': myEvent.userID
+        'userID': myEvent.userID,
+        'creatorName':myEvent.creatorName
       };
       this.Events.push(event);
     });
@@ -181,6 +186,7 @@ export class EventManagementComponent implements OnInit {
     if (type === 'MyEvents') {
       // this.events = this.myEvents;
       this.showMyEvents = true;
+      this.initEvents();
     } else {
       this.showMyEvents = false;
 /*      if (type === 'JoinedEvents') {
@@ -286,6 +292,19 @@ export class EventManagementComponent implements OnInit {
     }, error => {
       console.error(error.message);
     });
+  }
+
+  serachByUserName() {
+    if (this.searchUserName !== ''){
+      this.appService.searchByUsername(this.searchUserName).subscribe(data =>{
+          this.events = data;
+          this.initCalendarViewEvents();
+          console.log(this.events);
+
+      }), error => console.error(error.message);
+    }else {
+      this.initEvents();
+    }
   }
 
   onCancel() {
