@@ -16,7 +16,7 @@ export class EventManagementComponent implements OnInit {
   title: string;
   type: string;
   options: any;
-  calendarEvent: Event;
+  calendarEvent: any;
   events: any[];
   otherEvents: any[];
   myEvents: any[];
@@ -25,19 +25,19 @@ export class EventManagementComponent implements OnInit {
   Events: any[];
   event: any;
 
-  display: boolean = false;
-  displayEventDialog: boolean = false;
+  display = false;
+  displayEventDialog = false;
 
-  showJoinedEvents: boolean = true;
-  showMyEvents: boolean = true;
+  showJoinedEvents = true;
+  showMyEvents = true;
 
-  showCalendarView: boolean = true;
+  showCalendarView = true;
 
   userform: FormGroup;
   cols: any[];
-  dialogMessage:string;
+  dialogMessage: string;
   items: MenuItem[];
-  calendarItem:MenuItem[];
+  calendarItem: MenuItem[];
   fullName: string;
   email: string;
   firstname: string;
@@ -53,8 +53,8 @@ export class EventManagementComponent implements OnInit {
         'end': new FormControl('', Validators.required),
         'description': new FormControl('', Validators.required)
       });
-    }else if (this.type === 'modify') {
-      this.title='Modify Event';
+    } else if (this.type === 'modify') {
+      this.title = 'Modify Event';
       this.userform = this.fb.group({
         'name': new FormControl(this.event.name, Validators.required),
         'start': new FormControl(this.event.start, Validators.required),
@@ -71,7 +71,7 @@ export class EventManagementComponent implements OnInit {
   }
 
   showEventManagementDialog(type) {
-    let eventName = this.event.name;
+    const eventName = this.event.name;
     this.type = type;
     if (type === 'join') {
       this.dialogMessage = 'Are you sure to join the event: ' + eventName;
@@ -83,7 +83,16 @@ export class EventManagementComponent implements OnInit {
 
     this.displayEventDialog = true;
   }
-
+  eventClick(calEvent) {
+    this.event = {
+      name: calEvent.event.title,
+        description: calEvent.event.def.extendedProps.description,
+      start: calEvent.event.start,
+      end: calEvent.event.end,
+      userID: calEvent.event.def.extendedProps.userID,
+      eventID: calEvent.event.def.extendedProps.eventID
+    };
+  }
   ngOnInit() {
 
     this.options = {
@@ -92,8 +101,9 @@ export class EventManagementComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      eventClick: function (date) {
-       //self.calendarEvent =  new Event(date.event.title, date.event.start, date.event.end,date.event.extendedProps.description);
+      eventClick: (calEvent) => {
+        console.log('Selected Event: ', calEvent);
+        this.eventClick(calEvent);
       },
     };
 
@@ -103,11 +113,11 @@ export class EventManagementComponent implements OnInit {
       this.fullName = data.firstname + ' ' + data.lastname;
       this.email = data.email;
       this.userID = data.userID;
-      this.username = data.username
-      localStorage.setItem("firstName",data.firstname);
-      localStorage.setItem("lastname",data.lastname);
-      localStorage.setItem("email",data.email);
-      localStorage.setItem("username",data.username);
+      this.username = data.username;
+      localStorage.setItem('firstName', data.firstname);
+      localStorage.setItem('lastname', data.lastname);
+      localStorage.setItem('email', data.email);
+      localStorage.setItem('username', data.username);
       this.appService.loggedIn.next(true);
       this.appService.userData.next(data.username);
       this.initEvents();
@@ -116,7 +126,7 @@ export class EventManagementComponent implements OnInit {
       this.fullName = 'Janani Sundaresan';
       this.email = 'janani.sundaresan@gmail.com';
       this.userID = 100;
-      this.username = 'janu'
+      this.username = 'janu';
     });
     this.items = [
       {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)}/*,
@@ -139,20 +149,20 @@ export class EventManagementComponent implements OnInit {
       {field: 'start', header: 'Start Date/Time'},
       {field: 'end', header: 'End Date/Time'},
     ];
-  };
+  }
 
   // build calendarView events based on userEvents
-  initCalendarViewEvents(){
+  initCalendarViewEvents() {
 
     this.Events = new Array();
-    this.events.forEach( myEvent =>{
-      let event = {
-        "title":myEvent.name,
-        "start": this.datePipe.transform(myEvent.start, 'yyyy-MM-dd'),
-        "end": this.datePipe.transform(myEvent.end, 'yyyy-MM-dd'),
-        "description": myEvent.description,
-        "eventID": myEvent.eventID,
-        "userID": myEvent.userID
+    this.events.forEach( myEvent => {
+      const event = {
+        'title': myEvent.name,
+        'start': myEvent.start,
+        'end': myEvent.end,
+        'description': myEvent.description,
+        'eventID': myEvent.eventID,
+        'userID': myEvent.userID
       };
       this.Events.push(event);
     });
@@ -169,7 +179,7 @@ export class EventManagementComponent implements OnInit {
 
   showEvents(type) {
     if (type === 'MyEvents') {
-      //this.events = this.myEvents;
+      // this.events = this.myEvents;
       this.showMyEvents = true;
     } else {
       this.showMyEvents = false;
@@ -183,52 +193,16 @@ export class EventManagementComponent implements OnInit {
     }
   }
 
-  /*choice(value) {
+  choice(value) {
     if (value === 'yes') {
-      let choice = {
+      const choice = {
         userID: this.userID,
         eventID: this.event.eventID,
         date: this.event.start
       };
-      if (this.type === 'join') {
-        this.appService.createChoice(choice, this.userID).subscribe(data => {
-          this.joinedEvents.push(this.event);
-          this.otherEvents = this.otherEvents.filter(event => {
-            return event.eventID !== this.event.eventID;
-          });
-          this.afterOperstion();
-
-        }, error => {
-          console.error(error.message);
-        });
-
-      } else if (this.type === 'quit') {
-        this.appService.deleteChoice(this.userID, this.event.eventID).subscribe(data => {
-
-          this.otherEvents.push(this.event);
-          console.log(this.event.eventID + data);
-          this.joinedEvents = this.joinedEvents.filter(event => {
-            return event.eventID !== this.event.eventID;
-          });
-          this.afterOperstion();
-
-        }, error => {
-          console.error(error.message);
-        });
-
-      } else if (this.type === 'del') {
-
-        //TODO del others joined event
+      if (this.type === 'del') {
         this.appService.deleteEvent(this.userID, this.event.eventID).subscribe(eventID => {
-
-          this.myEvents = this.myEvents.filter(event => {
-            return event.eventID !== Number(eventID);
-          });
-          this.joinedEvents = this.joinedEvents.filter(event => {
-            return event.eventID !== Number(eventID);
-          });
-          this.afterOperstion();
-          alert('del event success');
+          this.initEvents();
         }, error => {
           console.error(error.message);
         });
@@ -237,10 +211,10 @@ export class EventManagementComponent implements OnInit {
     }
     this.displayEventDialog = false;
 
-  }*/
+  }
 
   onSubmit(value) {
-    let event = {
+    const event = {
       name: value.name,
       description: value.description,
       start: value.start,
@@ -251,6 +225,7 @@ export class EventManagementComponent implements OnInit {
     // console.log(event);
     if (this.type === 'create') {
       this.appService.createEvent(event, this.userID).subscribe(eventID => {
+        this.display = false;
         this.initEvents();
         /* console.log('get create event id:' + eventID);
          event['eventID'] = eventID;
@@ -288,7 +263,7 @@ export class EventManagementComponent implements OnInit {
   }
 
   onModify(value) {
-    let event = {
+    const event = {
       name: value.name,
       description: value.description,
       start: value.start,
@@ -297,6 +272,7 @@ export class EventManagementComponent implements OnInit {
       eventID: this.event.eventID
     };
     this.appService.updateEvent(event).subscribe(data => {
+      this.display = false;
       this.initEvents();
 /*      let itemIndex = this.myEvents.findIndex(item => item.eventID == event.eventID);
       this.myEvents[itemIndex] = event;
@@ -307,7 +283,6 @@ export class EventManagementComponent implements OnInit {
       this.afterOperstion();*/
 
       this.display = false;
-      alert('update event success');
     }, error => {
       console.error(error.message);
     });
@@ -317,12 +292,10 @@ export class EventManagementComponent implements OnInit {
     this.display = false;
   }
 
-  CalendarView(show:boolean){
-    this.showCalendarView =show;
+  CalendarView(show: boolean) {
+    this.showCalendarView = show;
   }
 
-  afterOperstion() {
-    this.event=null;
-  }
+
 
 }

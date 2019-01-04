@@ -61,7 +61,7 @@
   <p-footer>
     <button type="button" *ngIf="type === 'create'" pButton [disabled]="!userform.valid"
             (click)="onSubmit(userform.value)" label="Create"></button>
-    <button type="button" *ngIf="type==='Modify'" pButton [disabled]="!userform.valid"
+    <button type="button" *ngIf="type==='modify'" pButton [disabled]="!userform.valid"
             (click)="onModify(userform.value)" label="Modify"></button>
     <button type="button" pButton (click)="onCancel()" label="Cancel" class="ui-button-secondary"></button>
   </p-footer>
@@ -94,19 +94,29 @@
 <div class="container ui-grid-row">
 <div class="ui-grid-col-6">
   <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="showCalendarView && events && events.length > 0 &&  Events && Events.length > 0 " [events]="Events" [options]="options"></p-fullCalendar>
-</div> test{{calendarEvent}}
-<!--
-<div *ngIf="calendarEvent" style="border:1px solid #ccc;" class="ui-grid-col-6">
-      <label >Event Name</label>
-      {{calendarEvent.title}}
-      <label >Event Start Date</label>
-       {{calendarEvent.start}}
-      <label >Event End Date</label>
-       {{calendarEvent.end}}
-      <label >Event Description</label>
-       {{calendarEvent.def.extendedProps.description}}
+</div>
+
+<div *ngIf="event" style="margin: 10px" class="ui-grid-col-4">
+  <div class="container">
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Name :</label>
+      {{event.name}}
     </div>
--->
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Start Date :</label>
+       {{event.start}}
+    </div>
+    <div class="form-group">
+      <label style="font-weight: bolder">Event End Date :</label>
+       {{event.end}}
+    </div>
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Description :</label>
+       {{event.description}}
+    </div>
+    </div>
+</div>
+
 
 </div>
 <div *ngIf="!showCalendarView && events && events.length > 0">
