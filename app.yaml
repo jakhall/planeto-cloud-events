@@ -7,7 +7,7 @@ handlers:
 - url: /api/.*
   script: main.app
 
-- url: /home
+- url: /(home|login|signup)
   static_files: dist/eventCalendar/index.html
   upload: dist/eventCalendar/index.html
 

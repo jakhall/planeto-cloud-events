@@ -51,7 +51,7 @@ module.exports = [[module.i, "@charset \"UTF-8\";\n/*\n* Deprecated: Use nova in
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXHByb2plY3RcXHBsYW5ldG8tY2xvdWQtZXZlbnRzL3NyY1xcc3R5bGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsK0VBQStFIiwiZmlsZSI6InNyYy9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbiJdfQ== */", '', '']]
+module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93YW50L1dlYnN0b3JtUHJvamVjdHMvcGxhbmV0by1jbG91ZC1ldmVudHMvc3JjL3N0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLCtFQUErRSIsImZpbGUiOiJzcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBZb3UgY2FuIGFkZCBnbG9iYWwgc3R5bGVzIHRvIHRoaXMgZmlsZSwgYW5kIGFsc28gaW1wb3J0IG90aGVyIHN0eWxlIGZpbGVzICovXG4iXX0= */", '', '']]
 
 /***/ }),
 
@@ -721,11 +721,11 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\node_modules\fullcalendar\dist\fullcalendar.min.css */"./node_modules/fullcalendar/dist/fullcalendar.min.css");
-__webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\node_modules\primeng\resources\themes\omega\theme.css */"./node_modules/primeng/resources/themes/omega/theme.css");
-__webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\node_modules\primeicons\primeicons.css */"./node_modules/primeicons/primeicons.css");
-__webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\node_modules\primeng\resources\primeng.min.css */"./node_modules/primeng/resources/primeng.min.css");
-module.exports = __webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\src\styles.scss */"./src/styles.scss");
+__webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/node_modules/fullcalendar/dist/fullcalendar.min.css */"./node_modules/fullcalendar/dist/fullcalendar.min.css");
+__webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/node_modules/primeng/resources/themes/omega/theme.css */"./node_modules/primeng/resources/themes/omega/theme.css");
+__webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/node_modules/primeicons/primeicons.css */"./node_modules/primeicons/primeicons.css");
+__webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/node_modules/primeng/resources/primeng.min.css */"./node_modules/primeng/resources/primeng.min.css");
+module.exports = __webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })

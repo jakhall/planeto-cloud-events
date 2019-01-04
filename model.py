@@ -163,7 +163,8 @@ def getMostDate(eventID):
     return None
 
 
-class User(ndb.Model, UserMixin):
+#class User(ndb.Model, UserMixin):
+class User(ndb.Model):
   id = ndb.IntegerProperty()
   username = ndb.StringProperty()
   firstname = ndb.StringProperty()

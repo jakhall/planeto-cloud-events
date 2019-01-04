@@ -9,7 +9,11 @@ import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '43uyi573858fd322343r'
+app.config.update(
+    SESSION_COOKIE_SAMESITE='Lax'
+)
 loginManager = LoginManager()
+loginManager.session_protection = None
 loginManager.init_app(app)
 
 if __name__ == '__main__':
@@ -117,7 +121,7 @@ def handleDeleteEvent(userID, eventID):
   return make_response(str(eventID), 200)
 
 
-@app.route('/api/event/<string:type>/<int:userID>/', methods=['GET'])
+@app.route('/api/event/<string:type>/<int:userID>', methods=['GET'])
 def handleGetEvents(type, userID):
   eventList = []
   if type == 'userEvents':
@@ -151,17 +155,18 @@ def handleLogin():
   response = make_response(jsonify(message='Username of password incorrect'), 500)
   if userInDB:
     if userInDB[0].password == user['password']:
-       login_user(userInDB[0])
+#       login_user(userInDB[0])
        response = make_response(jsonify(userAsDict(current_user)), 200)
   return response
 
-  @app.route('/api/user/logout', methods=['GET'])
-  def handleLogout():
-      logout_user()
-      return make_response(jsonify(message='Logout Successful'), 200)
+@app.route('/api/user/logout', methods=['GET'])
+def handleLogout():
+#   logout_user()
+    return make_response(jsonify(message='Logout Successful'), 200)
+
 
 @app.route('/api/session/user', methods=['GET'])
-@login_required
+#@login_required
 def handleGetCurrentUser():
     return make_response(jsonify(userAsDict(current_user)), 200)
 

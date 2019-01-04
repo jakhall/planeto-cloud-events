@@ -286,7 +286,7 @@ module.exports = "<p-menubar [model]=\"items\">\n  <div *ngIf=\"!(isLoggedIn | a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".myAccount {\n  padding: 10px;\n  text-decoration: none; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL2FwcC1oZWFkZXIvQzpcXFVzZXJzXFxiYWNodVxcRG9jdW1lbnRzXFxwcm9qZWN0XFxwbGFuZXRvLWNsb3VkLWV2ZW50cy9zcmNcXGFwcFxcaG9tZS1wYWdlXFxhcHAtaGVhZGVyXFxhcHAtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYTtFQUNiLHNCQUFxQixFQUN0QiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9hcHAtaGVhZGVyL2FwcC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXlBY2NvdW50IHtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuLy8udWktbWVudWl0ZW0udWktbWVudWl0ZW0tYWN0aXZlID4gLnVpLW1lbnVpdGVtLWxpbmsge1xyXG4vLyAgY29sb3I6ICNjY2NjY2MgIWltcG9ydGFudDtcclxuLy8gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XHJcbi8vfVxyXG4vL1xyXG4vLy51aS1zdGF0ZS1hY3RpdmUge1xyXG4vLyAgICBjb2xvcjogI2NjY2NjYyAhaW1wb3J0YW50O1xyXG4vLyAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4vLyAgfVxyXG5cclxuIl19 */"
+module.exports = ".myAccount {\n  padding: 10px;\n  text-decoration: none; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93YW50L1dlYnN0b3JtUHJvamVjdHMvcGxhbmV0by1jbG91ZC1ldmVudHMvc3JjL2FwcC9ob21lLXBhZ2UvYXBwLWhlYWRlci9hcHAtaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYTtFQUNiLHNCQUFxQixFQUN0QiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9hcHAtaGVhZGVyL2FwcC1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXlBY2NvdW50IHtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuLy8udWktbWVudWl0ZW0udWktbWVudWl0ZW0tYWN0aXZlID4gLnVpLW1lbnVpdGVtLWxpbmsge1xyXG4vLyAgY29sb3I6ICNjY2NjY2MgIWltcG9ydGFudDtcclxuLy8gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XHJcbi8vfVxyXG4vL1xyXG4vLy51aS1zdGF0ZS1hY3RpdmUge1xyXG4vLyAgICBjb2xvcjogI2NjY2NjYyAhaW1wb3J0YW50O1xyXG4vLyAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4vLyAgfVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -358,7 +358,7 @@ var AppHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p-dialog *ngIf=\"userform\" header=\"{{title}}\" [(visible)]=\"display\" [modal]=\"true\" [responsive]=\"true\" [width]=\"900\"\n          [minWidth]=\"200\" [minY]=\"70\"\n          [maximizable]=\"true\" [baseZIndex]=\"10000\">\n    <span>\n      <div class=\"login-wrap\">\n  <div class=\"login-html\">\n    <div class=\"login-form\">\n      <div class=\"sign-up-htm\">\n        <form [formGroup]=\"userform\">\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Name</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"name\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Name is required\"\n                         *ngIf=\"!userform.controls['name'].valid&&userform.controls['name'].dirty\"></p-message>\n            </div>\n          </div>\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Start Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"start\" [showIcon]=\"true\"></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Start Date is required\"\n                         *ngIf=\"!userform.controls['start'].valid&&userform.controls['start'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n           <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event End Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"end\" [showIcon]=\"true\" ></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event End Date is required\"\n                         *ngIf=\"!userform.controls['end'].valid&&userform.controls['end'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Description</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"description\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"description\"\n                         *ngIf=\"!userform.controls['description'].valid&&userform.controls['description'].dirty\"></p-message>\n            </div>\n          </div>\n        </form>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n    </span>\n  <p-footer>\n    <button type=\"button\" *ngIf=\"type === 'create'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onSubmit(userform.value)\" label=\"Create\"></button>\n    <button type=\"button\" *ngIf=\"type==='Modify'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onModify(userform.value)\" label=\"Modify\"></button>\n    <button type=\"button\" pButton (click)=\"onCancel()\" label=\"Cancel\" class=\"ui-button-secondary\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog [(visible)]=\"displayEventDialog\">\n  <h3>{{dialogMessage}}</h3>\n  <div>\n    <p-button label=\"Yes\" (onClick)=\"choice('yes')\"></p-button>\n    <p-button label=\"No\" (onClick)=\"choice('no')\"></p-button>\n  </div>\n</p-dialog>\n\n\n<p-splitButton\n  (onClick)=\"CalendarView(true)\" [model]=\"calendarItem\"\n  label=\"Switch View\"\n></p-splitButton>\n<button type=\"button\" style=\"margin: 5px\" (click)=\"showDialog('create')\" pButton\n        label=\"CreateEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showDialog('modify')\" pButton\n        label=\"ModifyEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showEventManagementDialog('del')\" pButton\n        label=\"DelEvent\"></button>\n<!--<button *ngIf=\"!showJoinedEvents && !showMyEvents\" pButton type=\"button\"\n        label=\"JoinEvent\"  (click)=\"showEventManagementDialog('join')\"  ></button>\n<button *ngIf=\"showJoinedEvents && !showMyEvents\" pButton type=\"button\"\n        label=\"QuitEvent\"  (click)=\"showEventManagementDialog('quit')\"  ></button>-->\n<br>\n<div class=\"container ui-grid-row\">\n<div class=\"ui-grid-col-6\">\n  <p-fullCalendar class=\"fc-basic-view\"  #ucCalendar *ngIf=\"showCalendarView && events && events.length > 0 &&  Events && Events.length > 0 \" [events]=\"Events\" [options]=\"options\"></p-fullCalendar>\n</div> test{{calendarEvent}}\n<!--\n<div *ngIf=\"calendarEvent\" style=\"border:1px solid #ccc;\" class=\"ui-grid-col-6\">\n      <label >Event Name</label>\n      {{calendarEvent.title}}\n      <label >Event Start Date</label>\n       {{calendarEvent.start}}\n      <label >Event End Date</label>\n       {{calendarEvent.end}}\n      <label >Event Description</label>\n       {{calendarEvent.def.extendedProps.description}}\n    </div>\n-->\n\n</div>\n<div *ngIf=\"!showCalendarView && events && events.length > 0\">\n  <p-table #dt [columns]=\"cols\" [value]=\"events\" [(selection)]=\"event\" [paginator]=\"true\" [rows]=\"10\">\n    <ng-template pTemplate=\"caption\">\n\n      <div style=\"text-align: left\">\n        <p-tabMenu [model]=\"items\" [activeItem]=\"items[0]\"></p-tabMenu>\n        <input  type=\"text\" pInputText size=\"50\" placeholder=\"Search\"\n                (input)=\"dt.filterGlobal($event.target.value, 'contains')\" style=\"width:auto\">\n        <i class=\"pi pi-search\" style=\"margin:4px 4px 0 0\"></i>\n      </div>\n    </ng-template>\n    <ng-template pTemplate=\"header\" let-columns>\n      <tr>\n        <th style=\"width: 3em\"></th>\n        <th *ngFor=\"let col of columns\" [ngSwitch]=\"col.field\">\n          {{col.header}}\n          <input *ngSwitchCase=\"'name'\" pInputText type=\"text\"\n                 (input)=\"dt.filter($event.target.value, col.field, col.filterMatchMode)\">\n        </th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-rowData let-columns=\"columns\">\n      <tr [pSelectableRow]=\"rowData\">\n        <td>\n          <p-tableRadioButton [value]=\"rowData\"></p-tableRadioButton>\n        </td>\n        <td *ngFor=\"let col of columns\">\n          {{rowData[col.field]}}\n        </td>\n      </tr>\n    </ng-template>\n\n  </p-table>\n\n</div>\n"
+module.exports = "<p-dialog *ngIf=\"userform\" header=\"{{title}}\" [(visible)]=\"display\" [modal]=\"true\" [responsive]=\"true\" [width]=\"900\"\n          [minWidth]=\"200\" [minY]=\"70\"\n          [maximizable]=\"true\" [baseZIndex]=\"10000\">\n    <span>\n      <div class=\"login-wrap\">\n  <div class=\"login-html\">\n    <div class=\"login-form\">\n      <div class=\"sign-up-htm\">\n        <form [formGroup]=\"userform\">\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Name</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"name\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Name is required\"\n                         *ngIf=\"!userform.controls['name'].valid&&userform.controls['name'].dirty\"></p-message>\n            </div>\n          </div>\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event Start Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"start\" [showIcon]=\"true\"></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event Start Date is required\"\n                         *ngIf=\"!userform.controls['start'].valid&&userform.controls['start'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n           <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Event End Date</label></div>\n            <div class=\"ui-grid-col-6\">\n              <p-calendar formControlName=\"end\" [showIcon]=\"true\" ></p-calendar>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"Event End Date is required\"\n                         *ngIf=\"!userform.controls['end'].valid&&userform.controls['end'].dirty\"></p-message>\n            </div>\n          </div>\n          </div>\n\n          <div class=\"group ui-grid-row\">\n            <div class=\"ui-grid-col-4\" style=\"padding: 20px;\">\n              <label class=\"label\">Description</label></div>\n            <div class=\"ui-grid-col-6\">\n              <input pInputText class=\"input\" type=\"text\" formControlName=\"description\" placeholder=\"Required\"/></div>\n            <div class=\"ui-grid-col-6\">\n              <p-message severity=\"error\" text=\"description\"\n                         *ngIf=\"!userform.controls['description'].valid&&userform.controls['description'].dirty\"></p-message>\n            </div>\n          </div>\n        </form>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n    </span>\n  <p-footer>\n    <button type=\"button\" *ngIf=\"type === 'create'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onSubmit(userform.value)\" label=\"Create\"></button>\n    <button type=\"button\" *ngIf=\"type==='modify'\" pButton [disabled]=\"!userform.valid\"\n            (click)=\"onModify(userform.value)\" label=\"Modify\"></button>\n    <button type=\"button\" pButton (click)=\"onCancel()\" label=\"Cancel\" class=\"ui-button-secondary\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog [(visible)]=\"displayEventDialog\">\n  <h3>{{dialogMessage}}</h3>\n  <div>\n    <p-button label=\"Yes\" (onClick)=\"choice('yes')\"></p-button>\n    <p-button label=\"No\" (onClick)=\"choice('no')\"></p-button>\n  </div>\n</p-dialog>\n\n\n<p-splitButton\n  (onClick)=\"CalendarView(!showCalendarView)\" [model]=\"calendarItem\"\n  label=\"Switch View\"\n></p-splitButton>\n<button type=\"button\" style=\"margin: 5px\" (click)=\"showDialog('create')\" pButton\n        label=\"CreateEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showDialog('modify')\" pButton\n        label=\"ModifyEvent\"></button>\n<button type=\"button\" style=\"margin: 5px\" [disabled]=\"!(event && userID===event.userID)\" (click)=\"showEventManagementDialog('del')\" pButton\n        label=\"DelEvent\"></button>\n<!--<button *ngIf=\"!showJoinedEvents && !showMyEvents\" pButton type=\"button\"\n        label=\"JoinEvent\"  (click)=\"showEventManagementDialog('join')\"  ></button>\n<button *ngIf=\"showJoinedEvents && !showMyEvents\" pButton type=\"button\"\n        label=\"QuitEvent\"  (click)=\"showEventManagementDialog('quit')\"  ></button>-->\n<div class=\"container ui-grid-row\">\n<div class=\"ui-grid-col-6\">\n  <p-fullCalendar class=\"fc-basic-view\"  #ucCalendar *ngIf=\"showCalendarView && events && events.length > 0 &&  Events && Events.length > 0 \" [events]=\"Events\" [options]=\"options\"></p-fullCalendar>\n</div> test{{calendarEvent}}\n<!--\n<div *ngIf=\"calendarEvent\" style=\"border:1px solid #ccc;\" class=\"ui-grid-col-6\">\n      <label >Event Name</label>\n      {{calendarEvent.title}}\n      <label >Event Start Date</label>\n       {{calendarEvent.start}}\n      <label >Event End Date</label>\n       {{calendarEvent.end}}\n      <label >Event Description</label>\n       {{calendarEvent.def.extendedProps.description}}\n    </div>\n-->\n\n</div>\n<div *ngIf=\"!showCalendarView && events && events.length > 0\">\n  <p-table #dt [columns]=\"cols\" [value]=\"events\" [(selection)]=\"event\" [paginator]=\"true\" [rows]=\"10\">\n    <ng-template pTemplate=\"caption\">\n\n      <div style=\"text-align: left\">\n        <p-tabMenu [model]=\"items\" [activeItem]=\"items[0]\"></p-tabMenu>\n        <input  type=\"text\" pInputText size=\"50\" placeholder=\"Search\"\n                (input)=\"dt.filterGlobal($event.target.value, 'contains')\" style=\"width:auto\">\n        <i class=\"pi pi-search\" style=\"margin:4px 4px 0 0\"></i>\n      </div>\n    </ng-template>\n    <ng-template pTemplate=\"header\" let-columns>\n      <tr>\n        <th style=\"width: 3em\"></th>\n        <th *ngFor=\"let col of columns\" [ngSwitch]=\"col.field\">\n          {{col.header}}\n          <input *ngSwitchCase=\"'name'\" pInputText type=\"text\"\n                 (input)=\"dt.filter($event.target.value, col.field, col.filterMatchMode)\">\n        </th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-rowData let-columns=\"columns\">\n      <tr [pSelectableRow]=\"rowData\">\n        <td>\n          <p-tableRadioButton [value]=\"rowData\"></p-tableRadioButton>\n        </td>\n        <td *ngFor=\"let col of columns\">\n          {{rowData[col.field]}}\n        </td>\n      </tr>\n    </ng-template>\n\n  </p-table>\n\n</div>\n"
 
 /***/ }),
 
@@ -388,6 +388,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _services_app_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/app.service */ "./src/app/services/app.service.ts");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -429,8 +440,8 @@ var EventManagementComponent = /** @class */ (function () {
             this.title = 'Modify Event';
             this.userform = this.fb.group({
                 'name': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.event.name, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-                'start': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.event.start, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-                'end': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.event.end, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+                'start': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date(this.event.start), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+                'end': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date(this.event.end), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
                 'description': new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.event.description, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
         }
@@ -450,6 +461,19 @@ var EventManagementComponent = /** @class */ (function () {
         }
         this.displayEventDialog = true;
     };
+    EventManagementComponent.prototype.chooseCalendarEvent = function (date) {
+        // self.calendarEvent =  new Event(date.event.title, date.event.start, date.event.end,date.event.extendedProps.description);
+        var event = {
+            'name': date.event.title,
+            'start': date.event.start,
+            'end': date.event.end,
+            'description': date.event.extendedProps.description,
+            'userID': date.event.extendedProps.userID,
+            'eventID': date.event.extendedProps.eventID
+        };
+        this.event = event;
+        console.log(this.event);
+    };
     EventManagementComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.options = {
@@ -458,20 +482,18 @@ var EventManagementComponent = /** @class */ (function () {
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            eventClick: function (date) {
-                //self.calendarEvent =  new Event(date.event.title, date.event.start, date.event.end,date.event.extendedProps.description);
-            },
         };
+        this.options = __assign({}, this.options, { 'eventClick': this.chooseCalendarEvent });
         // test full calendar
         this.appService.getUser(this.userID).subscribe(function (data) {
             _this.fullName = data.firstname + ' ' + data.lastname;
             _this.email = data.email;
             _this.userID = data.userID;
             _this.username = data.username;
-            localStorage.setItem("firstName", data.firstname);
-            localStorage.setItem("lastname", data.lastname);
-            localStorage.setItem("email", data.email);
-            localStorage.setItem("username", data.username);
+            localStorage.setItem('firstName', data.firstname);
+            localStorage.setItem('lastname', data.lastname);
+            localStorage.setItem('email', data.email);
+            localStorage.setItem('username', data.username);
             _this.appService.loggedIn.next(true);
             _this.appService.userData.next(data.username);
             _this.initEvents();
@@ -487,12 +509,16 @@ var EventManagementComponent = /** @class */ (function () {
             {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}*/
         ];
         this.calendarItem = [
-            { label: 'EventsTableView', command: function () {
+            {
+                label: 'EventsTableView', command: function () {
                     _this.CalendarView(false);
-                } },
-            { label: 'EventsCalendarView', command: function () {
+                }
+            },
+            {
+                label: 'EventsCalendarView', command: function () {
                     _this.CalendarView(true);
-                } }
+                }
+            }
         ];
         this.cols = [
             { field: 'name', header: 'EventName' },
@@ -508,12 +534,12 @@ var EventManagementComponent = /** @class */ (function () {
         this.Events = new Array();
         this.events.forEach(function (myEvent) {
             var event = {
-                "title": myEvent.name,
-                "start": _this.datePipe.transform(myEvent.start, 'yyyy-MM-dd'),
-                "end": _this.datePipe.transform(myEvent.end, 'yyyy-MM-dd'),
-                "description": myEvent.description,
-                "eventID": myEvent.eventID,
-                "userID": myEvent.userID
+                'title': myEvent.name,
+                'start': _this.datePipe.transform(myEvent.start, 'yyyy-MM-dd'),
+                'end': _this.datePipe.transform(myEvent.end, 'yyyy-MM-dd'),
+                'description': myEvent.description,
+                'eventID': myEvent.eventID,
+                'userID': myEvent.userID
             };
             _this.Events.push(event);
         });
@@ -524,6 +550,7 @@ var EventManagementComponent = /** @class */ (function () {
         this.appService.getEvents(this.userID, 'userEvents').subscribe(function (data) {
             _this.events = data;
             _this.initCalendarViewEvents();
+            _this.display = false;
         }, function (error) { return console.error(error.message); });
     };
     EventManagementComponent.prototype.showEvents = function (type) {
@@ -542,61 +569,55 @@ var EventManagementComponent = /** @class */ (function () {
                   }*/
         }
     };
-    /*choice(value) {
-      if (value === 'yes') {
-        let choice = {
-          userID: this.userID,
-          eventID: this.event.eventID,
-          date: this.event.start
-        };
-        if (this.type === 'join') {
-          this.appService.createChoice(choice, this.userID).subscribe(data => {
-            this.joinedEvents.push(this.event);
-            this.otherEvents = this.otherEvents.filter(event => {
-              return event.eventID !== this.event.eventID;
-            });
-            this.afterOperstion();
-  
-          }, error => {
-            console.error(error.message);
-          });
-  
-        } else if (this.type === 'quit') {
-          this.appService.deleteChoice(this.userID, this.event.eventID).subscribe(data => {
-  
-            this.otherEvents.push(this.event);
-            console.log(this.event.eventID + data);
-            this.joinedEvents = this.joinedEvents.filter(event => {
-              return event.eventID !== this.event.eventID;
-            });
-            this.afterOperstion();
-  
-          }, error => {
-            console.error(error.message);
-          });
-  
-        } else if (this.type === 'del') {
-  
-          //TODO del others joined event
-          this.appService.deleteEvent(this.userID, this.event.eventID).subscribe(eventID => {
-  
-            this.myEvents = this.myEvents.filter(event => {
-              return event.eventID !== Number(eventID);
-            });
-            this.joinedEvents = this.joinedEvents.filter(event => {
-              return event.eventID !== Number(eventID);
-            });
-            this.afterOperstion();
-            alert('del event success');
-          }, error => {
-            console.error(error.message);
-          });
+    EventManagementComponent.prototype.choice = function (value) {
+        var _this = this;
+        if (value === 'yes') {
+            var choice = {
+                userID: this.userID,
+                eventID: this.event.eventID,
+                date: this.event.start
+            };
+            if (this.type === 'join') {
+                this.appService.createChoice(choice, this.userID).subscribe(function (data) {
+                    _this.joinedEvents.push(_this.event);
+                    _this.otherEvents = _this.otherEvents.filter(function (event) {
+                        return event.eventID !== _this.event.eventID;
+                    });
+                    _this.afterOperstion();
+                }, function (error) {
+                    console.error(error.message);
+                });
+            }
+            else if (this.type === 'quit') {
+                this.appService.deleteChoice(this.userID, this.event.eventID).subscribe(function (data) {
+                    _this.otherEvents.push(_this.event);
+                    console.log(_this.event.eventID + data);
+                    _this.joinedEvents = _this.joinedEvents.filter(function (event) {
+                        return event.eventID !== _this.event.eventID;
+                    });
+                    _this.afterOperstion();
+                }, function (error) {
+                    console.error(error.message);
+                });
+            }
+            else if (this.type === 'del') {
+                //TODO del others joined event
+                this.appService.deleteEvent(this.userID, this.event.eventID).subscribe(function (eventID) {
+                    // this.myEvents = this.myEvents.filter(event => {
+                    //   return event.eventID !== Number(eventID);
+                    // });
+                    // this.joinedEvents = this.joinedEvents.filter(event => {
+                    //   return event.eventID !== Number(eventID);
+                    // });
+                    _this.initEvents();
+                    alert('del event success');
+                }, function (error) {
+                    console.error(error.message);
+                });
+            }
         }
-  
-      }
-      this.displayEventDialog = false;
-  
-    }*/
+        this.displayEventDialog = false;
+    };
     EventManagementComponent.prototype.onSubmit = function (value) {
         var _this = this;
         var event = {
@@ -607,7 +628,6 @@ var EventManagementComponent = /** @class */ (function () {
             userID: this.userID,
             eventID: null
         };
-        // console.log(event);
         if (this.type === 'create') {
             this.appService.createEvent(event, this.userID).subscribe(function (eventID) {
                 _this.initEvents();
@@ -655,14 +675,6 @@ var EventManagementComponent = /** @class */ (function () {
         };
         this.appService.updateEvent(event).subscribe(function (data) {
             _this.initEvents();
-            /*      let itemIndex = this.myEvents.findIndex(item => item.eventID == event.eventID);
-                  this.myEvents[itemIndex] = event;
-            
-                  itemIndex = this.joinedEvents.findIndex(item => item.eventID == event.eventID);
-                  this.joinedEvents[itemIndex] = event;
-            
-                  this.afterOperstion();*/
-            _this.display = false;
             alert('update event success');
         }, function (error) {
             console.error(error.message);
@@ -673,6 +685,7 @@ var EventManagementComponent = /** @class */ (function () {
     };
     EventManagementComponent.prototype.CalendarView = function (show) {
         this.showCalendarView = show;
+        this.afterOperstion();
     };
     EventManagementComponent.prototype.afterOperstion = function () {
         this.event = null;
@@ -935,7 +948,7 @@ module.exports = "<div class=\"login\">\n  <h2>Login</h2>\n  <form [formGroup]=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL2xvZ2luL0M6XFxVc2Vyc1xcYmFjaHVcXERvY3VtZW50c1xccHJvamVjdFxccGxhbmV0by1jbG91ZC1ldmVudHMvc3JjXFxhcHBcXGhvbWUtcGFnZVxcbG9naW5cXGxvZ2luLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0RBQWlEO0VBQ2pELGNBQWE7RUFDYix3QkFBdUI7RUFDdkIsb0JBQW1CO0VBQ25CLHVCQUFzQjtFQUN0QixhQUFZO0VBQ1osZUFBc0I7RUFDdEIsa0JBQWlCLEVBcURsQjtFQTdERDtJQVlJLFdBQVUsRUFDWDtFQWJIOzs7SUFrQkksWUFBVztJQUNYLG1CQUFrQjtJQUNsQixjQUFhO0lBQ2Isc0JBQXFCO0lBQ3JCLHVCQUFzQjtJQUN0Qix1QkFBc0IsRUFDdkI7RUF4Qkg7SUEyQkksMEJBQXlCO0lBQ3pCLGFBQVk7SUFDWixtQkFBa0I7SUFDbEIsY0FBYTtJQUNiLGFBQVk7SUFDWixnQkFBZTtJQUNmLFlBQVcsRUFDWjtFQWxDSDtJQXFDSSxtQkFBa0I7SUFDbEIsMEJBQXlCLEVBQzFCO0VBdkNIOztJQTJDSSxZQUFXO0lBQ1gsV0FBVSxFQUNYO0VBN0NIO0lBZ0RJLGNBQWE7SUFDYix5QkFBd0IsRUFDekI7RUFsREg7SUFxREksWUFBVztJQUNYLFlBQVc7SUFDWCxlQUFjLEVBQ2Y7RUF4REg7SUEyREksY0FBYSxFQUNkO0VBRUg7RUFDRTs7SUFFRSxZQUFXLEVBQ1osRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb2dpbiB7XG4gIGZvbnQtZmFtaWx5OiBcIkNvbWljIFNhbnMgTVNcIiwgY3Vyc2l2ZSwgc2Fucy1zZXJpZjtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweDtcbiAgY29sb3I6IHJnYigzNywgMzcsIDM3KTtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG5cblxuICBmb3JtIHtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgaW5wdXRbdHlwZT10ZXh0XSxcbiAgaW5wdXRbdHlwZT1wYXNzd29yZF0sXG4gIGlucHV0W3R5cGU9ZW1haWxdIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB9XG5cbiAgYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG5cbiAgLmNhbmNlbGJ0biB7XG4gICAgcGFkZGluZzogMTRweCAyMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XG4gIH1cblxuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICBmbG9hdDogbGVmdDtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgLmNvbnRhaW5lciB7XG4gICAgcGFkZGluZzogMTZweDtcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gMzZweCk7XG4gIH1cblxuICAuY2xlYXJmaXg6OmFmdGVyIHtcbiAgICBjb250ZW50OiBcIlwiO1xuICAgIGNsZWFyOiBib3RoO1xuICAgIGRpc3BsYXk6IHRhYmxlO1xuICB9XG5cbiAgYSB7XG4gICAgY29sb3I6IGJpc3F1ZTtcbiAgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzAwcHgpIHtcbiAgLmNhbmNlbGJ0bixcbiAgLnNpZ251cGJ0biB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cbiJdfQ== */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93YW50L1dlYnN0b3JtUHJvamVjdHMvcGxhbmV0by1jbG91ZC1ldmVudHMvc3JjL2FwcC9ob21lLXBhZ2UvbG9naW4vbG9naW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrREFBaUQ7RUFDakQsY0FBYTtFQUNiLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsdUJBQXNCO0VBQ3RCLGFBQVk7RUFDWixlQUFzQjtFQUN0QixrQkFBaUIsRUFxRGxCO0VBN0REO0lBWUksV0FBVSxFQUNYO0VBYkg7OztJQWtCSSxZQUFXO0lBQ1gsbUJBQWtCO0lBQ2xCLGNBQWE7SUFDYixzQkFBcUI7SUFDckIsdUJBQXNCO0lBQ3RCLHVCQUFzQixFQUN2QjtFQXhCSDtJQTJCSSwwQkFBeUI7SUFDekIsYUFBWTtJQUNaLG1CQUFrQjtJQUNsQixjQUFhO0lBQ2IsYUFBWTtJQUNaLGdCQUFlO0lBQ2YsWUFBVyxFQUNaO0VBbENIO0lBcUNJLG1CQUFrQjtJQUNsQiwwQkFBeUIsRUFDMUI7RUF2Q0g7O0lBMkNJLFlBQVc7SUFDWCxXQUFVLEVBQ1g7RUE3Q0g7SUFnREksY0FBYTtJQUNiLHlCQUF3QixFQUN6QjtFQWxESDtJQXFESSxZQUFXO0lBQ1gsWUFBVztJQUNYLGVBQWMsRUFDZjtFQXhESDtJQTJESSxjQUFhLEVBQ2Q7RUFFSDtFQUNFOztJQUVFLFlBQVcsRUFDWixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9tZS1wYWdlL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcbiAgZm9udC1mYW1pbHk6IFwiQ29taWMgU2FucyBNU1wiLCBjdXJzaXZlLCBzYW5zLXNlcmlmO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgbWFyZ2luOiAyMHB4O1xuICBjb2xvcjogcmdiKDM3LCAzNywgMzcpO1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcblxuXG4gIGZvcm0ge1xuICAgIHdpZHRoOiA1MCU7XG4gIH1cblxuICBpbnB1dFt0eXBlPXRleHRdLFxuICBpbnB1dFt0eXBlPXBhc3N3b3JkXSxcbiAgaW5wdXRbdHlwZT1lbWFpbF0ge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmc6IDEycHggMjBweDtcbiAgICBtYXJnaW46IDhweCAwO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIH1cblxuICBidXR0b24ge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIHBhZGRpbmc6IDE0cHggMjBweDtcbiAgICBtYXJnaW46IDhweCAwO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cblxuICAuY2FuY2VsYnRuIHtcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNjtcbiAgfVxuXG4gIC5jYW5jZWxidG4sXG4gIC5zaWdudXBidG4ge1xuICAgIGZsb2F0OiBsZWZ0O1xuICAgIHdpZHRoOiA1MCU7XG4gIH1cblxuICAuY29udGFpbmVyIHtcbiAgICBwYWRkaW5nOiAxNnB4O1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAzNnB4KTtcbiAgfVxuXG4gIC5jbGVhcmZpeDo6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6IFwiXCI7XG4gICAgY2xlYXI6IGJvdGg7XG4gICAgZGlzcGxheTogdGFibGU7XG4gIH1cblxuICBhIHtcbiAgICBjb2xvcjogYmlzcXVlO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -1035,7 +1048,7 @@ module.exports = "<div class=\"login\">\n  <h2>Signup</h2>\n  <form [formGroup]=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL3NpZ251cC9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXHByb2plY3RcXHBsYW5ldG8tY2xvdWQtZXZlbnRzL3NyY1xcYXBwXFxob21lLXBhZ2VcXHNpZ251cFxcc2lnbnVwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0RBQWlEO0VBQ2pELGNBQWE7RUFDYix3QkFBdUI7RUFDdkIsb0JBQW1CO0VBQ25CLHVCQUFzQjtFQUN0QixhQUFZO0VBQ1osZUFBc0I7RUFDdEIsa0JBQWlCLEVBcURsQjtFQTdERDtJQVlJLFdBQVUsRUFDWDtFQWJIOzs7SUFrQkksWUFBVztJQUNYLG1CQUFrQjtJQUNsQixjQUFhO0lBQ2Isc0JBQXFCO0lBQ3JCLHVCQUFzQjtJQUN0Qix1QkFBc0IsRUFDdkI7RUF4Qkg7SUEyQkksMEJBQXlCO0lBQ3pCLGFBQVk7SUFDWixtQkFBa0I7SUFDbEIsY0FBYTtJQUNiLGFBQVk7SUFDWixnQkFBZTtJQUNmLFlBQVcsRUFDWjtFQWxDSDtJQXFDSSxtQkFBa0I7SUFDbEIsMEJBQXlCLEVBQzFCO0VBdkNIOztJQTJDSSxZQUFXO0lBQ1gsV0FBVSxFQUNYO0VBN0NIO0lBZ0RJLGNBQWE7SUFDYix5QkFBd0IsRUFDekI7RUFsREg7SUFxREksWUFBVztJQUNYLFlBQVc7SUFDWCxlQUFjLEVBQ2Y7RUF4REg7SUEyREksY0FBYSxFQUNkO0VBRUg7RUFDRTs7SUFFRSxZQUFXLEVBQ1osRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcbiAgZm9udC1mYW1pbHk6IFwiQ29taWMgU2FucyBNU1wiLCBjdXJzaXZlLCBzYW5zLXNlcmlmO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgbWFyZ2luOiAyMHB4O1xuICBjb2xvcjogcmdiKDM3LCAzNywgMzcpO1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcblxuXG4gIGZvcm0ge1xuICAgIHdpZHRoOiA1MCU7XG4gIH1cblxuICBpbnB1dFt0eXBlPXRleHRdLFxuICBpbnB1dFt0eXBlPXBhc3N3b3JkXSxcbiAgaW5wdXRbdHlwZT1lbWFpbF0ge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmc6IDEycHggMjBweDtcbiAgICBtYXJnaW46IDhweCAwO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIH1cblxuICBidXR0b24ge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIHBhZGRpbmc6IDE0cHggMjBweDtcbiAgICBtYXJnaW46IDhweCAwO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cblxuICAuY2FuY2VsYnRuIHtcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNjtcbiAgfVxuXG4gIC5jYW5jZWxidG4sXG4gIC5zaWdudXBidG4ge1xuICAgIGZsb2F0OiBsZWZ0O1xuICAgIHdpZHRoOiA1MCU7XG4gIH1cblxuICAuY29udGFpbmVyIHtcbiAgICBwYWRkaW5nOiAxNnB4O1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAzNnB4KTtcbiAgfVxuXG4gIC5jbGVhcmZpeDo6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6IFwiXCI7XG4gICAgY2xlYXI6IGJvdGg7XG4gICAgZGlzcGxheTogdGFibGU7XG4gIH1cblxuICBhIHtcbiAgICBjb2xvcjogYmlzcXVlO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxufVxuIl19 */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93YW50L1dlYnN0b3JtUHJvamVjdHMvcGxhbmV0by1jbG91ZC1ldmVudHMvc3JjL2FwcC9ob21lLXBhZ2Uvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtEQUFpRDtFQUNqRCxjQUFhO0VBQ2Isd0JBQXVCO0VBQ3ZCLG9CQUFtQjtFQUNuQix1QkFBc0I7RUFDdEIsYUFBWTtFQUNaLGVBQXNCO0VBQ3RCLGtCQUFpQixFQXFEbEI7RUE3REQ7SUFZSSxXQUFVLEVBQ1g7RUFiSDs7O0lBa0JJLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsY0FBYTtJQUNiLHNCQUFxQjtJQUNyQix1QkFBc0I7SUFDdEIsdUJBQXNCLEVBQ3ZCO0VBeEJIO0lBMkJJLDBCQUF5QjtJQUN6QixhQUFZO0lBQ1osbUJBQWtCO0lBQ2xCLGNBQWE7SUFDYixhQUFZO0lBQ1osZ0JBQWU7SUFDZixZQUFXLEVBQ1o7RUFsQ0g7SUFxQ0ksbUJBQWtCO0lBQ2xCLDBCQUF5QixFQUMxQjtFQXZDSDs7SUEyQ0ksWUFBVztJQUNYLFdBQVUsRUFDWDtFQTdDSDtJQWdESSxjQUFhO0lBQ2IseUJBQXdCLEVBQ3pCO0VBbERIO0lBcURJLFlBQVc7SUFDWCxZQUFXO0lBQ1gsZUFBYyxFQUNmO0VBeERIO0lBMkRJLGNBQWEsRUFDZDtFQUVIO0VBQ0U7O0lBRUUsWUFBVyxFQUNaLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob21lLXBhZ2Uvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb2dpbiB7XG4gIGZvbnQtZmFtaWx5OiBcIkNvbWljIFNhbnMgTVNcIiwgY3Vyc2l2ZSwgc2Fucy1zZXJpZjtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMjBweDtcbiAgY29sb3I6IHJnYigzNywgMzcsIDM3KTtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG5cblxuICBmb3JtIHtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgaW5wdXRbdHlwZT10ZXh0XSxcbiAgaW5wdXRbdHlwZT1wYXNzd29yZF0sXG4gIGlucHV0W3R5cGU9ZW1haWxdIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICB9XG5cbiAgYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG5cbiAgLmNhbmNlbGJ0biB7XG4gICAgcGFkZGluZzogMTRweCAyMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XG4gIH1cblxuICAuY2FuY2VsYnRuLFxuICAuc2lnbnVwYnRuIHtcbiAgICBmbG9hdDogbGVmdDtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgLmNvbnRhaW5lciB7XG4gICAgcGFkZGluZzogMTZweDtcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gMzZweCk7XG4gIH1cblxuICAuY2xlYXJmaXg6OmFmdGVyIHtcbiAgICBjb250ZW50OiBcIlwiO1xuICAgIGNsZWFyOiBib3RoO1xuICAgIGRpc3BsYXk6IHRhYmxlO1xuICB9XG5cbiAgYSB7XG4gICAgY29sb3I6IGJpc3F1ZTtcbiAgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzAwcHgpIHtcbiAgLmNhbmNlbGJ0bixcbiAgLnNpZ251cGJ0biB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -1136,7 +1149,7 @@ module.exports = "<div class=\"login\">\n  <div style=\"border:1px solid #ccc; w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL3VzZXItcHJvZmlsZS9DOlxcVXNlcnNcXGJhY2h1XFxEb2N1bWVudHNcXHByb2plY3RcXHBsYW5ldG8tY2xvdWQtZXZlbnRzL3NyY1xcYXBwXFxob21lLXBhZ2VcXHVzZXItcHJvZmlsZVxcdXNlci1wcm9maWxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0RBQWlEO0VBQ2pELGNBQWE7RUFDYix3QkFBdUI7RUFDdkIsb0JBQW1CO0VBQ25CLHVCQUFzQjtFQUN0QixhQUFZO0VBQ1osZUFBc0I7RUFDdEIsa0JBQWlCLEVBcURsQjtFQTdERDtJQVlJLFdBQVUsRUFDWDtFQWJIOzs7SUFrQkksWUFBVztJQUNYLG1CQUFrQjtJQUNsQixjQUFhO0lBQ2Isc0JBQXFCO0lBQ3JCLHVCQUFzQjtJQUN0Qix1QkFBc0IsRUFDdkI7RUF4Qkg7SUEyQkksMEJBQXlCO0lBQ3pCLGFBQVk7SUFDWixtQkFBa0I7SUFDbEIsY0FBYTtJQUNiLGFBQVk7SUFDWixnQkFBZTtJQUNmLFlBQVcsRUFDWjtFQWxDSDtJQXFDSSxtQkFBa0I7SUFDbEIsMEJBQXlCLEVBQzFCO0VBdkNIOztJQTJDSSxZQUFXO0lBQ1gsV0FBVSxFQUNYO0VBN0NIO0lBZ0RJLGNBQWE7SUFDYix5QkFBd0IsRUFDekI7RUFsREg7SUFxREksWUFBVztJQUNYLFlBQVc7SUFDWCxlQUFjLEVBQ2Y7RUF4REg7SUEyREksY0FBYSxFQUNkO0VBRUg7RUFDRTs7SUFFRSxZQUFXLEVBQ1osRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS91c2VyLXByb2ZpbGUvdXNlci1wcm9maWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcclxuICBmb250LWZhbWlseTogXCJDb21pYyBTYW5zIE1TXCIsIGN1cnNpdmUsIHNhbnMtc2VyaWY7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgbWFyZ2luOiAyMHB4O1xyXG4gIGNvbG9yOiByZ2IoMzcsIDM3LCAzNyk7XHJcbiAgYmFja2dyb3VuZDogd2hpdGU7XHJcblxyXG5cclxuICBmb3JtIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgfVxyXG5cclxuICBpbnB1dFt0eXBlPXRleHRdLFxyXG4gIGlucHV0W3R5cGU9cGFzc3dvcmRdLFxyXG4gIGlucHV0W3R5cGU9ZW1haWxdIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgcGFkZGluZzogMTJweCAyMHB4O1xyXG4gICAgbWFyZ2luOiA4cHggMDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuXHJcbiAgYnV0dG9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG5cclxuICAuY2FuY2VsYnRuIHtcclxuICAgIHBhZGRpbmc6IDE0cHggMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNDQzMzY7XHJcbiAgfVxyXG5cclxuICAuY2FuY2VsYnRuLFxyXG4gIC5zaWdudXBidG4ge1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gIH1cclxuXHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICBwYWRkaW5nOiAxNnB4O1xyXG4gICAgd2lkdGg6IGNhbGMoMTAwJSAtIDM2cHgpO1xyXG4gIH1cclxuXHJcbiAgLmNsZWFyZml4OjphZnRlciB7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgY2xlYXI6IGJvdGg7XHJcbiAgICBkaXNwbGF5OiB0YWJsZTtcclxuICB9XHJcblxyXG4gIGEge1xyXG4gICAgY29sb3I6IGJpc3F1ZTtcclxuICB9XHJcbn1cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzAwcHgpIHtcclxuICAuY2FuY2VsYnRuLFxyXG4gIC5zaWdudXBidG4ge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
+module.exports = ".login {\n  font-family: \"Comic Sans MS\", cursive, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin: 20px;\n  color: #252525;\n  background: white; }\n  .login form {\n    width: 50%; }\n  .login input[type=text],\n  .login input[type=password],\n  .login input[type=email] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    box-sizing: border-box; }\n  .login button {\n    background-color: #4CAF50;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    cursor: pointer;\n    width: 100%; }\n  .login .cancelbtn {\n    padding: 14px 20px;\n    background-color: #f44336; }\n  .login .cancelbtn,\n  .login .signupbtn {\n    float: left;\n    width: 50%; }\n  .login .container {\n    padding: 16px;\n    width: calc(100% - 36px); }\n  .login .clearfix::after {\n    content: \"\";\n    clear: both;\n    display: table; }\n  .login a {\n    color: bisque; }\n  @media screen and (max-width: 300px) {\n  .cancelbtn,\n  .signupbtn {\n    width: 100%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93YW50L1dlYnN0b3JtUHJvamVjdHMvcGxhbmV0by1jbG91ZC1ldmVudHMvc3JjL2FwcC9ob21lLXBhZ2UvdXNlci1wcm9maWxlL3VzZXItcHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtEQUFpRDtFQUNqRCxjQUFhO0VBQ2Isd0JBQXVCO0VBQ3ZCLG9CQUFtQjtFQUNuQix1QkFBc0I7RUFDdEIsYUFBWTtFQUNaLGVBQXNCO0VBQ3RCLGtCQUFpQixFQXFEbEI7RUE3REQ7SUFZSSxXQUFVLEVBQ1g7RUFiSDs7O0lBa0JJLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsY0FBYTtJQUNiLHNCQUFxQjtJQUNyQix1QkFBc0I7SUFDdEIsdUJBQXNCLEVBQ3ZCO0VBeEJIO0lBMkJJLDBCQUF5QjtJQUN6QixhQUFZO0lBQ1osbUJBQWtCO0lBQ2xCLGNBQWE7SUFDYixhQUFZO0lBQ1osZ0JBQWU7SUFDZixZQUFXLEVBQ1o7RUFsQ0g7SUFxQ0ksbUJBQWtCO0lBQ2xCLDBCQUF5QixFQUMxQjtFQXZDSDs7SUEyQ0ksWUFBVztJQUNYLFdBQVUsRUFDWDtFQTdDSDtJQWdESSxjQUFhO0lBQ2IseUJBQXdCLEVBQ3pCO0VBbERIO0lBcURJLFlBQVc7SUFDWCxZQUFXO0lBQ1gsZUFBYyxFQUNmO0VBeERIO0lBMkRJLGNBQWEsRUFDZDtFQUVIO0VBQ0U7O0lBRUUsWUFBVyxFQUNaLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob21lLXBhZ2UvdXNlci1wcm9maWxlL3VzZXItcHJvZmlsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sb2dpbiB7XHJcbiAgZm9udC1mYW1pbHk6IFwiQ29taWMgU2FucyBNU1wiLCBjdXJzaXZlLCBzYW5zLXNlcmlmO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIG1hcmdpbjogMjBweDtcclxuICBjb2xvcjogcmdiKDM3LCAzNywgMzcpO1xyXG4gIGJhY2tncm91bmQ6IHdoaXRlO1xyXG5cclxuXHJcbiAgZm9ybSB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gIH1cclxuXHJcbiAgaW5wdXRbdHlwZT10ZXh0XSxcclxuICBpbnB1dFt0eXBlPXBhc3N3b3JkXSxcclxuICBpbnB1dFt0eXBlPWVtYWlsXSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IDEycHggMjBweDtcclxuICAgIG1hcmdpbjogOHB4IDA7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICB9XHJcblxyXG4gIGJ1dHRvbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gICAgbWFyZ2luOiA4cHggMDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgLmNhbmNlbGJ0biB7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjQ0MzM2O1xyXG4gIH1cclxuXHJcbiAgLmNhbmNlbGJ0bixcclxuICAuc2lnbnVwYnRuIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICB9XHJcblxyXG4gIC5jb250YWluZXIge1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHdpZHRoOiBjYWxjKDEwMCUgLSAzNnB4KTtcclxuICB9XHJcblxyXG4gIC5jbGVhcmZpeDo6YWZ0ZXIge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIGNsZWFyOiBib3RoO1xyXG4gICAgZGlzcGxheTogdGFibGU7XHJcbiAgfVxyXG5cclxuICBhIHtcclxuICAgIGNvbG9yOiBiaXNxdWU7XHJcbiAgfVxyXG59XHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMwMHB4KSB7XHJcbiAgLmNhbmNlbGJ0bixcclxuICAuc2lnbnVwYnRuIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1231,9 +1244,9 @@ var AppService = /** @class */ (function () {
     function AppService(http) {
         this.http = http;
         // deploy url
-        this.baseUrl = 'https://planeto-app.appspot.com/api/';
+        // baseUrl = 'https://planeto-app.appspot.com/api/';
         // for local test url
-        // baseUrl = 'https://localhost:8080/';
+        this.baseUrl = 'http://localhost:8080/api/';
         this.userUrl = this.baseUrl + 'user/';
         this.eventUrl = this.baseUrl + 'event/';
         this.choiceUrl = this.baseUrl + 'choice/';
@@ -1261,48 +1274,48 @@ var AppService = /** @class */ (function () {
         };
         return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.createUser = function (user) {
         var url = this.userUrl + 'register';
         return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('register', [])));
+        }));
     };
     AppService.prototype.getUser = function (userID) {
         var url = this.userUrl + userID; //userId will be dynamic
         return this.http.get(url)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.createEvent = function (event, userID) {
         var uri = this.eventUrl + userID;
         return this.http.post(uri, event)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.updateEvent = function (event) {
         var url = this.eventUrl + event.eventID;
         return this.http.put(url, event)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.deleteEvent = function (userID, eventID) {
         var url = this.eventUrl + userID + '/' + eventID;
         return this.http.delete(url)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.getEvents = function (userID, type) {
         var url = this.eventUrl + type + '/' + userID; //userId will be dynamic
         return this.http.get(url)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('login', [])));
+        }));
     };
     AppService.prototype.getEventInfo = function (eventId) {
         var url = this.eventUrl + eventId; //userId will be dynamic
@@ -1332,17 +1345,19 @@ var AppService = /** @class */ (function () {
             return res;
         }));
     };
-    AppService.prototype.handleError = function (operation, result) {
-        if (operation === void 0) { operation = 'operation'; }
-        return function (error) {
-            // TODO: send the error to remote logging infrastructure
-            console.error(error); // log to console instead
-            // TODO: better job of transforming error for user consumption
-            console.log(operation + " failed: " + error.message);
-            // Let the app keep running by returning an empty result.
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
-        };
-    };
+    // private handleError<T> (operation = 'operation', result?: T) {
+    //   return (error: any): Observable<T> => {
+    //
+    //     // TODO: send the error to remote logging infrastructure
+    //     console.error(error); // log to console instead
+    //
+    //     // TODO: better job of transforming error for user consumption
+    //     console.log(`${operation} failed: ${error.message}`);
+    //
+    //     // Let the app keep running by returning an empty result.
+    //     return of(result as T);
+    //   };
+    // }
     AppService.prototype.debug = function () {
         return this.http.get(this.baseUrl + 'test/getUser').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
             return res;
@@ -1422,7 +1437,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\bachu\Documents\project\planeto-cloud-events\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/want/WebstormProjects/planeto-cloud-events/src/main.ts */"./src/main.ts");
 
 
 /***/ })
