@@ -7,7 +7,7 @@ Live Version: https://planeto-app.appspot.com/
 
 ## API Endpoints
 
-Access from /api/.*
+Access from /api/.* 
 
 ### User functions:
 
@@ -80,12 +80,12 @@ Description: returns the user currently logged in.
 - initialize frontend (angular)
 - user/event create functions
 - user/event read functions
+- authentication (Auth0? Firebase? Users API?)
 
 ### Todo
 
 - user/event update functions
 - user/event delete functions
-- authentication (Auth0? Firebase? Users API?)
 - handling of session state
 - calendar view
 - visuals (theme needs to be discussed)
