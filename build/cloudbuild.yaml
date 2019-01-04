@@ -4,6 +4,8 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install' ]
   dir: 'frontend'
+- name: gcr.io/cloud-builders/gsutil
+  args: ['rm', 'gs://staging.planeto-app.appspot.com/frontend/dist/*']
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'run', 'build', '--prod' ]
   dir: 'frontend'
