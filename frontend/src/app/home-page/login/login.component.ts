@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
     let username = value.username;
     let password = value.password;
 
-    this.appService.login(username,password).subscribe( (user: IUserModel) =>{
+    var res = this.appService.login(username,password)
+    console.log(res)
+    res.subscribe( (user: IUserModel) =>{
       localStorage.setItem("currentUser",String(user.userID));
       this.router.navigate(['/home']);
     }), error => {

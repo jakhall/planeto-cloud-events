@@ -15,7 +15,7 @@ export class AppService {
   baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-   //baseUrl = 'https://localhost:8081/api/';
+  //baseUrl = 'https://localhost:8081/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
