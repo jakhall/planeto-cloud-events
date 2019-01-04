@@ -8,14 +8,20 @@ handlers:
 - url: /home
   static_files: dist/eventCalendar/index.html
   upload: dist/eventCalendar/index.html
-
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+    
 - url: /(.+)
   static_files: dist/eventCalendar/\1
   upload: dist/eventCalendar/(.*)
+  http_headers:
+    Access-Control-Allow-Origin: "*"
 
 - url: /
   static_files: dist/eventCalendar/index.html
   upload: dist/eventCalendar/index.html
+  http_headers:
+    Access-Control-Allow-Origin: "*"
 
 skip_files:
 - e2e/
