@@ -3,6 +3,9 @@ from flask_login import login_required
 from google.appengine.ext import ndb
 from . import routes
 from models import user_model as m
+from models import event_model
+
+
 import json
 from fuzzywuzzy import process
 
@@ -73,7 +76,7 @@ def handleUpdateUser(id):
                             lastname=user['lastname'],
                             email=user['email'],
                             password=user['password']);
-      if event:
+      if user:
         response = make_response(user, 200)
     return response
 
@@ -95,7 +98,7 @@ def handleSearch(username):
 
      userId = user.key.id()
      username = match_name
-     events = m.getUserEvents(userId)
+     events = event_model.getUserEvents(userId)
 
      # for each user each event create a dict
      for event in events:

@@ -46,7 +46,7 @@ def getGroupUser(groupID, userID):
     return GroupUser.query(GroupUser.userID == userID, GroupUser.groupID == groupID).fetch()
 
 def getGroupEvent(groupID, eventID):
-    return GroupEvent.query(GroupEvent.eventID == userID, GroupEvent.groupID == groupID).fetch()
+    return GroupEvent.query(GroupEvent.eventID == eventID, GroupEvent.groupID == groupID).fetch()
 
 def addUser(groupID, userID, role):
   groupUser = GroupUser(groupID=groupID, userID=userID, role=role)
@@ -64,7 +64,7 @@ def removeEvent(groupID, eventID):
         groupEvent.key.delete()
 
 def removeUser(groupID, userID):
-      groupUser = getGroupEvent(groupID, userID)[0]
+      groupUser = getGroupUser(groupID, userID)[0]
       if groupUser:
         groupUser.key.delete()
 

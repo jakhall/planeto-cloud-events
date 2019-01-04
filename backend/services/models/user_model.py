@@ -23,13 +23,14 @@ def createUser(u, fn, ln, e, pw):
 def updateUser(id, username, firstname, lastname, email, password):
     user = getUserById(id)
     if user:
-       user.name = name
-       user.description = desc
-       user.start = start
-       user.end = end
+       user.name = username
+       user.firstname = firstname
+       user.lastname = lastname
+       user.email = email
+       user.password = password
        user.put()
        return user
-    else: return "No User"
+    else: return None
 
 def deleteUser(id):
   user = getUserById(id)
