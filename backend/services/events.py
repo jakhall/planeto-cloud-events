@@ -4,6 +4,7 @@ from google.appengine.ext import ndb
 from datetime import datetime
 from . import routes
 from models import event_model as m
+from models import user_model as u
 import json
 
 
@@ -59,7 +60,7 @@ def handleDeleteEvent(userID, eventID):
 @routes.route('/api/user/<int:userID>/events')
 def handleGetUserEvents(userID):
     eventList = m.getUserEvents(userID);
-    user = m.getUserById(userID)
+    user = u.getUserById(userID)
     username = user.username
     events = [eventAsDict(event,username) for event in eventList]
     return jsonify(events)

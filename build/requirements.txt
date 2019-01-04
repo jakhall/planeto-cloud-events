@@ -4,4 +4,3 @@ Flask_Cors==3.0.7
 Werkzeug == 0.14.0
 gunicorn==19.9.0
 fuzzywuzzy
-python-Levenshtein
