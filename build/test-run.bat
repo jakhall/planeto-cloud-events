@@ -1,0 +1,1 @@
+dev_appserver.py ..\frontend ..\backend  
