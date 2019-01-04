@@ -88,17 +88,17 @@ Description: returns the user currently logged in.
 - user/event read functions
 - authentication
 - restructuring
+- user/event update functions
+- user/event delete functions 
 
 ### In Progress
-- user/event update functions (want)
-- user/event delete functions (want)
 - calendar view (want)
+- Calendar CRUD functionality (want)
 - event-user relationship entity and CRUD (jak)
-- updating end-point list (jak)
+- modular backend services (jak)
 
 ### Todo
 - Tidying code - adding comments (everyone)
-- Calendar CRUD functionality (want?)
 - Profile page needs formatting and update function. (Jan?, Sarah?)
 - Visuals (theme needs to be discussed) (everyone?)
 - login validation and session states (Liu?, Jak?)
