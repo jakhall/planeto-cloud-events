@@ -7,7 +7,7 @@ Live Version: https://planeto-app.appspot.com/
 
 ## API Endpoints
 
-Access from /api/.*
+Access from /api/.* 
 
 ### User functions:
 
