@@ -3,7 +3,7 @@ from flask_login import login_required
 from google.appengine.ext import ndb
 from datetime import datetime
 from . import routes
-import model as m
+from models import event_model as m
 import json
 
 

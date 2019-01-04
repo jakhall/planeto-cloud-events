@@ -3,8 +3,11 @@ from flask_login import login_required
 from google.appengine.ext import ndb
 from datetime import datetime
 from . import routes
-import model as m
+from models import choice_model as m
 import json
+
+def get_client():
+  return datastore.Client(current_app.config['planeto-app'])
 
 @app.route('/api/choice/<int:userID>', methods=['POST'])
 def handleCreateChoice(userID):
