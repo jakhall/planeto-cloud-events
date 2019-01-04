@@ -4,6 +4,12 @@ Cloud group project - Event management system.
 
 Live Version: https://planeto-app.appspot.com/
 
+## Restructure Notes
+
+- The front-end Angular and back-end Flask files have been separated into two services, for modularity purposes.
+- The angular no longer needs to be compiled for deployment, it is done automatically via the cloudbuild.yaml.
+- If you have code that was not committed, please clone the updated master branch and insert the code manually.
+
 
 ## API Endpoints
 
@@ -70,7 +76,7 @@ URL: /session/user
 Method: GET
 Description: returns the user currently logged in.
 
-## Tasks for MVP
+## Tasks before the 7th
 
 ### Completed
 
@@ -80,17 +86,32 @@ Description: returns the user currently logged in.
 - initialize frontend (angular)
 - user/event create functions
 - user/event read functions
+- authentication
+- restructuring
+- user/event update functions
+- user/event delete functions 
+
+### In Progress
+- calendar view (want)
+- Calendar CRUD functionality (want)
+- event-user relationship entity and CRUD (jak)
+- modular backend services (jak)
 
 ### Todo
+- Tidying code - adding comments (everyone)
+- Date validation, events over multiple days defaulting to 00:00 (Jan?)
+- Profile page needs formatting and update function. (Jan?, Sarah?)
+- Visuals (theme needs to be discussed) (everyone?)
+- login validation and session states (Liu?, Jak?)
+- Logo/graphical elements (anyone)
+- Search for events/users (Liu?, Jak?)
+- View and update event details page (Liu?, Jak?)
+- User permissions (e.g. can user edit this profile/event) (Jan?, Sarah?)
+- Shared calendar views (integrate the event-user relationship) (Want?)
+- Review and add to report (everyone)
 
-- user/event update functions
-- user/event delete functions
-- authentication (Auth0? Firebase? Users API?)
-- handling of session state
-- calendar view
-- visuals (theme needs to be discussed)
 
-Please add to this list anything I've missed. Remember we're working towards the MVP so focus on basic functionality.
+Please add to this list anything I've missed. Only 3/4 days left so please work as much as you can!
 
 ## Local Testing
 
