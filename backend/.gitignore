@@ -1,5 +1,8 @@
 
 lib
+appengine_config.pyc
+main.pyc
+
 
 # compiled output
 /tmp
