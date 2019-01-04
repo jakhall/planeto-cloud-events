@@ -10,7 +10,6 @@ import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '43uyi573858fd322343r'
-CORS(app)
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 loginManager = LoginManager()
 loginManager.init_app(app)
