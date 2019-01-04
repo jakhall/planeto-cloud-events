@@ -31,7 +31,7 @@ def handleCreateEvent(userID):
                           desc=event['description'],
                           start=event['start'],
                           end=event['end'])
-    response = make_response(getEntityID(event), 200)
+    response = make_response(str(event.key.id()), 200)
   return response
 
 
@@ -46,7 +46,7 @@ def handleUpdateEvent(eventID):
                           start=event['start'],
                           end=event['end'])
     if event:
-      response = make_response(getEntityID(event), 200)
+      response = make_response(str(event.key.id()), 200)
   return response
 
 
