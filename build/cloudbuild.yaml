@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install' ]
   dir: 'frontend'
-- name: gcr.io/cloud-builders/gsutil
+- name: 'gcr.io/cloud-builders/gsutil'
   args: ['rm', 'frontend/dist/*']
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'run', 'build', '--prod' ]
