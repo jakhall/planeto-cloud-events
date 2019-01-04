@@ -1,6 +1,5 @@
 from flask import *
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
-from flask_cors
 from google.appengine.ext import ndb
 from datetime import datetime
 import model as m
