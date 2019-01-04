@@ -1,3 +1,3 @@
 @echo off
 cd ..
-pip install -t lib/ -r build/requirements.txt
+pip install -t backend/lib/ -r build/requirements.txt

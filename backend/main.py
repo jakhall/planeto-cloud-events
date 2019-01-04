@@ -1,5 +1,6 @@
 from flask import *
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
+from flask_cors
 from google.appengine.ext import ndb
 from datetime import datetime
 import model as m
@@ -9,6 +10,8 @@ import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '43uyi573858fd322343r'
+CORS(app)
+#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 loginManager = LoginManager()
 loginManager.init_app(app)
 
