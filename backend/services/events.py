@@ -7,10 +7,11 @@ from models import event_model as m
 import json
 
 
-def eventAsDict(event):
+def eventAsDict(event,username):
   eventDict = {'eventID': event.key.id(),
                'userID': event.userID,
                'name': event.name,
+               'creatorName': username,
                'description': event.description,
                'start': event.start,
                'end': event.end}
@@ -58,11 +59,13 @@ def handleDeleteEvent(userID, eventID):
 @routes.route('/api/user/<int:userID>/events')
 def handleGetUserEvents(userID):
     eventList = m.getUserEvents(userID);
-    events = [eventAsDict(event) for event in eventList]
+    user = m.getUserById(userID)
+    username = user.username
+    events = [eventAsDict(event,username) for event in eventList]
     return jsonify(events)
 
 
-@routes.route('/api/event/<string:type>/<int:userID>/', methods=['GET'])
+@routes.route('/api/event/<string:type>/<int:userID>', methods=['GET'])
 def handleGetEvents(type, userID):
   eventList = []
   if type == 'userEvents':
@@ -71,8 +74,9 @@ def handleGetEvents(type, userID):
     eventList = m.getJoinedEvent(userID)
   elif type == 'otherEvents':
     eventList = m.getOtherEvents(userID)
-  print eventList
-  events = [eventAsDict(event) for event in eventList]
+  user = m.getUserById(userID)
+  username = user.username
+  events = [eventAsDict(event,username) for event in eventList]
   if events:
     return make_response(json.dumps(events), 200)
   return make_response(json.dumps([]), 200)

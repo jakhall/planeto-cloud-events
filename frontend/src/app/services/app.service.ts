@@ -15,7 +15,7 @@ export class AppService {
   baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  //baseUrl = 'http://localhost:8081/api/';
+  // baseUrl = 'http://localhost:8080/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
@@ -184,6 +184,19 @@ export class AppService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+
+  searchByUsername(username:string) {
+    const url = this.baseUrl+'search'+'/'+username;
+
+    return this.http.get(url)
+      .pipe(
+        map(res => {
+          return <Array<any>>res;
+        }),
+        catchError(this.handleError('searchByUsername', [])));
+
   }
 
 

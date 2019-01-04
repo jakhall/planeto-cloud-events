@@ -20,7 +20,7 @@ def userAsDict(user):
 def userEventDict(event,username,userId):
   userEventDict = {
                'userID': userId,
-               'username': username,
+               'creatorName': username,
                'eventID': event.key.id(),
                'userID': event.userID,
                'name': event.name,
@@ -29,6 +29,9 @@ def userEventDict(event,username,userId):
                'end': event.end
                }
   return userEventDict
+
+def getEntityID(entity):
+    return str(entity.key.id())
 
 #functions:
 
