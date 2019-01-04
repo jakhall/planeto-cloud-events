@@ -1,0 +1,32 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+service: frontend
+
+handlers:
+
+- url: /home
+  static_files: dist/eventCalendar/index.html
+  upload: dist/eventCalendar/index.html
+
+- url: /(.+)
+  static_files: dist/eventCalendar/\1
+  upload: dist/eventCalendar/(.*)
+
+- url: /
+  static_files: dist/eventCalendar/index.html
+  upload: dist/eventCalendar/index.html
+
+skip_files:
+- e2e/
+- src/
+- ^(.*/)?\..*$
+- ^(.*/)?.*\.json$
+- ^(.*/)?.*\.md$
+- ^(.*/)?.*\.yaml$
+- ^Dockerfile
+- ^LICENSE
+
+libraries:
+- name: ssl
+  version: latest

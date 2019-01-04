@@ -3,7 +3,6 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 from google.appengine.ext import ndb
 from datetime import datetime
 import model as m
-import backend
 import json
 
 # app creation:
