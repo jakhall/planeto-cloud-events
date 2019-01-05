@@ -21,6 +21,7 @@ export class EventManagementComponent implements OnInit {
   otherEvents: any[];
   myEvents: any[];
   joinedEvents: any[];
+  searchedEvents:any[];
 
   Events: any[];
   event: any;
@@ -132,7 +133,8 @@ export class EventManagementComponent implements OnInit {
       this.username = 'janu';
     });
     this.items = [
-      {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)}/*,
+      {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)},
+      {label: 'SearchOtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)}/*,
       {label: 'JoinedEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)},
       {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}*/
     ];
@@ -187,8 +189,15 @@ export class EventManagementComponent implements OnInit {
       // this.events = this.myEvents;
       this.showMyEvents = true;
       this.initEvents();
-    } else {
+    } else if (type==='SearchOtherEvents'){
+      if (!this.searchedEvents) {
+        this.searchedEvents = this.events;
+      }
+      this.events = this.searchedEvents;
+      this.initCalendarViewEvents();
+
       this.showMyEvents = false;
+    } else {
 /*      if (type === 'JoinedEvents') {
         this.events = this.joinedEvents;
         this.showJoinedEvents = true;
@@ -294,16 +303,15 @@ export class EventManagementComponent implements OnInit {
     });
   }
 
-  serachByUserName() {
+  searchByUserName() {
     if (this.searchUserName !== ''){
       this.appService.searchByUsername(this.searchUserName).subscribe(data =>{
-          this.events = data;
+          this.searchedEvents = data;
+          this.events = this.searchedEvents;
           this.initCalendarViewEvents();
-          console.log(this.events);
+          // console.log(this.events);
 
       }), error => console.error(error.message);
-    }else {
-      this.initEvents();
     }
   }
 
