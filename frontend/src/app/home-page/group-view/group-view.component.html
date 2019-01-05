@@ -1,0 +1,41 @@
+
+<body>
+<main>
+  <div class="details-container">
+    <h2> Group Details </h2>
+
+    <div class="container">
+      <div class="button-container">
+        <button pButton label="Edit" style="margin-left:.25em" (click)="cleanUser()"></button>
+      </div>
+      <div class="form-group">
+        <label >Group Name: </label>
+        {{group.groupName}}
+      </div>
+      <div class="form-group">
+        <label >Created By: </label>
+        {{group.creatorName}}
+      </div>
+      <div class="form-group-description">
+        <label >Description: </label>
+        {{group.description}}
+      </div>
+
+    </div>
+
+    <h2> Users </h2>
+    <div class="button-container">
+     <button pButton class="add-button" label="Add" style="margin-left:.25em" (click)="cleanUser()"></button>
+     </div>
+  <mat-nav-list>
+     <a mat-list-item *ngFor="let x of users" routerLink="group/{{x.userID}}"> <p> {{ x.firstname + " " + x.lastname + " (" + x.username + ")"}} </p> </a>
+  </mat-nav-list>
+
+  </div>
+  <div class="calendar-container">
+    <h2> Calendar </h2>
+      <div class="container" width="60%" height="650px"> Calendar View </div>
+  </div>
+</main>
+
+</body>

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {catchError, map, tap} from 'rxjs/operators';
-import {IUserModel} from '../home-page/home-page.model';
+import {IUserModel, IGroup} from '../home-page/home-page.model';
 import {stringify} from 'querystring';
 import { Observable, BehaviorSubject, of, from } from 'rxjs';
 @Injectable({
@@ -15,10 +15,11 @@ export class AppService {
   baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  // baseUrl = 'http://localhost:8080/api/';
+   //baseUrl = 'http://localhost:8081/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
+  groupUrl = this.baseUrl + 'group/';
   choiceUrl = this.baseUrl + 'choice/';
   public loggedIn: BehaviorSubject<boolean>;
   public userData: BehaviorSubject<string>;
@@ -53,6 +54,14 @@ export class AppService {
       }),
       catchError(this.handleError('login', []))
     );
+  }
+
+  getUserGroups(userID){
+    const url = this.userUrl + userID + '/groups';
+    return this.http.get(url).pipe(
+      map(res => {
+        return <Array<any>>res;
+      }));
   }
 
   createUser(user) {
@@ -132,13 +141,23 @@ export class AppService {
   }
 
   getEventInfo(eventId) {
-    const url = this.eventUrl + eventId; //userId will be dynamic
+    const url = this.eventUrl + eventId;
 
     return this.http.get(url)
       .pipe(
         map(res => {
           return String(res);
         }));
+  }
+
+  getGroupInfo(groupId) {
+    const url = this.groupUrl + groupId;
+    return this.http.get<IGroup>(url);
+  }
+
+  getGroupUsers(groupId) {
+    const url = this.groupUrl + groupId + "/users";
+    return this.http.get(url).pipe(map(res => {return <Array<any>>res;}));
   }
 
   createChoice(choice,userID) {

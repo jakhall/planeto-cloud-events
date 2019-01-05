@@ -1,23 +1,43 @@
+
 <div class="login">
-  <div style="border:1px solid #ccc; width: 100%">
+  <main>
+    <h2> My Profile </h2>
+
     <div class="container">
       <div class="form-group">
-        <label >UserID</label>
-        {{userID}}
-      </div>
-      <div class="form-group">
-        <label >Username</label>
+        <label >Username: </label>
         {{username}}
       </div>
       <div class="form-group">
-        <label >Full Name</label>
+        <label >Name:</label>
         {{fullName}}
       </div>
       <div class="form-group">
-        <label >Email</label>
+        <label >Email: </label>
         {{email}}
+      </div>
+      <div class="button-container">
+        <button pButton label="Edit" style="margin-left:.25em" (click)="cleanUser()"></button>
       </div>
     </div>
 
-</div>
+    <h2> My Groups </h2>
+  <button pButton label="Edit" style="margin-left:.25em" (click)="showDialog('create')"></button>
+  <mat-nav-list>
+     <a mat-list-item class="create" (click)="showDialog('create')"> <p> + Create a group </p>  </a>
+     <a mat-list-item *ngFor="let x of items" routerLink="/group/{{x.groupID}}"> <p> {{ x.groupName }} </p> </a>
+  </mat-nav-list>
+</main>
+
+<p-dialog *ngIf="groupform" header="{{title}}" [(visible)]="display" [modal]="true" [responsive]="true"
+          [minWidth]="200" [minY]="70" [style]="{width: '900px', height: '900px'}"
+          [maximizable]="true" [baseZIndex]="10000">
+          <form [formGroup]="userform">
+            <div class="group ui-grid-row">
+
+        </div>
+    </form>
+</p-dialog>
+
+
 </div>

@@ -2,7 +2,7 @@
   <div *ngIf="!(isLoggedIn | async)">
   </div>
   <div *ngIf="(isLoggedIn | async)">
-    <a class="myAccount" routerLink="/userProfile">Hi! {{currentUser}}</a>
+    Logged in as: <a class="myAccount" routerLink="/profile"> <b>  {{currentUser}} </b> </a>
     <button pButton label="logout" style="margin-left:.25em" (click)="cleanUser()" routerLink="/login"></button>
   </div>
 </p-menubar>

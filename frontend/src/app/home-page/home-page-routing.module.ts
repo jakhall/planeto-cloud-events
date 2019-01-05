@@ -4,17 +4,21 @@ import {HomePageComponent} from './home-page.component';
 import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
 import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {GroupComponent} from "./group-view/group-view.component"
+import {MatListModule} from '@angular/material/list';
 import {AuthGuard} from "../auth/auth.guard";
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component:SignupComponent},
-  { path: 'userProfile', component:UserProfileComponent, canActivate: [AuthGuard]}
+  { path: 'profile', component:UserProfileComponent, canActivate: [AuthGuard]},
+  {path:  'group/:id', component:GroupComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes), MatListModule],
+  exports: [RouterModule, MatListModule]
 })
+
 export class HomePageRoutingModule { }

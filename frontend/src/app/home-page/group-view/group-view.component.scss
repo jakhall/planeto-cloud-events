@@ -2,34 +2,46 @@
 
 body {
   font-family: "Arial", sans-serif;
+  text-align: center;
 }
 
 main {
   text-align: left;
-  width: 60%;
+  width: 90%;
+  margin: auto;
+  display: inline-block;
 }
 
-.login {
-  font-family: "Arial", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px;
-  color: rgb(37, 37, 37);
-  background: white;
+.details-container{
+  padding: 10px;
+  width: 22%;
+  float: left;
+}
+
+.calendar-container{
+  padding: 10px;
+  width:72%;
+  float: left;
+}
+
+.add-button{
+}
 
 
-  form {
+form {
     width: 50%;
   }
 
 .form-group {
   margin: 10px;
 }
-  input[type=text],
-  input[type=password],
-  input[type=email] {
+
+.form-group-description {
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -39,10 +51,15 @@ main {
   }
 
   button {
-    width: 150px;
+    width: 80px;
   }
 
   .button-container{
+    width: 100%;
+    text-align: right;
+  }
+
+  .add-button-container{
     width: 100%;
     text-align: right;
   }
@@ -59,7 +76,7 @@ main {
   }
 
   .container {
-    padding: 15px;
+    padding: 8px;
     background-color: #ebebeb;
     border: 1px solid #a9a9a9;
     border-radius: 5px;
@@ -100,7 +117,7 @@ main {
   a {
     color: bisque;
   }
-}
+
 @media screen and (max-width: 300px) {
   .cancelbtn,
   .signupbtn {

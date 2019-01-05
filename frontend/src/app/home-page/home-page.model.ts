@@ -17,3 +17,11 @@ export interface IEvent
   name:string
 }
 
+
+export interface IGroup {
+    groupID: number;
+    userID: number;
+    creatorName: string;
+    groupName: string;
+    description: string;
+}
