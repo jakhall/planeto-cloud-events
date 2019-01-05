@@ -80,6 +80,63 @@ URL: /session/user
 Method: GET
 Description: returns the user currently logged in.
 
+### Group functions: 
+
+Name: getGroupEvents
+URL: /group/\<id>/events
+Method: GET
+Description: returns all events associated with a group 
+
+Name: getGroupUsers
+URL: /group/\<id>/users
+Method: GET
+Description: returns all users associated with a group 
+
+Name: getUserGroups 
+URL: /user/\<id>/groups
+Method: GET
+Description: returns all groups associated with a user.
+
+Name: getGroup 
+URL: /group/\<id> 
+Method: GET
+Description: returns a specific group entity. 
+
+Name: createGroup
+URL: /user/\<id>/group
+Method: POST
+Description: Creates a new group, adds the user as a creator.  
+
+name: deleteGroup 
+URL: /group/\<id> 
+Method: DELETE
+Description: Deletes the specified group, deletes all associated events and user links. 
+
+name: updateGroup
+URL: /group/\<id> 
+Method: PUT
+Description: Updates the group information with the input object. 
+
+name: addUser 
+URL: /group/\<id>/user/\<id> 
+Method: POST 
+Description: Adds a link between the specificied group and user - also assigns a role. 
+
+name: removeUser 
+URL: /group/\<id>/user/\<id>
+Method: DELETE 
+Description: Removes the link between the group and the user. 
+
+name: addEvent 
+URL: /group/\<id>/event/\<id> 
+Method: POST 
+Description: Adds a link between the specificied group and user - also assigns a role. 
+
+name: removeEvent 
+URL: /group/\<id>/event/\<id>
+Method: DELETE 
+Description: Removes the link between the group and the even, then deletes the event.  
+
 ## Tasks before the 7th
 
 ### Completed
@@ -94,12 +151,13 @@ Description: returns the user currently logged in.
 - restructuring
 - user/event update functions
 - user/event delete functions 
-
-### In Progress
 - calendar view (want)
 - Calendar CRUD functionality (want)
 - event-user relationship entity and CRUD (jak)
 - modular backend services (jak)
+
+### In Progress
+- Frontend Group and User Pages (Jak) 
 
 ### Todo
 - Tidying code - adding comments (everyone)
@@ -115,7 +173,7 @@ Description: returns the user currently logged in.
 - Review and add to report (everyone)
 
 
-Please add to this list anything I've missed. Only 3/4 days left so please work as much as you can!
+Please add to this list anything I've missed. Only 2/3 days left so please work as much as you can!
 
 ## Local Testing
 
