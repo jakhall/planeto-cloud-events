@@ -17,12 +17,15 @@
         {{email}}
       </div>
       <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em" (click)="cleanUser()"></button>
+        <button pButton label="Edit" style="margin-left:.25em"></button>
       </div>
     </div>
 
     <h2> My Groups </h2>
-  <button pButton label="Edit" style="margin-left:.25em" (click)="showDialog('create')"></button>
+    <div class="button-container">
+      <button pButton label="Update" style="margin-left:.25em" (click)="update()"></button>
+    </div>
+
   <mat-nav-list>
      <a mat-list-item class="create" (click)="showDialog('create')"> <p> + Create a group </p>  </a>
      <a mat-list-item *ngFor="let x of items" routerLink="/group/{{x.groupID}}"> <p> {{ x.groupName }} </p> </a>
@@ -30,13 +33,24 @@
 </main>
 
 <p-dialog *ngIf="groupform" header="{{title}}" [(visible)]="display" [modal]="true" [responsive]="true"
-          [minWidth]="200" [minY]="70" [style]="{width: '900px', height: '900px'}"
-          [maximizable]="true" [baseZIndex]="10000">
-          <form [formGroup]="userform">
+          [style]="{width: '600px', height: '300px'}" [maximizable]="true" [baseZIndex]="10000">
+          <form [formGroup]="groupform">
             <div class="group ui-grid-row">
-
-        </div>
+                Group Name:
+                <input pInputText class="input" type="text" formControlName="groupName" placeholder="Required"/>
+              </div>
+            <div class="group ui-grid-row">
+                Description:
+                <input pInputText class="input" type="text" formControlName="description" placeholder=""/>
+            </div>
     </form>
+    <p-footer>
+      <div>
+      <button type="button" *ngIf="type === 'create'" pButton [disabled]="!groupform.valid"
+              (click)="createGroup(groupform.value)" label="Create"></button>
+      <button type="button" pButton (click)="cancel()" label="Cancel" class="ui-button-secondary"></button>
+      </div>
+    </p-footer>
 </p-dialog>
 
 

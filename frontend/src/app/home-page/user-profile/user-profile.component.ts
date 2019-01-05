@@ -27,27 +27,54 @@ export class UserProfileComponent implements OnInit {
   userID: string;
   items: any;
   title: string;
+  urlID: string;
   display = false;
   type: string;
   groupform: FormGroup;
 
   showDialog(type){
-    console.log("logged")
     this.type = type;
-    if (this.type === 'create') {
+    if (type === 'create') {
       this.title = 'Create Group';
       this.groupform = this.fb.group({
-        'Group Name': new FormControl('', Validators.required),
-        'Description': new FormControl('', Validators.required)
+        'groupName': new FormControl('', Validators.required),
+        'description': new FormControl('')
       });
       }
       this.display = true;
     }
 
+    cancel() {
+      this.display = false;
+    }
 
-  test(){
-    console.log("Clicked");
+
+    createGroup(value) {
+
+        const group = {
+          groupName: value.groupName,
+          description: value.description,
+          creatorName: this.username
+        };
+        var self = this;
+
+        if (this.type === 'create') {
+          this.appService.createGroup(group, this.userID).then(function onSuccess(data) {
+            self.display = false;
+            self.items = data;
+            console.log(data)
+          });
+        }
+    }
+
+  update(){
+    var self = this;
+    this.appService.getUserGroups(this.userID).then(function onSuccess(data) {
+      self.items = data;
+      console.log(data);
+    });
   }
+
   constructor(private fb: FormBuilder,
               private appService: AppService) { }
 
@@ -67,10 +94,18 @@ export class UserProfileComponent implements OnInit {
       this.username = 'janu'
     });
 
+    /*
     this.appService.getUserGroups(this.userID).subscribe(data => {
       this.items = data;
       console.log(data);
     });
+    */
+    var self = this;
+    this.appService.getUserGroups(this.userID).then(function onSuccess(data) {
+      self.items = data;
+      console.log(data);
+    });
+
 
   }
 

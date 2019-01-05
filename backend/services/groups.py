@@ -77,7 +77,11 @@ def handleCreateGroup(id):
   createdGroup = m.createGroup(id, group['creatorName'],
                                 group['groupName'], group['description'])
   m.addUser(createdGroup.key.id(), id, "Creator")
-  return make_response(jsonify(groupAsDict(createdGroup)), 200)
+  groupIdList = m.getAllUserGroups(id)
+  groups = []
+  for x in groupIdList:
+      groups.append(groupAsDict(m.getGroupById(x.groupID)))
+  return make_response(jsonify(groups), 200)
 
 @routes.route('/api/group/<int:groupID>', methods=['DELETE'])
 def handleDeleteGroup(groupID):
@@ -91,7 +95,7 @@ def handleDeleteGroup(groupID):
     m.deleteGroup(groupID=groupID)
     return make_response("Group Deleted", 200)
 
-@routes.route('/api/event/<int:eventID>', methods=['PUT'])
+@routes.route('/api/group/<int:eventID>', methods=['PUT'])
 def handleUpdateGroup(eventID):
   group = json.loads(request.data)
   event = m.updateGroup(groupID=groupID,

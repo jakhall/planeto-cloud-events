@@ -6,7 +6,7 @@
 
     <div class="container">
       <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em" (click)="cleanUser()"></button>
+        <button pButton label="Edit" style="margin-left:.25em"></button>
       </div>
       <div class="form-group">
         <label >Group Name: </label>
@@ -25,7 +25,7 @@
 
     <h2> Users </h2>
     <div class="button-container">
-     <button pButton class="add-button" label="Add" style="margin-left:.25em" (click)="cleanUser()"></button>
+     <button pButton class="add-button" label="Add" style="margin-left:.25em"></button>
      </div>
   <mat-nav-list>
      <a mat-list-item *ngFor="let x of users" routerLink="group/{{x.userID}}"> <p> {{ x.firstname + " " + x.lastname + " (" + x.username + ")"}} </p> </a>

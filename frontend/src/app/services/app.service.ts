@@ -15,7 +15,7 @@ export class AppService {
   baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-   //baseUrl = 'http://localhost:8081/api/';
+  // baseUrl = 'http://localhost:8081/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
@@ -56,12 +56,20 @@ export class AppService {
     );
   }
 
+/*
   getUserGroups(userID){
     const url = this.userUrl + userID + '/groups';
     return this.http.get(url).pipe(
       map(res => {
         return <Array<any>>res;
       }));
+  }
+*/
+
+
+  getUserGroups(userID){
+    const url = this.userUrl + userID + '/groups';
+    return this.http.get(url).toPromise();
   }
 
   createUser(user) {
@@ -158,6 +166,11 @@ export class AppService {
   getGroupUsers(groupId) {
     const url = this.groupUrl + groupId + "/users";
     return this.http.get(url).pipe(map(res => {return <Array<any>>res;}));
+  }
+
+  createGroup(group, userID) {
+    var url = this.userUrl + userID + "/group";
+    return this.http.post(url, group).toPromise();
   }
 
   createChoice(choice,userID) {
