@@ -1,5 +1,5 @@
 <p-dialog *ngIf="userform" header="{{title}}" [(visible)]="display" [modal]="true" [responsive]="true"
-          [minWidth]="200" [minY]="70" [style]="{width: '900px', height: '900px'}"
+          [minY]="70" [style]="{width: '900px', height: '900px'}"
           [maximizable]="true" [baseZIndex]="10000">
     <span>
       <div class="login-wrap">
@@ -87,8 +87,7 @@
         label="ModifyEvent"></button>
 <button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
         label="DelEvent"></button>
-<input type="text" pInputText placeholder="search username"  [(ngModel)]="searchUserName">
-<button pButton type="button" label="Search" (click)="serachByUserName()"></button>
+
 
 <!--<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button"
         label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
@@ -128,9 +127,8 @@
 
       <div style="text-align: left">
         <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
-        <input  type="text" pInputText size="50" placeholder="Search"
-                (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
-        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+        <input *ngIf="!showMyEvents" type="text" pInputText placeholder="search by username"  [(ngModel)]="searchUserName">
+        <button *ngIf="!showMyEvents" pButton type="button" label="Search" (click)="searchByUserName()"></button>
       </div>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
