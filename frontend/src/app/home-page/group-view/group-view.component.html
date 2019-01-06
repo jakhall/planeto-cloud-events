@@ -1,6 +1,78 @@
 
 <body>
 <main>
+
+  <p-dialog *ngIf="eventForm" header="{{dialogTitle}}" [(visible)]="displayDialog" [modal]="true" [responsive]="true"
+            [minY]="70" [style]="{width: '900px', height: '900px'}"
+            [maximizable]="true" [baseZIndex]="10000">
+    <span>
+      <div class="login-wrap">
+  <div class="login-html">
+    <div class="login-form">
+      <div class="sign-up-htm">
+        <form [formGroup]="eventForm">
+          <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Event Name</label></div>
+            <div class="ui-grid-col-6">
+              <input pInputText class="input" type="text" formControlName="name" placeholder="Required"/></div>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="Event Name is required"
+                         *ngIf="!eventForm.controls['name'].valid&&eventForm.controls['name'].dirty"></p-message>
+            </div>
+          </div>
+          <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Event Start Date</label></div>
+            <div class="ui-grid-col-6">
+              <p-calendar formControlName="start" [showIcon]="true" showTime="true" hourFormat="24" showButtonBar="true" ></p-calendar>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="Event Start Date is required"
+                         *ngIf="!eventForm.controls['start'].valid&&eventForm.controls['start'].dirty"></p-message>
+            </div>
+          </div>
+          </div>
+           <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Event End Date</label></div>
+            <div class="ui-grid-col-6">
+              <p-calendar formControlName="end" [showIcon]="true" showTime="true" hourFormat="24" showButtonBar="true" [minDate]="eventForm.value.start" ></p-calendar>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="Event End Date is required"
+                         *ngIf="!eventForm.controls['end'].valid&&eventForm.controls['end'].dirty"></p-message>
+            </div>
+          </div>
+          </div>
+
+          <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Description</label></div>
+            <div class="ui-grid-col-6">
+              <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"  formControlName="description" placeholder="Required"></textarea>
+            </div>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="description"
+                         *ngIf="!eventForm.controls['description'].valid&&eventForm.controls['description'].dirty"></p-message>
+            </div>
+          </div>
+        </form>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+    </span>
+    <p-footer>
+      <button type="button" *ngIf="type === 'create'" pButton [disabled]="!eventForm.valid"
+              (click)="onSubmit(eventForm.value)" label="Create"></button>
+      <button type="button" *ngIf="type==='modify'" pButton [disabled]="!eventForm.valid"
+              (click)="onModify(eventForm.value)" label="Modify"></button>
+      <button type="button" pButton (click)="onCancel()" label="Cancel" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-dialog>
+
+
   <div class="details-container">
     <h2> Group Details </h2>
 
@@ -10,15 +82,15 @@
       </div>
       <div class="form-group">
         <label >Group Name: </label>
-        {{group.groupName}}
+        {{group? group.groupName : ""}}
       </div>
       <div class="form-group">
         <label >Created By: </label>
-        {{group.creatorName}}
+        {{group? group.creatorName: ""}}
       </div>
       <div class="form-group-description">
         <label >Description: </label>
-        {{group.description}}
+        {{group? group.description : ""}}
       </div>
 
     </div>
@@ -33,9 +105,31 @@
 
   </div>
   <div class="calendar-container">
-    <h2> Calendar </h2>
-      <div class="container" width="60%" height="650px"> Calendar View </div>
+    <div class="container" width="60%" height="650px"> Calendar View </div>
+    <div>
+      <button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
+              label="CreateEvent"></button>
+      <button type="button" style="margin: 5px" [disabled]="!(event && currentUserID===event.userID)" (click)="showDialog('modify')" pButton
+              label="ModifyEvent"></button>
+      <button type="button" style="margin: 5px" [disabled]="!(event && currentUserID===event.userID)" (click)="showEventManagementDialog('del')" pButton
+              label="DelEvent"></button>
+    </div>
+    <div class="ui-grid-col-6">
+      <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="true " [events]="Events" [options]="options"></p-fullCalendar>
+    </div>
   </div>
+
+
+
+
+  <p-dialog [(visible)]="displayMessageDialog">
+    <h3>{{dialogMessage}}</h3>
+    <div>
+      <p-button label="Yes" (onClick)="choice('yes')"></p-button>
+      <p-button label="No" (onClick)="choice('no')"></p-button>
+    </div>
+  </p-dialog>
+
 </main>
 
 </body>

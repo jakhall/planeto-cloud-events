@@ -237,38 +237,10 @@ export class EventManagementComponent implements OnInit {
       userID: this.userID,
       eventID: null
     };
-    // console.log(event);
     if (this.type === 'create') {
       this.appService.createEvent(event, this.userID).subscribe(eventID => {
         this.display = false;
         this.initEvents();
-        /* console.log('get create event id:' + eventID);
-         event['eventID'] = eventID;
-
-         this.myEvents.push(event);
-         this.joinedEvents.push(event);
-
-         // console.log(event);
-         this.display = false;
-
-         let choice = {
-           'eventID': eventID,
-           'userID': this.userID,
-           // TODO add choose join date,now just use the start date
-           'date': event.start
-         };
-
-         this.appService.createChoice(choice, this.userID).subscribe(choiceID => {
-           console.log('create choice ID is: ' + choiceID);
-         }), error => {
-           console.error(error.message);
-         };
-
-         alert('create event success');
-       }, error => {
-         console.error(error.message);
-       });
- */
 
       }, error => {
         console.error(error.message);
@@ -289,15 +261,7 @@ export class EventManagementComponent implements OnInit {
     this.appService.updateEvent(event).subscribe(data => {
       this.display = false;
       this.initEvents();
-/*      let itemIndex = this.myEvents.findIndex(item => item.eventID == event.eventID);
-      this.myEvents[itemIndex] = event;
 
-      itemIndex = this.joinedEvents.findIndex(item => item.eventID == event.eventID);
-      this.joinedEvents[itemIndex] = event;
-
-      this.afterOperstion();*/
-
-      this.display = false;
     }, error => {
       console.error(error.message);
     });

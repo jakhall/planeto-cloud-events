@@ -12,10 +12,10 @@ export class AppService {
   result: any;
   // deploy url
 
-  baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
+  // baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  // baseUrl = 'http://localhost:8081/api/';
+  baseUrl = 'http://localhost:8080/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
@@ -137,15 +137,6 @@ export class AppService {
         }),
         catchError(this.handleError('login', [])));
 
-
-    /* const url = this.eventUrl + type + '/' + userID; //userId will be dynamic
-
-    return this.http.get(url)
-      .pipe(
-        map(res => {
-          return <Array<any>>res;
-        }),
-        catchError(this.handleError('login', []))); */
   }
 
   getEventInfo(eventId) {
@@ -173,50 +164,24 @@ export class AppService {
     return this.http.post(url, group).toPromise();
   }
 
-  createChoice(choice,userID) {
-    const url = this.choiceUrl+userID;
-
-    return this.http.post(url,choice)
-      .pipe(
-        map(res => {
-          return res;
-        }));
+  getGroupEvents(groupID){
+    let url = this.groupUrl+groupID+'/events';
+    return this.http.get(url).pipe(map(res => {return <Array<any>>res;}));
   }
 
-  updateChoice(choice) {
-    const url = this.choiceUrl+choice.eventID;
-
-    return this.http.put(url,choice)
-      .pipe(
-        map(res => {
-          return res;
-        }));
+  createGroupEvent(eventID,groupID) {
+    let url = this.groupUrl+groupID+'/event/'+eventID;
+    return this.http.post(url,"").pipe(map(res=> {return res;}));
   }
 
-  deleteChoice(userID,eventID) {
-    const url = this.choiceUrl + userID + '/' + eventID;
-
-    return this.http.delete(url)
-      .pipe(
-        map(res => {
-          return res;
-        })
-      );
+  deleteGroupEvent(eventID,groupID) {
+    let url = this.groupUrl+groupID+'/event/'+eventID;
+    return this.http.delete(url).pipe(map(res=> {return res;}));
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
 
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
 
-      // TODO: better job of transforming error for user consumption
-      console.log(`${operation} failed: ${error.message}`);
 
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
 
 
   searchByUsername(username:string) {
@@ -231,6 +196,20 @@ export class AppService {
 
   }
 
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      console.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 
   debug() {
     return this.http.get(this.baseUrl + 'test/getUser').pipe(map(res => {
