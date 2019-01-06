@@ -5,6 +5,9 @@ def getGroupById(id):
     key = ndb.Key(Group, id)
     return key.get()
 
+def getGroupByName(groupName):
+    return Group.query(Group.groupName == groupName).fetch()
+
 def getGroupEventById(id):
     key = ndb.Key(GroupEvent, id)
     return key.get()
@@ -22,11 +25,26 @@ def getAllGroupUsers(id):
 def getAllUserGroups(id):
     return GroupUser.query(GroupUser.userID == id).fetch()
 
+def getAllGroups():
+    return Group.query().fetch()
+
+def getOtherGroups(userID):
+    joinedGroups = getAllUserGroups(userID)
+    groupIDs = [groupUser.groupID for groupUser in joinedGroups]
+    allGroups = getAllGroups()
+
+    otherGroups = []
+    for group in allGroups:
+        if group.key.id() not in groupIDs:
+            otherGroups.append(group)
+    return otherGroups
+
+
 
 def createGroup(userID, username, name, description):
   group = Group(userID=userID, creatorName = username, groupName=name, description=description)
   group.put()
-  return (getAllUserGroups(userID), group)
+  return group
 
 def deleteGroup(id):
   group = getGroupById(id)
@@ -59,26 +77,26 @@ def addEvent(groupID, eventID):
     return groupEvent
 
 def removeEvent(groupID, eventID):
-      groupEvent = getGroupEvent(groupID, eventID)[0]
-      if groupEvent:
+    groupEvent = getGroupEvent(groupID, eventID)[0]
+    if groupEvent:
         groupEvent.key.delete()
 
 def removeUser(groupID, userID):
-      groupUser = getGroupUser(groupID, userID)[0]
-      if groupUser:
-        groupUser.key.delete()
+	groupUser = getGroupUser(groupID, userID)[0]
+	if groupUser:
+	  groupUser.key.delete()
 
 
 class Group(ndb.Model):
-      userID = ndb.IntegerProperty()
-      creatorName = ndb.StringProperty()
-      groupName = ndb.StringProperty()
-      description = ndb.StringProperty()
+	userID = ndb.IntegerProperty()
+	creatorName = ndb.StringProperty()
+	groupName = ndb.StringProperty()
+	description = ndb.StringProperty()
 
 class GroupUser(ndb.Model):
-     groupID = ndb.IntegerProperty()
-     userID = ndb.IntegerProperty()
-     role = ndb.StringProperty()
+    groupID = ndb.IntegerProperty()
+    userID = ndb.IntegerProperty()
+    role = ndb.StringProperty()
 
 class GroupEvent(ndb.Model):
      groupID =  ndb.IntegerProperty()

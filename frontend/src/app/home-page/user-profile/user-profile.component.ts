@@ -33,6 +33,37 @@ export class UserProfileComponent implements OnInit {
   type: string;
   groupform: FormGroup;
   signupForm: FormGroup;
+
+  menuItems:MenuItem[];
+  cols:any[];
+  group:any;
+
+  searchGroupName:string;
+  searchedGroups:any[];
+
+  ngOnInit() {
+    this.userID = localStorage.getItem('currentUser');
+    // if (this.userID==null) {
+    //   this.router.navigate(['/login'])
+    // }
+    this.update();
+
+    this.menuItems = [
+      {label: 'Groups', icon: 'pi pi-info', command: () => {}},
+    ];
+
+    this.cols = [
+      {field: 'groupName', header: 'GroupName'},
+      {field: 'description', header: 'Description'},
+      {field: 'creatorName', header: 'CreatorName'}
+    ];
+
+
+  }
+  constructor(private fb: FormBuilder,
+              private appService: AppService) { }
+
+
   showDialog(type) {
     this.type = type;
     if (type === 'create') {
@@ -109,20 +140,6 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  constructor(private fb: FormBuilder,
-              private appService: AppService) { }
-
-  ngOnInit() {
-    this.userID = localStorage.getItem('currentUser');
-    // if (this.userID==null) {
-    //   this.router.navigate(['/login'])
-    // }
-this.update();
-
-
-
-
-  }
   updateUser(value) {
     const user =  {
       id: localStorage.getItem('currentUser'),
@@ -138,5 +155,17 @@ this.update();
     }), error => {
       console.error(error.message.body);
     };
+  }
+
+  searchGroups() {
+    if (this.searchGroupName==='') {
+      this.searchedGroups = [];
+    }else{
+      this.appService.searchGroups(this.searchGroupName,this.userID).subscribe( groups =>{
+        this.searchedGroups = groups;
+      }),error =>{
+        console.log(error.message.body);
+      }
+    }
   }
 }

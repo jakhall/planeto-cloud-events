@@ -6,7 +6,7 @@ from models import group_model as m
 from models import user_model as u
 from models import event_model as e
 import json
-
+from fuzzywuzzy import process
 # Utilities:
 
 def userAsDict(user):
@@ -74,9 +74,10 @@ def handleGetGroup(groupID):
 @routes.route('/api/user/<int:id>/group', methods=['POST'])
 def handleCreateGroup(id):
   group = json.loads(request.data)
-  groupIdList, createdGroup = m.createGroup(id, group['creatorName'],
+  createdGroup = m.createGroup(id, group['creatorName'],
                                 group['groupName'], group['description'])
   m.addUser(createdGroup.key.id(), id, "Creator")
+  groupIdList = m.getAllUserGroups(id)
   groups = []
   for x in groupIdList:
       groups.append(groupAsDict(m.getGroupById(x.groupID)))
@@ -122,3 +123,24 @@ def handleRemoveUser(groupID, userID):
 def handleRemoveEvent(groupID, eventID):
   m.removeEvent(groupID=groupID, eventID=eventID)
   return make_response("Event removed from group", 200)
+
+
+@routes.route('/api/group/search/<string:groupName>/user/<int:userID>', methods=['GET'])
+def handleSearchGroups(groupName,userID):
+  # response = make_response("Failed", 500)
+
+  # get all groupName to a list
+  groupNames = [group.groupName for group in m.getOtherGroups(userID)]
+
+  # match 10 most similar groupName
+  res_tuple_list = process.extract(groupName, groupNames, limit=10)
+
+  return_list = []
+  for match_name,score in res_tuple_list:
+     group = m.getGroupByName(match_name)[0]
+
+     return_list.append(groupAsDict(group))
+
+  res = jsonify(return_list)
+  response = make_response(res, 200)
+  return response

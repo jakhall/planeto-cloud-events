@@ -199,6 +199,11 @@ export class AppService {
     return this.http.delete(url).pipe(map(res=> {return res;}));
   }
 
+  searchGroups(searchGroupName,userID) {
+    let url = this.groupUrl+'search/'+searchGroupName+'/user/'+userID;
+    return this.http.get(url).pipe(map(res =>{return <Array<any>>res;}));
+  }
+
 
 
 
