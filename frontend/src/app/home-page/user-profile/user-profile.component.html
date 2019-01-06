@@ -17,7 +17,7 @@
         {{email}}
       </div>
       <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em"></button>
+        <button pButton label="Edit" (click)="showEditDialog()" style="margin-left:.25em"></button>
       </div>
     </div>
 
@@ -53,5 +53,35 @@
     </p-footer>
 </p-dialog>
 
+  <p-dialog *ngIf="signupForm" header="{{title}}" [(visible)]="displayEdit" [modal]="true" [responsive]="true"
+             [maximizable]="true" [baseZIndex]="10000">
+    <form [formGroup]="signupForm" style="border:1px solid #ccc">
+      <div class="container">
+        <div class="form-group">
+          <label >Username</label>
+          <input pInputText class="input" type="text" formControlName="username" placeholder="required"/>
+        </div>
+        <div class="form-group">
+          <label >Firstname</label>
+          <input pInputText type="text" class="input" formControlName="firstname" placeholder="required">
+        </div>
+        <div class="form-group">
+          <label >Lastname</label>
+          <input pInputText type="text"  class="input" formControlName="lastname" placeholder="required">
+        </div>
+        <div class="form-group">
+          <label >Email</label>
+          <input pInputText type="email"  class="input" formControlName="email" placeholder="required">
+        </div>
+      </div>
+    </form>
+    <p-footer>
+      <div>
+        <button type="button"  pButton [disabled]="!signupForm.valid"
+                (click)="updateUser(signupForm.value)" label="update"></button>
+        <button type="button" pButton (click)="cancel()" label="Cancel" class="ui-button-secondary"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
 
 </div>

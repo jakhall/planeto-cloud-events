@@ -26,7 +26,7 @@ def getAllUserGroups(id):
 def createGroup(userID, username, name, description):
   group = Group(userID=userID, creatorName = username, groupName=name, description=description)
   group.put()
-  return group
+  return (getAllUserGroups(userID), group)
 
 def deleteGroup(id):
   group = getGroupById(id)
