@@ -24,7 +24,7 @@ export class GroupComponent implements OnInit {
   urlID: string;
   currentUserID: string;
   group: IGroup;
-  users: any;
+  users: any[];
   Events: any[];
   event:any;
   options:any;
@@ -34,6 +34,8 @@ export class GroupComponent implements OnInit {
   displayMessageDialog:boolean;
   dialogMessage:string;
   type:any;
+
+  userInGroup:boolean = false;
 
   constructor(private route: ActivatedRoute,
               private fb: FormBuilder,
@@ -60,6 +62,7 @@ export class GroupComponent implements OnInit {
 
     this.initGroupInfo();
     this.initGroupEvents();
+    this.initGroupUsers();
 
     this.options = {
       header: {
@@ -81,17 +84,14 @@ export class GroupComponent implements OnInit {
       console.log(this.group);
     });
 
-    /*
-    this.groupName = data['groupName'],
-    this.creatorName = data['creatorName'],
-    this.description = data['description']
-    */
-
-    this.appService.getGroupUsers(this.urlID).subscribe(data => {
-      this.users = data;
-    });
   }
 
+  initGroupUsers(){
+    this.appService.getGroupUsers(this.urlID).subscribe(data => {
+      this.users = data;
+      this.currentUserInGroup();
+    });
+  }
 
   initGroupEvents() {
 
@@ -111,12 +111,37 @@ export class GroupComponent implements OnInit {
       });
     });
 
+
+
   }
 
-  showEventManagementDialog(message) {
-    let eventName = this.event.name;
-    this.dialogMessage = 'Are you sure to delete the event: ' + eventName;
-    this.displayMessageDialog = true;
+  currentUserInGroup(){
+    if (this.users) {
+      // bad code
+      let inGroup:boolean = false;
+      this.users.forEach(groupUser =>{
+        if (String(groupUser.userID) === this.currentUserID){
+          inGroup = true;
+        }
+      });
+      this.userInGroup = inGroup;
+    }
+  }
+
+  showManagementDialog(type) {
+    this.type=type;
+    if (type === 'del') {
+      let eventName = this.event.name;
+      this.dialogMessage = 'Are you sure to delete the event: ' + eventName;
+      this.displayMessageDialog = true;
+    } else if(type ==='join'){
+      this.dialogMessage = 'Are you sure to join in the group: ' + this.group.groupName;
+      this.displayMessageDialog = true;
+    } else if(type==='quit'){
+      this.dialogMessage = 'Are you sure to quit from the group: ' + this.group.groupName;
+      this.displayMessageDialog = true;
+    }
+
   }
 
   showDialog(type) {
@@ -201,6 +226,24 @@ export class GroupComponent implements OnInit {
         }, error => {
           console.error(error.message);
         });
+      }
+      else if(this.type === 'join') {
+        let userRole = {
+          'role':'normalUser'
+        };
+
+        this.appService.addGroupUser(this.urlID,this.currentUserID,userRole).subscribe( res=>{
+          console.log("join group successfully:"+res);
+          this.initGroupUsers();
+        });
+      }
+      else if(this.type === 'quit') {
+        this.appService.removeGroupUser(this.urlID,this.currentUserID).subscribe(res =>{
+          console.log("quit from the group successfully:"+res);
+          this.initGroupUsers();
+        }), error=>{
+          console.error(error.message);
+        };
       }
 
     }

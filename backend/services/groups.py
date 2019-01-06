@@ -117,20 +117,20 @@ def handleAddEvent(groupID, eventID):
 @routes.route('/api/group/<int:groupID>/user/<int:userID>', methods=['DELETE'])
 def handleRemoveUser(groupID, userID):
   m.removeUser(groupID=groupID, userID=userID)
-  return make_response("User removed from group", 200)
+  return make_response(str(groupID), 200)
 
 @routes.route('/api/group/<int:groupID>/event/<int:eventID>', methods=['DELETE'])
 def handleRemoveEvent(groupID, eventID):
   m.removeEvent(groupID=groupID, eventID=eventID)
-  return make_response("Event removed from group", 200)
+  return make_response(str(groupID), 200)
 
 
-@routes.route('/api/group/search/<string:groupName>/user/<int:userID>', methods=['GET'])
-def handleSearchGroups(groupName,userID):
+@routes.route('/api/group/search/<string:groupName>', methods=['GET'])
+def handleSearchGroups(groupName):
   # response = make_response("Failed", 500)
 
   # get all groupName to a list
-  groupNames = [group.groupName for group in m.getOtherGroups(userID)]
+  groupNames = [group.groupName for group in m.getAllGroups()]
 
   # match 10 most similar groupName
   res_tuple_list = process.extract(groupName, groupNames, limit=10)

@@ -12,10 +12,10 @@ export class AppService {
   result: any;
   // deploy url
 
-  baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
+  // baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  // baseUrl = 'http://localhost:8080/api/';
+  baseUrl = 'http://localhost:8080/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
@@ -199,9 +199,18 @@ export class AppService {
     return this.http.delete(url).pipe(map(res=> {return res;}));
   }
 
-  searchGroups(searchGroupName,userID) {
-    let url = this.groupUrl+'search/'+searchGroupName+'/user/'+userID;
+  searchGroups(searchGroupName) {
+    let url = this.groupUrl+'search/'+searchGroupName;
     return this.http.get(url).pipe(map(res =>{return <Array<any>>res;}));
+  }
+
+  addGroupUser(groupID,userID,userRole) {
+    let url = this.groupUrl+groupID+'/user/'+userID;
+    return this.http.post(url,userRole).pipe(map(res =>{ return res;}));
+  }
+  removeGroupUser(groupID,userID) {
+    let url = this.groupUrl+groupID+'/user/'+userID;
+    return this.http.delete(url).pipe(map (res=>{return res;}));
   }
 
 

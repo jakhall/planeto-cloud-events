@@ -1,0 +1,36 @@
+<div>
+  <div *ngIf=" searchedGroups && searchedGroups.length > 0">
+    <p-table #dt [columns]="cols" [value]="searchedGroups" [(selection)]="group" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="caption">
+
+        <div style="text-align: left">
+          <p-tabMenu [model]="menuItems" [activeItem]="menuItems[0]"></p-tabMenu>
+          <button pButton label="gotoGroupPage" routerLink="/group/{{group? group.groupID : ''}}" [disabled]="!group"></button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width: 3em"></th>
+          <th *ngFor="let col of columns" [ngSwitch]="col.field">
+            {{col.header}}
+            <input *ngSwitchCase="'name'" pInputText type="text"
+                   (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td>
+            <p-tableRadioButton [value]="rowData"></p-tableRadioButton>
+          </td>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+
+  </div>
+
+</div>

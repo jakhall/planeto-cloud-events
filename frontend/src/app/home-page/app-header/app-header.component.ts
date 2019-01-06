@@ -3,6 +3,7 @@ import {MenuItem} from "primeng/api";
 import {IUserModel} from '../home-page.model';
 import {AppService} from "../../services/app.service";
 import { Observable } from "rxjs";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +16,9 @@ export class AppHeaderComponent implements OnInit {
   currentUser: any;
   currentName: string;
   currentID: string;
+  searchGroupName:string;
   isLoggedIn : Observable<boolean>;
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,private router: Router) {
     this.isLoggedIn = this.appService.isLoggedIn();
   }
 
@@ -44,6 +46,13 @@ export class AppHeaderComponent implements OnInit {
 
   public setUser(user){
     this.currentUser = user;
+  }
+
+  searchGroups() {
+    if (!this.searchGroupName || this.searchGroupName===""){
+      this.searchGroupName = "group";
+    }
+    this.router.navigate(['/search/'+this.searchGroupName])
   }
 
   logout(){

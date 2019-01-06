@@ -22,7 +22,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
-import {GroupComponent} from './group-view/group-view.component'
+import {GroupComponent} from './group-view/group-view.component';
+import { SearchGroupComponent } from './search-group/search-group.component'
 @NgModule({
   declarations: [HomePageComponent,
                 AppHeaderComponent,
@@ -30,7 +31,8 @@ import {GroupComponent} from './group-view/group-view.component'
                 LoginComponent,
                 SignupComponent,
                 UserProfileComponent,
-                GroupComponent
+                GroupComponent,
+                SearchGroupComponent
               ],
   imports: [
     CommonModule,
