@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, map, tap} from 'rxjs/operators';
 import {IUserModel, IGroup} from '../home-page/home-page.model';
 import {stringify} from 'querystring';
@@ -21,12 +21,23 @@ export class AppService {
   eventUrl = this.baseUrl + 'event/';
   groupUrl = this.baseUrl + 'group/';
   choiceUrl = this.baseUrl + 'choice/';
+
+  httpOptions = {
+    withCredentials: true,
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'charset': 'UTF-8',
+
+      })
+  };
+
   public loggedIn: BehaviorSubject<boolean>;
   public userData: BehaviorSubject<string>;
   constructor(private http: HttpClient) {
     this.loggedIn = new BehaviorSubject<boolean>(this.hasToken());
     this.userData = new BehaviorSubject<string>(null);
   }
+
   /**
    * if we have token the user is loggedIn
    * @returns {boolean}
@@ -44,16 +55,11 @@ export class AppService {
 
   login(username: string, password: string) {
     const url = this.userUrl + 'login';
-    let user = {
+    var user = {
       username: username,
       password: password
     };
-    return this.http.post(url, user).pipe(
-      map(res => {
-        return res;
-      }),
-      catchError(this.handleError('login', []))
-    );
+    return this.http.post(url, user, this.httpOptions).toPromise();
   }
 
 /*
@@ -66,6 +72,10 @@ export class AppService {
   }
 */
 
+  getSessionUser(){
+    const url = this.baseUrl + "session/user"
+    return this.http.get(url, this.httpOptions).toPromise();
+  }
 
   getUserGroups(userID){
     const url = this.userUrl + userID + '/groups';
@@ -228,7 +238,11 @@ export class AppService {
           return <Array<any>>res;
         }),
         catchError(this.handleError('searchByUsername', [])));
+  }
 
+  logout(){
+    const url = this.userUrl + "logout"
+    return this.http.get(url).toPromise()
   }
 
 

@@ -74,10 +74,9 @@ def handleGetGroup(groupID):
 @routes.route('/api/user/<int:id>/group', methods=['POST'])
 def handleCreateGroup(id):
   group = json.loads(request.data)
-  createdGroup = m.createGroup(id, group['creatorName'],
+  groupIdList, createdGroup = m.createGroup(id, group['creatorName'],
                                 group['groupName'], group['description'])
   m.addUser(createdGroup.key.id(), id, "Creator")
-  groupIdList = m.getAllUserGroups(id)
   groups = []
   for x in groupIdList:
       groups.append(groupAsDict(m.getGroupById(x.groupID)))

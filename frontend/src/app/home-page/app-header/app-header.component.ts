@@ -12,27 +12,42 @@ import { Observable } from "rxjs";
 })
 export class AppHeaderComponent implements OnInit {
   items: MenuItem[];
-  currentUser:string;
+  currentUser: any;
+  currentName: string;
+  currentID: string;
   isLoggedIn : Observable<boolean>;
   constructor(private appService: AppService) {
     this.isLoggedIn = this.appService.isLoggedIn();
-
   }
 
   ngOnInit() {
+
+    /*
     this.appService.userDataAvailable().subscribe((data) => {
       this.currentUser = data || localStorage.getItem('username');
     });
+
+    */
+
+    var self = this;
+    this.appService.getSessionUser().then(function onSuccess(data: IUserModel) {
+      self.currentUser = data;
+    });
+
     this.items = [
       {
         label: 'Event Calendar',
         routerLink: '/home'
       }
-    ];
+     ];
+    }
+
+  public setUser(user){
+    this.currentUser = user;
   }
 
-
-  cleanUser(){
+  logout(){
+    this.appService.logout();
     this.currentUser = null;
     this.appService.loggedIn.next(false);
     localStorage.clear();
