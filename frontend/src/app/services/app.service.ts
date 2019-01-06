@@ -12,10 +12,10 @@ export class AppService {
   result: any;
   // deploy url
 
-  // baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
+  baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  baseUrl = 'http://localhost:8080/api/';
+  // baseUrl = 'http://localhost:8080/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
