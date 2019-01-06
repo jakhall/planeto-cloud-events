@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {AppService} from "../../services/app.service";
+import {AppService} from '../../services/app.service';
 import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import {NgModule} from '@angular/core';
-import { IUserModel, IGroup} from "../home-page.model";
+import { IUserModel, IGroup} from '../home-page.model';
 import {MatListModule} from '@angular/material/list';
 import {MenuItem} from 'primeng/api';
 
@@ -29,10 +29,11 @@ export class UserProfileComponent implements OnInit {
   title: string;
   urlID: string;
   display = false;
+  displayEdit = false;
   type: string;
   groupform: FormGroup;
-
-  showDialog(type){
+  signupForm: FormGroup;
+  showDialog(type) {
     this.type = type;
     if (type === 'create') {
       this.title = 'Create Group';
@@ -43,9 +44,31 @@ export class UserProfileComponent implements OnInit {
       }
       this.display = true;
     }
+  showEditDialog() {
 
+    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
+      this.fullName = localStorage.getItem('firstName') + ' ' + localStorage.getItem('lastname');
+      this.email =  localStorage.getItem('email');
+      this.username = localStorage.getItem('username');
+      this.signupForm = this.fb.group({
+        'username': new FormControl(data.username, Validators.required),
+        'firstname': new FormControl(data.firstname),
+        'lastname': new FormControl(data.lastname),
+        'email': new FormControl(data.email, Validators.email)
+      });
+      this.displayEdit = true;
+    }, error2 => {
+      this.fullName = 'Janani Sundaresan';
+      this.email = 'janani.sundaresan@gmail.com';
+      this.userID = String(100);
+      this.username = 'janu';
+    });
+
+
+  }
     cancel() {
       this.display = false;
+      this.displayEdit = false;
     }
 
 
@@ -56,22 +79,33 @@ export class UserProfileComponent implements OnInit {
           description: value.description,
           creatorName: this.username
         };
-        var self = this;
+
 
         if (this.type === 'create') {
           this.appService.createGroup(group, this.userID).then(function onSuccess(data) {
-            self.display = false;
-            self.items = data;
-            console.log(data)
+            this.display = false;
+            this.items = data;
+            console.log(data);
           });
         }
     }
 
-  update(){
-    var self = this;
-    this.appService.getUserGroups(this.userID).then(function onSuccess(data) {
-      self.items = data;
+  update() {
+
+    this.appService.getUserGroups(this.userID).subscribe((data) => {
+      this.items = data;
       console.log(data);
+    });
+    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
+      this.fullName = data.firstname + ' ' + data.lastname;
+      this.email =  data.email;
+      this.username = data.username;
+      localStorage.setItem('firstName', data.firstname);
+      localStorage.setItem('lastname', data.lastname);
+      localStorage.setItem('email', data.email);
+      localStorage.setItem('username', data.username);
+    }, error => {
+     console.log(error);
     });
   }
 
@@ -79,34 +113,30 @@ export class UserProfileComponent implements OnInit {
               private appService: AppService) { }
 
   ngOnInit() {
-    this.userID = localStorage.getItem("currentUser");
+    this.userID = localStorage.getItem('currentUser');
     // if (this.userID==null) {
     //   this.router.navigate(['/login'])
     // }
-    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
-      this.fullName = localStorage.getItem("firstName") + ' ' + localStorage.getItem("lastname");;
-      this.email =  localStorage.getItem("email");
-      this.username = localStorage.getItem("username");
-      }, error2 => {
-      this.fullName = 'Janani Sundaresan';
-      this.email = 'janani.sundaresan@gmail.com';
-      this.userID = String(100);
-      this.username = 'janu'
-    });
+this.update();
 
-    /*
-    this.appService.getUserGroups(this.userID).subscribe(data => {
-      this.items = data;
-      console.log(data);
-    });
-    */
-    var self = this;
-    this.appService.getUserGroups(this.userID).then(function onSuccess(data) {
-      self.items = data;
-      console.log(data);
-    });
+
 
 
   }
+  updateUser(value) {
+    const user =  {
+      id: localStorage.getItem('currentUser'),
+      username: value.username,
+      firstname: value.firstname,
+      lastname: value.lastname,
+      email: value.email
+    };
 
+    this.appService.updateUser(user).subscribe(userID => {
+      this.update();
+      this.displayEdit = false;
+    }), error => {
+      console.error(error.message.body);
+    };
+  }
 }
