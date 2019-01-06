@@ -77,9 +77,12 @@ export class AppService {
     return this.http.get(url, this.httpOptions).toPromise();
   }
 
-  getUserGroups(userID){
+  getUserGroups(userID) {
     const url = this.userUrl + userID + '/groups';
-    return this.http.get(url).toPromise();
+    return this.http.get(url).pipe(
+      map(res => {
+        return <Array<any>>res;
+      }));
   }
 
   createUser(user) {
@@ -90,9 +93,16 @@ export class AppService {
       }),
       catchError(this.handleError('register', [])));
   }
-
+  updateUser(user) {
+    const url = this.userUrl + user.id;
+    return this.http.put(url, user).pipe(
+      map(res => {
+        return res;
+      }),
+      catchError(this.handleError('register', [])));
+  }
   getUser(userID) {
-    const url = this.userUrl + userID; //userId will be dynamic
+    const url = this.userUrl + userID;
 
     return this.http.get(url)
       .pipe(
