@@ -17,9 +17,11 @@ export class AppHeaderComponent implements OnInit {
   currentUser: any;
   currentName: string;
   currentID: number;
+  searchGroupName:string;
   isLoggedIn : Observable<boolean>;
   constructor(private appService: AppService,
-  private dataSharingService: DataSharingService) {
+  private dataSharingService: DataSharingService,
+  private router: Router) {
     this.isLoggedIn = this.appService.getSessionState();
     this.dataSharingService.currentUser.subscribe( value => {
         this.currentUser = value;
