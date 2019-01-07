@@ -2,6 +2,55 @@
 <body>
 <main>
 
+  <p-dialog *ngIf="groupForm" header="EditGroupInfo" [(visible)]="displayGroupDialog" [modal]="true" [responsive]="true"
+            [minY]="70" [style]="{width: '900px', height: '900px'}"
+            [maximizable]="true" [baseZIndex]="10000">
+    <span>
+      <div class="login-wrap">
+  <div class="login-html">
+    <div class="login-form">
+      <div class="sign-up-htm">
+        <form [formGroup]="groupForm">
+          <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Group Name</label></div>
+            <div class="ui-grid-col-6">
+              <input pInputText class="input" type="text" formControlName="GroupName" placeholder="Required"/></div>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="Event Name is required"
+                         *ngIf="!groupForm.controls['GroupName'].valid&&groupForm.controls['GroupName'].dirty"></p-message>
+            </div>
+          </div>
+          <div class="group ui-grid-row">
+            <div class="ui-grid-col-4" style="padding: 20px;">
+              <label class="label">Description</label></div>
+            <div class="ui-grid-col-6">
+              <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"  formControlName="Description" placeholder="Required"></textarea>
+            </div>
+            <div class="ui-grid-col-6">
+              <p-message severity="error" text="description"
+                         *ngIf="!groupForm.controls['Description'].valid&&groupForm.controls['Description'].dirty"></p-message>
+            </div>
+          </div>
+        </form>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+    </span>
+    <p-footer>
+      <button class="eventButton" type="button"  pButton [disabled]="!groupForm.valid"
+              (click)="submitGroup(groupForm.value)" label="EditGroup"></button>
+      <button class="eventButton" type="button" pButton (click)="onCancel()" label="Cancel" ></button>
+    </p-footer>
+  </p-dialog>
+
+
+
+  <!--<div-->
+
   <p-dialog *ngIf="eventForm" header="{{dialogTitle}}" [(visible)]="displayDialog" [modal]="true" [responsive]="true"
             [minY]="70" [style]="{width: '900px', height: '900px'}"
             [maximizable]="true" [baseZIndex]="10000">
@@ -78,7 +127,7 @@
 
     <div class="container">
       <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em"></button>
+        <button pButton label="Edit" style="margin-left:.25em" (click)="showGroupDialog()" [disabled]="!(currentUserID===groupCreator)"></button>
       </div>
       <div class="form-group">
         <label >Group Name: </label>
@@ -105,9 +154,9 @@
     </div>
 
     <h2> Users </h2>
-    <div class="button-container">
-     <button pButton class="add-button" label="Add" style="margin-left:.25em"></button>
-     </div>
+    <!--<div class="button-container">-->
+     <!--<button pButton class="add-button" label="Add" style="margin-left:.25em"></button>-->
+     <!--</div>-->
   <mat-nav-list>
      <a mat-list-item *ngFor="let x of users" routerLink="group/{{x.userID}}"> <p> {{ x.firstname + " " + x.lastname + " (" + x.username + ")"}} </p> </a>
   </mat-nav-list>
@@ -159,6 +208,7 @@
       <p-button label="No" (onClick)="choice('no')"></p-button>
     </div>
   </p-dialog>
+
 
 </main>
 

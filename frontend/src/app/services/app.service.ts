@@ -238,6 +238,11 @@ export class AppService {
     return this.http.delete(url).pipe(map (res=>{return res;}));
   }
 
+  updateGroup(groupID,group) {
+    let url = this.groupUrl+groupID;
+    return this.http.put(url,group).pipe(map(res=>{return res;}));
+  }
+
 
 
 

@@ -137,18 +137,18 @@ def handleDeleteGroup(groupID):
     return make_response("Group Deleted", 200)
 
 
-@routes.route('/api/group/<int:eventID>', methods=['PUT'])
-def handleUpdateGroup(eventID):
+@routes.route('/api/group/<int:groupID>', methods=['PUT'])
+def handleUpdateGroup(groupID):
     """
     Return a response 200 if successful updated
     Updating a Group by its ID via function of group_model.updateGroup
     Get detailed Group data from input items in web page
     """
     group = json.loads(request.data)
-    event = m.updateGroup(groupID=groupID,
-                        name=event['name'],
-                        desc=event['description'])
-    return make_response(getEntityID(event), 200)
+    group = m.updateGroup(groupID=groupID,
+                        name=group['groupName'],
+                        desc=group['description'])
+    return make_response(str(group.key.id()), 200)
 
 
 @routes.route('/api/group/<int:groupID>/user/<int:userID>', methods=['POST'])
