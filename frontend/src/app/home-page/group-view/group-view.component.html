@@ -124,13 +124,10 @@
 
   <div class="details-container">
     <h2> Group Details </h2>
-    <div class="edit-button">
-      <button pButton label="Edit" style="margin-left:.25em"></button>
+    <div class="button-container">
+      <button pButton label="Edit" style="margin-left:.25em" (click)="showGroupDialog()" [disabled]="!(currentUserID===groupCreator)"></button>
     </div>
     <div class="container">
-      <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em" (click)="showGroupDialog()" [disabled]="!(currentUserID===groupCreator)"></button>
-      </div>
       <div class="form-group">
         <label >Group Name: </label>
         {{group? group.groupName : ""}}
