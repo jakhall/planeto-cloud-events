@@ -2,6 +2,7 @@ from google.appengine.ext import ndb
 from flask_login import UserMixin
 
 
+# Function purpose: Get all event choices matched an userId in database
 def getJoinedEvent(userID):
   joinedEvents = []
   choices = Choice.query(Choice.userID == userID).fetch()
@@ -12,6 +13,7 @@ def getJoinedEvent(userID):
   return joinedEvents
 
 
+# Function purpose: Get other event choices matched an userId in database
 def getOtherEvents(userID):
   otherEvents = []
   joinedEvents = getJoinedEvent(userID)
@@ -24,12 +26,14 @@ def getOtherEvents(userID):
   return otherEvents
 
 
+# Function purpose: Create a new choice item in database
 def createChoice(eventID, userID, dateChoice):
   choice = Choice(eventID=eventID, userID=userID, dateChoice=dateChoice)
   choice.put()
   return choice
 
 
+# Function purpose: Get an existed choice item in database
 def getChoice(eventID, userID):
   choice = Choice.query(ndb.AND(Choice.eventID == eventID, Choice.userID == userID)).fetch(1)
   if not choice:
@@ -37,6 +41,7 @@ def getChoice(eventID, userID):
   return choice[0]
 
 
+# Function purpose: Update an existed choice item in database
 def updateChoice(eventID, userID, dateChoice):
   choice = getChoice(eventID, userID)
   if choice:
@@ -45,6 +50,7 @@ def updateChoice(eventID, userID, dateChoice):
   return choice
 
 
+# Function purpose: Delete an existed choice item in database
 def deleteChoice(eventID, userID):
   choice = getChoice(eventID, userID)
   if choice:
@@ -52,17 +58,20 @@ def deleteChoice(eventID, userID):
   return None
 
 
+# Function purpose: Delete all existed choice items matched an eventId in database
 def deleteEventChoices(eventID):
   choices = Choice.query(Choice.eventID == eventID)
   for choice in choices:
     choice.key.delete()
 
 
+# Function purpose: Get total choice numbers matched an eventId in database
 def getNumOfJoined(eventID):
   num_ppl = len(Choice.query(Choice.eventID == eventID).fetch())
   return num_ppl
 
 
+# Function purpose: Get most voted event date choice matched an eventId in database
 def getMostDate(eventID):
   choiceDict = {}
   for choice in Choice.query(Choice.eventID == eventID).fetch():
@@ -77,6 +86,8 @@ def getMostDate(eventID):
   else:
     return None
 
+
+# Utilities:
 class Choice(ndb.Model):
   eventID = ndb.IntegerProperty()
   userID = ndb.IntegerProperty()
