@@ -3,9 +3,11 @@ import {AppService} from '../../services/app.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IUserModel} from '../home-page.model';
+import {AppHeaderComponent} from '../app-header/app-header.component';
 
 @Component({
   selector: 'app-signup',
+  providers: [AppHeaderComponent],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
@@ -14,7 +16,8 @@ export class SignupComponent implements OnInit {
   signupForm:FormGroup;
   constructor(private appService:AppService,
               private router: Router,
-              private fb:FormBuilder) { }
+              private fb:FormBuilder,
+              private header : AppHeaderComponent) { }
 
   ngOnInit() {
     if(localStorage.getItem("currentUser")) {
@@ -39,9 +42,13 @@ export class SignupComponent implements OnInit {
       password:value.password
     };
 
+    var self = this;
     this.appService.createUser(user).subscribe(userID =>{
-      localStorage.setItem("currentUser",String(userID));
-      this.router.navigate(['/home']);
+      this.appService.login(user.username, user.password).then(function onSuccess(data: IUserModel){
+        localStorage.setItem("currentUser", String(data.userID));
+        self.header.setUser(data)
+        self.router.navigate(['/home']);
+      });
     }), error =>{
       console.error(error.message.body);
     }

@@ -4,7 +4,7 @@
   <div *ngIf="(isLoggedIn | async)">
     <input type="text" pInputText placeholder="search groups"  [(ngModel)]="searchGroupName">
     <button pButton type="button" label="SearchGroups" (click)="searchGroups()"></button>
-    Logged in as: <a class="myAccount" routerLink="/user/{{currentUser.userID}}"> <b>  {{currentUser? currentUser.username: ""}} </b> </a>
+    Logged in as: <a class="myAccount" routerLink="/user/{{currentUser.userID}}"> <b>  {{currentUser.username}} </b> </a>
     <button pButton label="Logout" style="margin-left:.25em" (click)="logout()" routerLink="/login"></button>
   </div>
 
