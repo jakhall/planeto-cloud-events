@@ -28,11 +28,17 @@ export class GroupComponent implements OnInit {
   Events: any[];
   event:any;
   options:any;
+
+  groupCreator:string;
+
   eventForm:FormGroup;
+  groupForm:FormGroup;
+
   dialogTitle:string;
   displayDialog:boolean;
   displayMessageDialog:boolean;
   dialogMessage:string;
+  displayGroupDialog:boolean = false;
   type:any;
 
   userInGroup:boolean = false;
@@ -52,7 +58,8 @@ export class GroupComponent implements OnInit {
       creatorName: calEvent.event.def.extendedProps.creatorName
     };
 
-    console.log(this.event);
+    console.log("currentUserID:"+this.currentUserID);
+    console.log("eventUserID:"+this.event.userID);
   }
 
   ngOnInit() {
@@ -63,6 +70,7 @@ export class GroupComponent implements OnInit {
     this.initGroupInfo();
     this.initGroupEvents();
     this.initGroupUsers();
+
 
     this.options = {
       header: {
@@ -82,6 +90,7 @@ export class GroupComponent implements OnInit {
     this.appService.getGroupInfo(this.urlID).subscribe((data: IGroup) => {
       this.group = data;
       console.log(this.group);
+      this.groupCreator = String(this.group.userID);
     });
 
   }
@@ -164,8 +173,33 @@ export class GroupComponent implements OnInit {
     this.displayDialog = true;
   }
 
+  showGroupDialog() {
+
+    this.groupForm = this.fb.group({
+      'GroupName': new FormControl(this.group.groupName, Validators.required),
+      'Description': new FormControl(this.group.description, Validators.required),
+    });
+    this.displayGroupDialog = true;
+  }
+
+  submitGroup(value) {
+    let group = {
+      'groupName':value.GroupName,
+      'description':value.Description
+    }
+    this.appService.updateGroup(this.urlID,group).subscribe(groupID =>{
+      console.log("update group:"+groupID);
+      this.displayGroupDialog = false;
+      this.initGroupInfo();
+    }),error =>{
+      console.error(error.message);
+    };
+  }
+
+
   onCancel() {
     this.displayDialog = false;
+    this.displayGroupDialog = false;
   }
 
   onSubmit(value) {
@@ -218,8 +252,8 @@ export class GroupComponent implements OnInit {
           // delete groupEvent
           this.appService.deleteGroupEvent(this.event.eventID,this.urlID).subscribe(res =>{
             console.log("delete groupEvent:"+this.event.eventID);
+            this.initGroupEvents();
           });
-          this.initGroupEvents();
         }, error => {
           console.error(error.message);
         });
@@ -245,6 +279,11 @@ export class GroupComponent implements OnInit {
 
     }
     this.displayMessageDialog = false;
+
+  }
+
+
+  editGroup() {
 
   }
 

@@ -169,5 +169,24 @@
   </p-table>
 
 </div>
-</main>
-</body>
+
+<div *ngIf="event" style="margin: 10px" class="ui-grid-col-4">
+  <div class="container">
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Name :</label>
+      {{event.name}}
+    </div>
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Start Date :</label>
+      {{event.start}}
+    </div>
+    <div class="form-group">
+      <label style="font-weight: bolder">Event End Date :</label>
+      {{event.end}}
+    </div>
+    <div class="form-group">
+      <label style="font-weight: bolder">Event Description :</label>
+      {{event.description}}
+    </div>
+  </div>
+</div>

@@ -15,7 +15,7 @@ export class AppService {
   baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  //baseUrl = 'http://localhost:8081/api/';
+  // baseUrl = 'http://localhost:8080/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
@@ -236,6 +236,11 @@ export class AppService {
   removeGroupUser(groupID,userID) {
     let url = this.groupUrl+groupID+'/user/'+userID;
     return this.http.delete(url).pipe(map (res=>{return res;}));
+  }
+
+  updateGroup(groupID,group) {
+    let url = this.groupUrl+groupID;
+    return this.http.put(url,group).pipe(map(res=>{return res;}));
   }
 
 
