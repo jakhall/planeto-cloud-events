@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MessageModule, MenubarModule,CalendarModule, MultiSelectModule, RadioButtonModule, DropdownModule } from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import { LoginComponent } from './login/login.component';
+import { LaunchComponent } from './launch/launch.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
@@ -31,6 +32,7 @@ import { SearchGroupComponent } from './search-group/search-group.component'
                 EventManagementComponent,
                 LoginComponent,
                 SignupComponent,
+                LaunchComponent,
                 UserProfileComponent,
                 GroupComponent,
                 SearchGroupComponent

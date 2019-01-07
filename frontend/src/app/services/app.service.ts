@@ -47,10 +47,10 @@ export class AppService {
     return !!localStorage.getItem('currentUser');
   }
 
-   sessionExists() : boolean {
-    console.log(this.sessionState)
-    return this.sessionState;
-  }
+   sessionExists() {
+     var url = this.baseUrl + "session";
+     return this.http.get(url, this.httpOptions).toPromise();
+   }
 
   updateSessionState() {
     var url = this.baseUrl + "session";
