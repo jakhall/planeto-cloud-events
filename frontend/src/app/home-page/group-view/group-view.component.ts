@@ -52,7 +52,8 @@ export class GroupComponent implements OnInit {
       creatorName: calEvent.event.def.extendedProps.creatorName
     };
 
-    console.log(this.event);
+    console.log("currentUserID:"+this.currentUserID);
+    console.log("eventUserID:"+this.event.userID);
   }
 
   ngOnInit() {
@@ -221,8 +222,8 @@ export class GroupComponent implements OnInit {
           // delete groupEvent
           this.appService.deleteGroupEvent(this.event.eventID,this.urlID).subscribe(res =>{
             console.log("delete groupEvent:"+this.event.eventID);
+            this.initGroupEvents();
           });
-          this.initGroupEvents();
         }, error => {
           console.error(error.message);
         });

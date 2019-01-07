@@ -64,11 +64,11 @@
 
     </span>
     <p-footer>
-      <button type="button" *ngIf="type === 'create'" pButton [disabled]="!eventForm.valid"
+      <button class="eventButton" type="button" *ngIf="type === 'create'" pButton [disabled]="!eventForm.valid"
               (click)="onSubmit(eventForm.value)" label="Create"></button>
-      <button type="button" *ngIf="type==='modify'" pButton [disabled]="!eventForm.valid"
-              (click)="onModify(eventForm.value)" label="Modify"></button>
-      <button type="button" pButton (click)="onCancel()" label="Cancel" class="ui-button-secondary"></button>
+      <button class="eventButton" type="button" *ngIf="type==='modify'" pButton [disabled]="!eventForm.valid"
+              (click)="onSubmit(eventForm.value)" label="Modify"></button>
+      <button class="eventButton" type="button" pButton (click)="onCancel()" label="Cancel" ></button>
     </p-footer>
   </p-dialog>
 
@@ -118,14 +118,35 @@
     <div class="container" style="float-displace: auto" >
       <button class="eventButton" type="button" style="margin: 10px" [disabled]="!userInGroup" (click)="showDialog('create')" pButton
               label="CreateEvent"></button>
-      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showDialog('modify')" pButton
+      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && userInGroup)" (click)="showDialog('modify')" pButton
               label="ModifyEvent"></button>
-      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showManagementDialog('del')" pButton
+      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && userInGroup)" (click)="showManagementDialog('del')" pButton
               label="DelEvent"></button>
     </div>
     <div class="container">
       <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="true " [events]="Events" [options]="options"></p-fullCalendar>
+      <div *ngIf="event" style="margin: 10px" class="ui-grid-col-4">
+        <div>
+          <div class="form-group">
+            <label style="font-weight: bolder">Event Name :</label>
+            {{event.name}}
+          </div>
+          <div class="form-group">
+            <label style="font-weight: bolder">Event Start Date :</label>
+            {{event.start}}
+          </div>
+          <div class="form-group">
+            <label style="font-weight: bolder">Event End Date :</label>
+            {{event.end}}
+          </div>
+          <div class="form-group">
+            <label style="font-weight: bolder">Event Description :</label>
+            {{event.description}}
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
 
