@@ -7,7 +7,7 @@ from models import user_model as u
 from models import event_model as e
 import json
 from fuzzywuzzy import process
-# Utilities:
+
 
 def userAsDict(user):
     """
