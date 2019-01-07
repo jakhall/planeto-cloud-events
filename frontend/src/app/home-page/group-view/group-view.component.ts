@@ -110,9 +110,6 @@ export class GroupComponent implements OnInit {
         this.Events.push(event);
       });
     });
-
-
-
   }
 
   currentUserInGroup(){

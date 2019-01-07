@@ -6,6 +6,7 @@ import {SignupComponent} from './signup/signup.component';
 import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {GroupComponent} from "./group-view/group-view.component"
 import {LaunchComponent} from "./launch/launch.component"
+import {AppHeaderComponent} from './app-header/app-header.component';
 import {MatListModule} from '@angular/material/list';
 import {AuthGuard} from "../auth/auth.guard";
 import {SearchGroupComponent} from './search-group/search-group.component';

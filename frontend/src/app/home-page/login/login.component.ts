@@ -20,9 +20,6 @@ export class LoginComponent implements OnInit {
               private header : AppHeaderComponent) { }
 
   ngOnInit() {
-    if(localStorage.getItem("currentUser")) {
-      this.router.navigate(['/home']);
-    }
     this.loginForm = this.fb.group({
       'username': new FormControl('', Validators.required),
       'password': new FormControl('',Validators.required),

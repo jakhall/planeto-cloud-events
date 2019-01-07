@@ -78,6 +78,19 @@ input[type=text] {
     width: 50%;
   }
 
+  .edit-button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .cal-buttons {
+    float: right;
+  }
+
+  .join-leave-buttons{
+    float: left;
+  }
+
   .container {
     padding: 8px;
     background-color: #ebebeb;
@@ -96,6 +109,10 @@ input[type=text] {
 
 .mat-list-item:hover{
   background-color: #79b6e2;
+}
+
+.clear {
+  clear: both;
 }
 
 .create {

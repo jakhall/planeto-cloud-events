@@ -1,3 +1,6 @@
+<body>
+
+<main>
 <p-dialog *ngIf="userform" header="{{title}}" [(visible)]="display" [modal]="true" [responsive]="true"
           [minY]="70" [style]="{width: '900px', height: '900px'}"
           [maximizable]="true" [baseZIndex]="10000">
@@ -77,28 +80,39 @@
 </p-dialog>
 
 
-<p-splitButton
+
+<div class="calendar">
+    <div class="title-container">
+       <h2> Personal Events  </h2>
+     </div>
+<p-splitButton class="switch"
   (onClick)="CalendarView(!showCalendarView)" [model]="calendarItem"
   label="Switch View"
 ></p-splitButton>
-<button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
-        label="CreateEvent"></button>
-<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showDialog('modify')" pButton
-        label="ModifyEvent"></button>
-<button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
-        label="DelEvent"></button>
 
+<div class="button-container">
+  <button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
+          label="Create"></button>
+  <button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showDialog('modify')" pButton
+          label="Modify"></button>
+  <button type="button" style="margin: 5px" [disabled]="!(event && userID===event.userID)" (click)="showEventManagementDialog('del')" pButton
+          label="Delete"></button>
+</div>
+
+<div class="clear"> </div>
 
 <!--<button *ngIf="!showJoinedEvents && !showMyEvents" pButton type="button"
         label="JoinEvent"  (click)="showEventManagementDialog('join')"  ></button>
 <button *ngIf="showJoinedEvents && !showMyEvents" pButton type="button"
         label="QuitEvent"  (click)="showEventManagementDialog('quit')"  ></button>-->
-<div class="container ui-grid-row">
-<div class="ui-grid-col-6">
+<div class="container" *ngIf="showCalendarView">
   <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="showCalendarView && events && events.length > 0 &&  Events && Events.length > 0 " [events]="Events" [options]="options"></p-fullCalendar>
 </div>
+</div>
 
-<div *ngIf="event" style="margin: 10px" class="ui-grid-col-4">
+<div class="details" *ngIf="showCalendarView">
+<div *ngIf="event" style="margin: 10px">
+    <h2> Details </h2>
   <div class="container">
     <div class="form-group">
       <label style="font-weight: bolder">Event Name :</label>
@@ -118,10 +132,10 @@
     </div>
     </div>
 </div>
-
-
 </div>
-<div *ngIf="!showCalendarView && events && events.length > 0">
+
+<div class="test" *ngIf="!showCalendarView && events && events.length > 0">
+  <div class="clear"> </div>
   <p-table #dt [columns]="cols" [value]="events" [(selection)]="event" [paginator]="true" [rows]="10">
     <ng-template pTemplate="caption">
 
@@ -155,3 +169,5 @@
   </p-table>
 
 </div>
+</main>
+</body>

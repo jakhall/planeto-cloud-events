@@ -5,7 +5,7 @@ import {NgModule} from '@angular/core';
 import { IUserModel, IGroup} from '../home-page.model';
 import {MatListModule} from '@angular/material/list';
 import {MenuItem} from 'primeng/api';
-
+import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
   imports: [MatListModule],
@@ -31,22 +31,25 @@ export class UserProfileComponent implements OnInit {
   display = false;
   displayEdit = false;
   type: string;
+  isUsersProfile = false;
   groupform: FormGroup;
   signupForm: FormGroup;
-
   searchGroupName:string;
   searchedGroups:any[];
 
   ngOnInit() {
     this.userID = localStorage.getItem('currentUser');
-    // if (this.userID==null) {
-    //   this.router.navigate(['/login'])
-    // }
+    this.urlID = this.route.snapshot.paramMap.get('id');
+
+    if(this.urlID == this.userID){
+      this.isUsersProfile = true;
+    }
     this.update();
-
-
   }
+
+
   constructor(private fb: FormBuilder,
+              private route: ActivatedRoute,
               private appService: AppService) { }
 
 
@@ -63,8 +66,9 @@ export class UserProfileComponent implements OnInit {
     }
   showEditDialog() {
 
-    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
+    this.appService.getUser(this.urlID).subscribe((data: IUserModel) => {
       this.fullName = localStorage.getItem('firstName') + ' ' + localStorage.getItem('lastname');
+      this.firstname = localStorage.getItem('firstName');
       this.email =  localStorage.getItem('email');
       this.username = localStorage.getItem('username');
       this.signupForm = this.fb.group({
@@ -80,8 +84,6 @@ export class UserProfileComponent implements OnInit {
       this.userID = String(100);
       this.username = 'janu';
     });
-
-
   }
     cancel() {
       this.display = false;
@@ -109,12 +111,13 @@ export class UserProfileComponent implements OnInit {
 
   update() {
 
-    this.appService.getUserGroups(this.userID).subscribe((data) => {
+    this.appService.getUserGroups(this.urlID).subscribe((data) => {
       this.items = data;
       console.log(data);
     });
-    this.appService.getUser(this.userID).subscribe((data: IUserModel) => {
+    this.appService.getUser(this.urlID).subscribe((data: IUserModel) => {
       this.fullName = data.firstname + ' ' + data.lastname;
+      this.firstname = data.firstname;
       this.email =  data.email;
       this.username = data.username;
       localStorage.setItem('firstName', data.firstname);

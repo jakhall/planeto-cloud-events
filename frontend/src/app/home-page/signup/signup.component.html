@@ -7,11 +7,11 @@
         <input pInputText class="input" type="text" formControlName="username" placeholder="required"/>
       </div>
       <div class="form-group">
-        <label >Firstname</label>
+        <label >First name</label>
         <input pInputText type="text" class="input" formControlName="firstname" placeholder="required">
       </div>
       <div class="form-group">
-        <label >Lastname</label>
+        <label >Last name</label>
         <input pInputText type="text"  class="input" formControlName="lastname" placeholder="required">
       </div>
       <div class="form-group">
@@ -29,7 +29,7 @@
       <p-message severity="error" text="checkPassword is not equal to password"
                  *ngIf="signupForm.controls['checkPassword'].valid && signupForm.controls['password'].value!=signupForm.controls['checkPassword'].value"></p-message>
       <div class="clearfix">
-        <button pButton class="signupbtn" [disabled]="!signupForm.valid || signupForm.controls['password'].value!=signupForm.controls['checkPassword'].value" type="button"  label="signup" style="margin-left:.25em" class="btn btn-default" (click)="signup(signupForm.value)"></button>
+        <button pButton class="signupbtn" [disabled]="!signupForm.valid || signupForm.controls['password'].value!=signupForm.controls['checkPassword'].value" type="button"  label="Register" style="margin-left:.25em" class="btn btn-default" (click)="signup(signupForm.value)"></button>
         <button pButton style="margin-left:.25em" type="button" label="Login" routerLink="/login"></button>
 
       </div>

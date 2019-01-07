@@ -1,7 +1,10 @@
 
 <div class="login">
   <main>
-    <h2> My Profile </h2>
+
+
+    <h2 *ngIf="isUsersProfile"> My Profile </h2>
+    <h2 *ngIf="!isUsersProfile"> {{firstname}}'s Profile </h2>
 
     <div class="container">
       <div class="form-group">
@@ -21,18 +24,17 @@
       </div>
     </div>
 
-    <h2> My Groups </h2>
+    <h2 *ngIf="isUsersProfile"> My Groups </h2>
+    <h2 *ngIf="!isUsersProfile"> {{firstname}}'s Groups </h2>
     <div class="button-container">
       <button pButton label="Update" style="margin-left:.25em" (click)="update()"></button>
     </div>
 
-    <div class="container">
       <div>
         <mat-nav-list>
           <a mat-list-item class="create" (click)="showDialog('create')"> <p> + Create a group </p>  </a>
           <a mat-list-item *ngFor="let x of items" routerLink="/group/{{x.groupID}}"> <p> {{ x.groupName }} </p> </a>
         </mat-nav-list>
-    </div>
     </div>
 
 

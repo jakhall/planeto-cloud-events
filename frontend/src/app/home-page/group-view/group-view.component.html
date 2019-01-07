@@ -75,11 +75,10 @@
 
   <div class="details-container">
     <h2> Group Details </h2>
-
+    <div class="edit-button">
+      <button pButton label="Edit" style="margin-left:.25em"></button>
+    </div>
     <div class="container">
-      <div class="button-container">
-        <button pButton label="Edit" style="margin-left:.25em"></button>
-      </div>
       <div class="form-group">
         <label >Group Name: </label>
         {{group? group.groupName : ""}}
@@ -94,40 +93,37 @@
       </div>
 
     </div>
-    <div class="container">
-      <h2>Join or Quit</h2>
-      <div *ngIf="!userInGroup">Do you want to Join in this group?</div>
-      <button *ngIf="!userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('join')" pButton
-              label="joinGroup"></button>
-      <div *ngIf="userInGroup">Do you want to quit from this group?</div>
-      <button *ngIf="userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('quit')" pButton
-              label="quitGroup"></button>
-    </div>
+
 
     <h2> Users </h2>
-    <div class="button-container">
-     <button pButton class="add-button" label="Add" style="margin-left:.25em"></button>
-     </div>
   <mat-nav-list>
-     <a mat-list-item *ngFor="let x of users" routerLink="group/{{x.userID}}"> <p> {{ x.firstname + " " + x.lastname + " (" + x.username + ")"}} </p> </a>
+     <a mat-list-item *ngFor="let x of users" routerLink="/user/{{x.userID}}"> <p> {{ x.firstname + " " + x.lastname + " (" + x.username + ")"}} </p> </a>
   </mat-nav-list>
 
   </div>
   <div class="calendar-container">
-    <div class="container" width="60%" height="650px"> Calendar View </div>
-    <div class="container" style="float-displace: auto" >
+    <h2> Group Calendar </h2>
+    <div class="all-buttons">
+      <div class="join-leave-buttons">
+      <button *ngIf="!userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('join')" pButton
+              label="Join"></button>
+      <button *ngIf="userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('quit')" pButton
+              label="Leave"></button>
+      </div>
+      <div class="cal-buttons">
       <button class="eventButton" type="button" style="margin: 10px" [disabled]="!userInGroup" (click)="showDialog('create')" pButton
-              label="CreateEvent"></button>
+              label="Create"></button>
       <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showDialog('modify')" pButton
-              label="ModifyEvent"></button>
+              label="Modify"></button>
       <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showManagementDialog('del')" pButton
-              label="DelEvent"></button>
+              label="Delete"></button>
+          </div>
     </div>
+    <div class="clear"> </div>
     <div class="container">
       <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="true " [events]="Events" [options]="options"></p-fullCalendar>
     </div>
   </div>
-
 
 
 

@@ -133,27 +133,23 @@ export class EventManagementComponent implements OnInit {
       this.username = 'janu';
     });
     this.items = [
-      {label: 'MyEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)},
-      {label: 'SearchOtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)}/*,
-      {label: 'JoinedEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[1].label)},
-      {label: 'OtherEvents', icon: 'pi pi-info', command: () => this.showEvents(this.items[2].label)}*/
+      {label: 'My Events', icon: 'pi pi-info', command: () => this.showEvents(this.items[0].label)},
     ];
 
     this.calendarItem = [
-      {label: 'EventsTableView', command: () => {
+      {label: 'Table View', command: () => {
           this.CalendarView(false);
         }},
-      {label: 'EventsCalendarView', command: () => {
+      {label: 'Calendar View', command: () => {
           this.CalendarView(true);
         }}
     ];
 
     this.cols = [
-      {field: 'name', header: 'EventName'},
+      {field: 'name', header: 'Name'},
       {field: 'description', header: 'Description'},
       {field: 'start', header: 'Start Date/Time'},
-      {field: 'end', header: 'End Date/Time'},
-      {field: 'creatorName', header: 'creatorName'}
+      {field: 'end', header: 'End Date/Time'}
     ];
   }
 
