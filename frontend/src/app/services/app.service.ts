@@ -12,16 +12,16 @@ export class AppService {
   result: any;
   // deploy url
 
-  baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
+  //baseUrl = 'https://backend-dot-planeto-app.appspot.com/api/';
 
   // for local test url
-  // baseUrl = 'http://localhost:8080/api/';
+   baseUrl = 'http://localhost:8081/api/';
 
   userUrl = this.baseUrl + 'user/';
   eventUrl = this.baseUrl + 'event/';
   groupUrl = this.baseUrl + 'group/';
   choiceUrl = this.baseUrl + 'choice/';
-
+  sessionState = false;
   httpOptions = {
     withCredentials: true,
     headers: new HttpHeaders({
@@ -30,12 +30,13 @@ export class AppService {
 
       })
   };
-
+  public session: BehaviorSubject<boolean>;
   public loggedIn: BehaviorSubject<boolean>;
   public userData: BehaviorSubject<string>;
   constructor(private http: HttpClient) {
     this.loggedIn = new BehaviorSubject<boolean>(this.hasToken());
     this.userData = new BehaviorSubject<string>(null);
+    this.session = new BehaviorSubject<boolean>(null);
   }
 
   /**
@@ -46,9 +47,33 @@ export class AppService {
     return !!localStorage.getItem('currentUser');
   }
 
+   sessionExists() : boolean {
+    console.log(this.sessionState)
+    return this.sessionState;
+  }
+
+  updateSessionState() {
+    var url = this.baseUrl + "session";
+    var self = this;
+    var promise = this.http.get(url, this.httpOptions).toPromise();
+    promise.then(function onSuccess(data) {
+      if (data == "Exists")
+        self.session.next(true);
+      else{
+        self.session.next(false);
+        console.log(data);
+      }
+    });
+  }
+
   isLoggedIn() : Observable<boolean> {
     return this.loggedIn.asObservable();
   }
+
+  getSessionState() : Observable<boolean> {
+    return this.session.asObservable();
+  }
+
   userDataAvailable() : Observable<string> {
     return this.userData.asObservable();
   }
@@ -204,11 +229,6 @@ export class AppService {
     return this.http.get(url).pipe(map(res =>{return <Array<any>>res;}));
   }
 
-
-
-
-
-
   searchByUsername(username:string) {
     const url = this.baseUrl+'search'+'/'+username;
 
@@ -222,13 +242,12 @@ export class AppService {
 
   logout(){
     const url = this.userUrl + "logout"
-    return this.http.get(url).toPromise()
+    return this.http.get(url, this.httpOptions).toPromise()
   }
 
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 

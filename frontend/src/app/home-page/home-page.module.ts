@@ -23,6 +23,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import {GroupComponent} from './group-view/group-view.component'
+import {DataSharingService} from './app-header/data-sharing.service'
 @NgModule({
   declarations: [HomePageComponent,
                 AppHeaderComponent,
@@ -30,7 +31,7 @@ import {GroupComponent} from './group-view/group-view.component'
                 LoginComponent,
                 SignupComponent,
                 UserProfileComponent,
-                GroupComponent
+                GroupComponent,
               ],
   imports: [
     CommonModule,
@@ -51,5 +52,6 @@ import {GroupComponent} from './group-view/group-view.component'
     CheckboxModule, DataListModule, MenubarModule,MenuModule,TabMenuModule,FullCalendarModule,SplitButtonModule
   ],
   exports: [AppHeaderComponent, EventManagementComponent],
+  providers: [DataSharingService],
 })
 export class HomePageModule { }

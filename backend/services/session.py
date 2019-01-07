@@ -46,7 +46,17 @@ def handleLogin():
 
 @routes.route('/api/user/logout', methods=['GET'])
 def handleLogout():
-    logout_user()
+    response = jsonify()
+    response.headers.add('Access-Control-Allow-Headers',
+                             "Origin, X-Requested-With, Content-Type, Accept, x-auth")
     for key in session.keys():
      session.pop(key)
-    return make_response(jsonify(message='Logout Successful'), 200)
+    response = jsonify("Logout Successful")
+    return response
+
+
+@routes.route('/api/session', methods=['GET'])
+def handleIsLoggedIn():
+    if 'userId' in session.keys():
+        return make_response(jsonify("Exists"), 200)
+    return make_response(jsonify("Does not exist"), 200)

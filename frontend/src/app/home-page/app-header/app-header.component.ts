@@ -2,7 +2,8 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {IUserModel} from '../home-page.model';
 import {AppService} from "../../services/app.service";
-import { Observable } from "rxjs";
+import { Observable, BehaviorSubject } from "rxjs";
+import { DataSharingService } from './data-sharing.service';
 
 @Component({
   selector: 'app-header',
@@ -14,25 +15,27 @@ export class AppHeaderComponent implements OnInit {
   items: MenuItem[];
   currentUser: any;
   currentName: string;
-  currentID: string;
+  currentID: number;
   isLoggedIn : Observable<boolean>;
-  constructor(private appService: AppService) {
-    this.isLoggedIn = this.appService.isLoggedIn();
+  constructor(private appService: AppService,
+  private dataSharingService: DataSharingService) {
+    this.isLoggedIn = this.appService.getSessionState();
+    this.dataSharingService.currentUser.subscribe( value => {
+        this.currentUser = value;
+    });
   }
+
 
   ngOnInit() {
 
-    /*
-    this.appService.userDataAvailable().subscribe((data) => {
-      this.currentUser = data || localStorage.getItem('username');
-    });
-
-    */
 
     var self = this;
+
     this.appService.getSessionUser().then(function onSuccess(data: IUserModel) {
-      self.currentUser = data;
+      self.dataSharingService.currentUser.next(data);
+      self.appService.updateSessionState();
     });
+
 
     this.items = [
       {
@@ -43,14 +46,23 @@ export class AppHeaderComponent implements OnInit {
     }
 
   public setUser(user){
-    this.currentUser = user;
+    this.dataSharingService.currentUser.next(user);
+    console.log("SETTING USER AS", user);
+    console.log(this.currentUser);
+    this.appService.updateSessionState();
+    console.log("Session Updated");
   }
 
   logout(){
-    this.appService.logout();
-    this.currentUser = null;
+    var self = this;
+    this.dataSharingService.currentUser.next(null);
     this.appService.loggedIn.next(false);
     localStorage.clear();
+    this.appService.logout().then(function onSuccess(res){
+      self.appService.updateSessionState();
+      }
+    );
+
   }
 
 }

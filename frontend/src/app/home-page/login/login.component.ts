@@ -47,19 +47,11 @@ export class LoginComponent implements OnInit {
     */
     var self = this;
     this.appService.login(username, password).then(function onSuccess(data: IUserModel) {
-      console.log("Got Response")
-      console.log(data)
       localStorage.setItem("currentUser",String(data.userID));
+      self.header.setUser(data)
       self.router.navigate(['/home']);
-      self.header.setUser(data);
     });
-
-
   }
-
-
-
-
 
   debug(){
     this.appService.debug().subscribe(res =>{
