@@ -94,6 +94,15 @@
       </div>
 
     </div>
+    <div class="container">
+      <h2>Join or Quit</h2>
+      <div *ngIf="!userInGroup">Do you want to Join in this group?</div>
+      <button *ngIf="!userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('join')" pButton
+              label="joinGroup"></button>
+      <div *ngIf="userInGroup">Do you want to quit from this group?</div>
+      <button *ngIf="userInGroup" class="eventButton" type="button" style="margin: 10px" (click)="showManagementDialog('quit')" pButton
+              label="quitGroup"></button>
+    </div>
 
     <h2> Users </h2>
     <div class="button-container">
@@ -106,15 +115,15 @@
   </div>
   <div class="calendar-container">
     <div class="container" width="60%" height="650px"> Calendar View </div>
-    <div>
-      <button type="button" style="margin: 5px" (click)="showDialog('create')" pButton
+    <div class="container" style="float-displace: auto" >
+      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!userInGroup" (click)="showDialog('create')" pButton
               label="CreateEvent"></button>
-      <button type="button" style="margin: 5px" [disabled]="!(event && currentUserID===event.userID)" (click)="showDialog('modify')" pButton
+      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showDialog('modify')" pButton
               label="ModifyEvent"></button>
-      <button type="button" style="margin: 5px" [disabled]="!(event && currentUserID===event.userID)" (click)="showEventManagementDialog('del')" pButton
+      <button class="eventButton" type="button" style="margin: 10px" [disabled]="!(event && currentUserID===event.userID)" (click)="showManagementDialog('del')" pButton
               label="DelEvent"></button>
     </div>
-    <div class="ui-grid-col-6">
+    <div class="container">
       <p-fullCalendar class="fc-basic-view"  #ucCalendar *ngIf="true " [events]="Events" [options]="options"></p-fullCalendar>
     </div>
   </div>

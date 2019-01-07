@@ -34,10 +34,6 @@ export class UserProfileComponent implements OnInit {
   groupform: FormGroup;
   signupForm: FormGroup;
 
-  menuItems:MenuItem[];
-  cols:any[];
-  group:any;
-
   searchGroupName:string;
   searchedGroups:any[];
 
@@ -47,16 +43,6 @@ export class UserProfileComponent implements OnInit {
     //   this.router.navigate(['/login'])
     // }
     this.update();
-
-    this.menuItems = [
-      {label: 'Groups', icon: 'pi pi-info', command: () => {}},
-    ];
-
-    this.cols = [
-      {field: 'groupName', header: 'GroupName'},
-      {field: 'description', header: 'Description'},
-      {field: 'creatorName', header: 'CreatorName'}
-    ];
 
 
   }
@@ -157,15 +143,5 @@ export class UserProfileComponent implements OnInit {
     };
   }
 
-  searchGroups() {
-    if (this.searchGroupName==='') {
-      this.searchedGroups = [];
-    }else{
-      this.appService.searchGroups(this.searchGroupName,this.userID).subscribe( groups =>{
-        this.searchedGroups = groups;
-      }),error =>{
-        console.log(error.message.body);
-      }
-    }
-  }
+
 }

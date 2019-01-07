@@ -24,6 +24,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import {GroupComponent} from './group-view/group-view.component'
 import {DataSharingService} from './app-header/data-sharing.service'
+import { SearchGroupComponent } from './search-group/search-group.component'
 @NgModule({
   declarations: [HomePageComponent,
                 AppHeaderComponent,
@@ -32,6 +33,7 @@ import {DataSharingService} from './app-header/data-sharing.service'
                 SignupComponent,
                 UserProfileComponent,
                 GroupComponent,
+                SearchGroupComponent
               ],
   imports: [
     CommonModule,

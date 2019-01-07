@@ -4,6 +4,7 @@ import {IUserModel} from '../home-page.model';
 import {AppService} from "../../services/app.service";
 import { Observable, BehaviorSubject } from "rxjs";
 import { DataSharingService } from './data-sharing.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -51,6 +52,13 @@ export class AppHeaderComponent implements OnInit {
     console.log(this.currentUser);
     this.appService.updateSessionState();
     console.log("Session Updated");
+  }
+
+  searchGroups() {
+    if (!this.searchGroupName || this.searchGroupName===""){
+      this.searchGroupName = "group";
+    }
+    this.router.navigate(['/search/'+this.searchGroupName])
   }
 
   logout(){
